@@ -1,0 +1,117 @@
+{
+  "info": {
+    "_postman_id": "c6e3af5f-5db7-4912-90d6-8e4e3b73a2c1",
+    "name": "Computer Shop - Member 1 API",
+    "description": "Auth, Admin Dashboard, user management and visit tracking. Run Login as Admin first to populate adminToken.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000/api" },
+    { "key": "adminUsername", "value": "admin" },
+    { "key": "adminPassword", "value": "CHANGE_TO_THE_ADMIN_PASSWORD_IN_ENV" },
+    { "key": "adminToken", "value": "" },
+    { "key": "customerToken", "value": "" },
+    { "key": "sampleUserId", "value": "2" }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Health check",
+          "request": { "method": "GET", "url": "http://localhost:5000/health" }
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register Customer",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Registration returns 201 or expected validation/duplicate response', function () { pm.expect([201, 400, 409]).to.include(pm.response.code); });", "if (pm.response.code === 201) { const data = pm.response.json().data; if (data && data.token) pm.collectionVariables.set('customerToken', data.token); }"] } }],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"username\": \"postman_customer\",\n  \"email\": \"postman.customer@example.com\",\n  \"password\": \"Customer123!\",\n  \"fullName\": \"Postman Customer\",\n  \"phone\": \"0900000011\"\n}" },
+            "url": "{{baseUrl}}/auth/register"
+          }
+        },
+        {
+          "name": "Login as Admin",
+          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Login successful', function () { pm.response.to.have.status(200); });", "const data = pm.response.json().data; pm.collectionVariables.set('adminToken', data.token);"] } }],
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"identifier\": \"{{adminUsername}}\",\n  \"password\": \"{{adminPassword}}\"\n}" },
+            "url": "{{baseUrl}}/auth/login"
+          }
+        },
+        {
+          "name": "Current user (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": "{{baseUrl}}/auth/me"
+          }
+        },
+        {
+          "name": "Change password (test only)",
+          "request": {
+            "method": "PATCH",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"currentPassword\": \"CURRENT_PASSWORD\",\n  \"newPassword\": \"NewPassword123!\"\n}" },
+            "url": "{{baseUrl}}/auth/change-password"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Visits",
+      "item": [
+        {
+          "name": "Track visit session",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": { "mode": "raw", "raw": "{\n  \"sessionId\": \"postman-session-0001\"\n}" },
+            "url": "{{baseUrl}}/visits"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin Dashboard",
+      "item": [
+        {
+          "name": "Dashboard (last 30 days)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "url": "{{baseUrl}}/admin/dashboard?from=2026-01-01&to=2026-12-31"
+          }
+        }
+      ]
+    },
+    {
+      "name": "User Management",
+      "item": [
+        {
+          "name": "List users",
+          "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/users?page=1&limit=20" }
+        },
+        {
+          "name": "Get one user",
+          "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/users/{{sampleUserId}}" }
+        },
+        {
+          "name": "Change user role",
+          "request": { "method": "PATCH", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"role\": \"Staff\"\n}" }, "url": "{{baseUrl}}/users/{{sampleUserId}}/role" }
+        },
+        {
+          "name": "Deactivate user",
+          "request": { "method": "PATCH", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"isActive\": false\n}" }, "url": "{{baseUrl}}/users/{{sampleUserId}}/status" }
+        }
+      ]
+    }
+  ]
+}
