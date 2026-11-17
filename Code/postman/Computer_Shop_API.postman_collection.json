@@ -1,17 +1,35 @@
 {
   "info": {
     "_postman_id": "c6e3af5f-5db7-4912-90d6-8e4e3b73a2c1",
-    "name": "Computer Shop - Member 1 API",
+    "name": "Computer Shop Management Software API (Member 1 & Member 2)",
     "description": "Auth, Admin Dashboard, user management and visit tracking. Run Login as Admin first to populate adminToken.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
-    { "key": "baseUrl", "value": "http://localhost:5000/api" },
-    { "key": "adminUsername", "value": "admin" },
-    { "key": "adminPassword", "value": "CHANGE_TO_THE_ADMIN_PASSWORD_IN_ENV" },
-    { "key": "adminToken", "value": "" },
-    { "key": "customerToken", "value": "" },
-    { "key": "sampleUserId", "value": "2" }
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api"
+    },
+    {
+      "key": "adminUsername",
+      "value": "admin"
+    },
+    {
+      "key": "adminPassword",
+      "value": "CHANGE_TO_THE_ADMIN_PASSWORD_IN_ENV"
+    },
+    {
+      "key": "adminToken",
+      "value": ""
+    },
+    {
+      "key": "customerToken",
+      "value": ""
+    },
+    {
+      "key": "sampleUserId",
+      "value": "2"
+    }
   ],
   "item": [
     {
@@ -19,7 +37,10 @@
       "item": [
         {
           "name": "Health check",
-          "request": { "method": "GET", "url": "http://localhost:5000/health" }
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5000/health"
+          }
         }
       ]
     },
@@ -28,21 +49,59 @@
       "item": [
         {
           "name": "Register Customer",
-          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Registration returns 201 or expected validation/duplicate response', function () { pm.expect([201, 400, 409]).to.include(pm.response.code); });", "if (pm.response.code === 201) { const data = pm.response.json().data; if (data && data.token) pm.collectionVariables.set('customerToken', data.token); }"] } }],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Registration returns 201 or expected validation/duplicate response', function () { pm.expect([201, 400, 409]).to.include(pm.response.code); });",
+                  "if (pm.response.code === 201) { const data = pm.response.json().data; if (data && data.token) pm.collectionVariables.set('customerToken', data.token); }"
+                ]
+              }
+            }
+          ],
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"username\": \"postman_customer\",\n  \"email\": \"postman.customer@example.com\",\n  \"password\": \"Customer123!\",\n  \"fullName\": \"Postman Customer\",\n  \"phone\": \"0900000011\"\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"postman_customer\",\n  \"email\": \"postman.customer@example.com\",\n  \"password\": \"Customer123!\",\n  \"fullName\": \"Postman Customer\",\n  \"phone\": \"0900000011\"\n}"
+            },
             "url": "{{baseUrl}}/auth/register"
           }
         },
         {
           "name": "Login as Admin",
-          "event": [{ "listen": "test", "script": { "type": "text/javascript", "exec": ["pm.test('Login successful', function () { pm.response.to.have.status(200); });", "const data = pm.response.json().data; pm.collectionVariables.set('adminToken', data.token);"] } }],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Login successful', function () { pm.response.to.have.status(200); });",
+                  "const data = pm.response.json().data; pm.collectionVariables.set('adminToken', data.token);"
+                ]
+              }
+            }
+          ],
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"identifier\": \"{{adminUsername}}\",\n  \"password\": \"{{adminPassword}}\"\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifier\": \"{{adminUsername}}\",\n  \"password\": \"{{adminPassword}}\"\n}"
+            },
             "url": "{{baseUrl}}/auth/login"
           }
         },
@@ -50,7 +109,12 @@
           "name": "Current user (Admin)",
           "request": {
             "method": "GET",
-            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
             "url": "{{baseUrl}}/auth/me"
           }
         },
@@ -58,8 +122,20 @@
           "name": "Change password (test only)",
           "request": {
             "method": "PATCH",
-            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }, { "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"currentPassword\": \"CURRENT_PASSWORD\",\n  \"newPassword\": \"NewPassword123!\"\n}" },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"currentPassword\": \"CURRENT_PASSWORD\",\n  \"newPassword\": \"NewPassword123!\"\n}"
+            },
             "url": "{{baseUrl}}/auth/change-password"
           }
         }
@@ -72,8 +148,16 @@
           "name": "Track visit session",
           "request": {
             "method": "POST",
-            "header": [{ "key": "Content-Type", "value": "application/json" }],
-            "body": { "mode": "raw", "raw": "{\n  \"sessionId\": \"postman-session-0001\"\n}" },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sessionId\": \"postman-session-0001\"\n}"
+            },
             "url": "{{baseUrl}}/visits"
           }
         }
@@ -86,7 +170,12 @@
           "name": "Dashboard (last 30 days)",
           "request": {
             "method": "GET",
-            "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
             "url": "{{baseUrl}}/admin/dashboard?from=2026-01-01&to=2026-12-31"
           }
         }
@@ -97,19 +186,350 @@
       "item": [
         {
           "name": "List users",
-          "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/users?page=1&limit=20" }
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/users?page=1&limit=20"
+          }
         },
         {
           "name": "Get one user",
-          "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }], "url": "{{baseUrl}}/users/{{sampleUserId}}" }
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/users/{{sampleUserId}}"
+          }
         },
         {
           "name": "Change user role",
-          "request": { "method": "PATCH", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"role\": \"Staff\"\n}" }, "url": "{{baseUrl}}/users/{{sampleUserId}}/role" }
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"role\": \"Staff\"\n}"
+            },
+            "url": "{{baseUrl}}/users/{{sampleUserId}}/role"
+          }
         },
         {
           "name": "Deactivate user",
-          "request": { "method": "PATCH", "header": [{ "key": "Authorization", "value": "Bearer {{adminToken}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"isActive\": false\n}" }, "url": "{{baseUrl}}/users/{{sampleUserId}}/status" }
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"isActive\": false\n}"
+            },
+            "url": "{{baseUrl}}/users/{{sampleUserId}}/status"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Categories (Module 2)",
+      "item": [
+        {
+          "name": "List All Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categories",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categories"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Category (Admin/Staff)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Tản nhiệt (Cooling)\",\n  \"description\": \"Tản nhiệt khí và tản nhiệt nước AIO cho CPU\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/categories",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categories"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products & Specs (Module 2)",
+      "item": [
+        {
+          "name": "List Products (Multi-Criteria Filter)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products?category=CPU&spec_Socket=LGA1700&inStock=true&sortBy=price_desc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "CPU"
+                },
+                {
+                  "key": "spec_Socket",
+                  "value": "LGA1700"
+                },
+                {
+                  "key": "inStock",
+                  "value": "true"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "price_desc"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Product Filter Options (Sidebar)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/filter-options/all",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "filter-options",
+                "all"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Product Details by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Hardware Product with Specs & Variants",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Intel Core i7-14700K\",\n  \"brand\": \"Intel\",\n  \"categoryId\": 1,\n  \"description\": \"CPU thế hệ 14 Raptor Lake Refresh 20 nhân 28 luồng.\",\n  \"variants\": [\n    {\n      \"sku\": \"CPU-INTEL-14700K-BOX\",\n      \"price\": 10890000,\n      \"stockQuantity\": 10,\n      \"lowStockThreshold\": 5\n    }\n  ],\n  \"specs\": [\n    {\n      \"specName\": \"Socket\",\n      \"specValue\": \"LGA1700\"\n    },\n    {\n      \"specName\": \"Cores\",\n      \"specValue\": \"20 Cores\"\n    },\n    {\n      \"specName\": \"TDP\",\n      \"specValue\": \"125W\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Inventory & Low-Stock Alerts (Module 4)",
+      "item": [
+        {
+          "name": "List Inventory Table & Valuation",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/inventory?status=all",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "inventory"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "all"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Low-Stock Alerts (Threshold breach)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/inventory/low-stock",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "inventory",
+                "low-stock"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Batch Restock (Nhập kho theo lô)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"batchCode\": \"BATCH-202611-FPT01\",\n  \"notes\": \"Lô hàng linh kiện bo mạch chủ và CPU nhập từ Synnex FPT\",\n  \"items\": [\n    {\n      \"sku\": \"CPU-INTEL-14900K-TRAY\",\n      \"quantity\": 10\n    },\n    {\n      \"sku\": \"GPU-ASUS-4070TIS-16G\",\n      \"quantity\": 5\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/inventory/restock-batch",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "inventory",
+                "restock-batch"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Adjust Variant Stock & Threshold",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"newQuantity\": 15,\n  \"lowStockThreshold\": 5,\n  \"reason\": \"Kiểm kê định kỳ thực tế\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/inventory/variants/1/adjust",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "inventory",
+                "variants",
+                "1",
+                "adjust"
+              ]
+            }
+          }
         }
       ]
     }
