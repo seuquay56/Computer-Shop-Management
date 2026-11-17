@@ -45,3 +45,23 @@ SELECT
 FROM orders;
 
 SELECT COUNT(*) AS tracked_sessions FROM website_visits;
+
+-- 7) Low-stock alert and inventory verification (Module 4 - Member 2).
+SELECT pv.variant_id, p.name AS product_name, pv.sku, pv.price,
+       pv.stock_quantity, COALESCE(pv.low_stock_threshold, 5) AS threshold,
+       CASE
+         WHEN pv.stock_quantity = 0 THEN 'CRITICAL (Out of Stock)'
+         WHEN pv.stock_quantity <= COALESCE(pv.low_stock_threshold, 5) THEN 'WARNING (Low Stock)'
+         ELSE 'HEALTHY (In Stock)'
+       END AS stock_status
+FROM product_variants pv
+JOIN products p ON p.product_id = pv.product_id
+ORDER BY pv.stock_quantity ASC;
+
+-- 8) Technical Specifications breakdown per product (Module 2 - Member 2).
+SELECT p.product_id, p.name AS product_name, p.brand, s.spec_name, ps.spec_value
+FROM products p
+JOIN product_specs ps ON ps.product_id = p.product_id
+JOIN specs s ON s.spec_id = ps.spec_id
+ORDER BY p.product_id, s.spec_name;
+
