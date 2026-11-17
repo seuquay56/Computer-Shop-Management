@@ -47,8 +47,11 @@ CREATE TABLE IF NOT EXISTS product_variants (
     product_id BIGINT NOT NULL REFERENCES products(product_id) ON DELETE CASCADE,
     sku VARCHAR(50) NOT NULL UNIQUE,
     price NUMERIC(12, 2) NOT NULL CHECK (price >= 0),
-    stock_quantity INTEGER NOT NULL DEFAULT 0 CHECK (stock_quantity >= 0)
+    stock_quantity INTEGER NOT NULL DEFAULT 0 CHECK (stock_quantity >= 0),
+    low_stock_threshold INTEGER NOT NULL DEFAULT 5 CHECK (low_stock_threshold >= 0)
 );
+
+ALTER TABLE product_variants ADD COLUMN IF NOT EXISTS low_stock_threshold INTEGER NOT NULL DEFAULT 5 CHECK (low_stock_threshold >= 0);
 
 CREATE INDEX IF NOT EXISTS ix_product_variants_product_id ON product_variants(product_id);
 
@@ -99,4 +102,18 @@ CREATE TABLE IF NOT EXISTS order_items (
 
 CREATE INDEX IF NOT EXISTS ix_order_items_order_id ON order_items(order_id);
 CREATE INDEX IF NOT EXISTS ix_order_items_variant_id ON order_items(variant_id);
+
+CREATE TABLE IF NOT EXISTS inventory_transactions (
+    transaction_id BIGSERIAL PRIMARY KEY,
+    variant_id BIGINT NOT NULL REFERENCES product_variants(variant_id) ON DELETE CASCADE,
+    change_quantity INTEGER NOT NULL,
+    transaction_type VARCHAR(30) NOT NULL CHECK (transaction_type IN ('Import', 'Sale', 'Adjustment', 'Return')),
+    notes TEXT,
+    created_by BIGINT REFERENCES users(user_id) ON DELETE SET NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS ix_inventory_transactions_variant_id ON inventory_transactions(variant_id);
+CREATE INDEX IF NOT EXISTS ix_inventory_transactions_created_at ON inventory_transactions(created_at);
+
 

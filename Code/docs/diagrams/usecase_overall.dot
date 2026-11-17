@@ -1,0 +1,113 @@
+
+digraph G {
+    rankdir=LR;
+    dpi=300;
+    nodesep=0.45;
+    ranksep=0.85;
+    compound=true;
+    fontname="Arial";
+    node [fontname="Arial"];
+    edge [fontname="Arial"];
+
+    // Actors
+    node [shape=box, style="filled,rounded", fillcolor="#e0e7ff", color="#3730a3", penwidth=1.5, fontsize=11];
+    guest [label="<<actor>>\nGuest / Visitor"];
+    customer [label="<<actor>>\nCustomer"];
+    staff [label="<<actor>>\nInventory / Sales Staff"];
+    admin [label="<<actor>>\nStore Manager (Admin)"];
+    
+    node [shape=box, style="filled,rounded", fillcolor="#fef3c7", color="#92400e", penwidth=1.5, fontsize=11];
+    payment_gw [label="<<actor>>\nPayment Gateway\n(VietQR / ZaloPay)"];
+
+    // Generalizations between actors
+    edge [style=solid, arrowhead=empty, color="#3730a3", penwidth=1.2];
+    customer -> guest;
+    admin -> staff;
+
+    // Use cases style
+    node [shape=ellipse, style="filled", fillcolor="#f0fdf4", color="#166534", penwidth=1.2, fontsize=10];
+
+    subgraph cluster_system {
+        label="Computer Shop Management Software System Boundary";
+        fontname="Arial Bold";
+        fontsize=14;
+        style=dashed;
+        color="#64748b";
+        bgcolor="#f8fafc";
+        margin=20;
+
+        subgraph cluster_m1 {
+            label="Module 1: Authentication and User Administration";
+            style=rounded;
+            bgcolor="#ffffff";
+            color="#cbd5e1";
+            uc_login [label="UC-01: Authenticate User\n(JWT Login)"];
+            uc_register [label="UC-02: Register Customer\nAccount"];
+            uc_users [label="UC-03: Manage System\nUsers and RBAC"];
+            uc_dashboard [label="UC-04: View Sales and\nRevenue Dashboard"];
+        }
+
+        subgraph cluster_m2 {
+            label="Module 2: Products, Specs and Variants Management";
+            style=rounded;
+            bgcolor="#ffffff";
+            color="#cbd5e1";
+            uc_cat [label="UC-05: Manage Hardware\nCategories"];
+            uc_prod [label="UC-06: Manage Hardware\nProducts"];
+            uc_specs [label="UC-07: Configure Technical\nSpecs and Variants"];
+            uc_filter [label="UC-08: Filter and Search\nHardware by Specs"];
+        }
+
+        subgraph cluster_m3 {
+            label="Module 3: Storefront, Cart and Payment";
+            style=rounded;
+            bgcolor="#ffffff";
+            color="#cbd5e1";
+            uc_cart [label="UC-09: Manage Shopping Cart"];
+            uc_stock_val [label="UC-10: Validate Real-Time\nStock Availability"];
+            uc_checkout [label="UC-11: Cashless Checkout\n(VietQR / ZaloPay)"];
+        }
+
+        subgraph cluster_m4 {
+            label="Module 4: Order Fulfillment and Inventory Control";
+            style=rounded;
+            bgcolor="#ffffff";
+            color="#cbd5e1";
+            uc_orders [label="UC-12: Process Order Fulfillment\n(Lifecycle: Paid to Shipped)"];
+            uc_deduct [label="UC-13: Deduct Inventory\nStock on Sale"];
+            uc_batch_in [label="UC-14: Batch Inward\nStock Receipt (Restock)"];
+            uc_alert [label="UC-15: Monitor Low-Stock\nAlerts and Thresholds"];
+        }
+    }
+
+    // Actor to Use Cases Associations
+    edge [style=solid, arrowhead=none, color="#334155", penwidth=1.2];
+    guest -> uc_filter;
+    guest -> uc_register;
+    guest -> uc_login;
+
+    customer -> uc_cart;
+    customer -> uc_checkout;
+
+    staff -> uc_prod;
+    staff -> uc_specs;
+    staff -> uc_batch_in;
+    staff -> uc_alert;
+    staff -> uc_orders;
+
+    admin -> uc_users;
+    admin -> uc_dashboard;
+    admin -> uc_cat;
+
+    uc_checkout -> payment_gw;
+
+    // <<include>> and <<extend>> relationships
+    edge [style=dashed, arrowhead=open, color="#0284c7", penwidth=1.0, fontcolor="#0369a1", fontsize=8];
+    uc_users -> uc_login [label="<<include>>"];
+    uc_dashboard -> uc_login [label="<<include>>"];
+    uc_specs -> uc_prod [label="<<extend>>"];
+    uc_cart -> uc_stock_val [label="<<include>>"];
+    uc_checkout -> uc_stock_val [label="<<include>>"];
+    uc_orders -> uc_deduct [label="<<include>>"];
+    uc_batch_in -> uc_alert [label="<<extend>>"];
+}

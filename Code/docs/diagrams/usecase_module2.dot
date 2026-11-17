@@ -1,0 +1,59 @@
+
+digraph G {
+    rankdir=LR;
+    dpi=300;
+    nodesep=0.4;
+    ranksep=0.8;
+    fontname="Arial";
+    node [fontname="Arial"];
+    edge [fontname="Arial"];
+
+    node [shape=box, style="filled,rounded", fillcolor="#e0e7ff", color="#3730a3", penwidth=1.5, fontsize=11];
+    actor_staff [label="<<actor>>\nInventory / Sales Staff"];
+    actor_admin [label="<<actor>>\nStore Manager (Admin)"];
+    actor_guest [label="<<actor>>\nCustomer / Guest"];
+
+    edge [style=solid, arrowhead=empty, color="#3730a3", penwidth=1.2];
+    actor_admin -> actor_staff;
+
+    node [shape=ellipse, style="filled", fillcolor="#f0fdf4", color="#166534", penwidth=1.2, fontsize=10];
+
+    subgraph cluster_m2_detail {
+        label="Module 2: Hardware Products, Specs and Variants Subsystem";
+        fontname="Arial Bold";
+        fontsize=13;
+        style=dashed;
+        color="#64748b";
+        bgcolor="#f8fafc";
+        margin=15;
+
+        uc_create_prod [label="Create Hardware Product\n(Name, Brand, Category)"];
+        uc_update_prod [label="Update Hardware Product"];
+        uc_delete_prod [label="Delete Hardware Product"];
+        uc_add_variant [label="Add Product SKU Variant\n(SKU, Price, Stock, Threshold)"];
+        uc_update_variant [label="Update Variant Price and Stock"];
+        uc_config_specs [label="Map Technical Specifications\n(Socket, Bus, VRAM, TDP)"];
+        uc_manage_specs [label="Register New Spec Attribute\n(Specs Definition)"];
+        uc_filter_specs [label="Search and Multi-Criteria\nFilter Hardware by Specs"];
+        uc_view_options [label="Retrieve Dynamic Filter\nOptions and Attributes"];
+        uc_check_order_ref [label="Validate No Active Order\nReferences before Delete"];
+    }
+
+    edge [style=solid, arrowhead=none, color="#334155", penwidth=1.2];
+    actor_staff -> uc_create_prod;
+    actor_staff -> uc_update_prod;
+    actor_staff -> uc_delete_prod;
+    actor_staff -> uc_add_variant;
+    actor_staff -> uc_update_variant;
+    actor_staff -> uc_config_specs;
+    actor_staff -> uc_manage_specs;
+
+    actor_guest -> uc_filter_specs;
+    actor_guest -> uc_view_options;
+
+    edge [style=dashed, arrowhead=open, color="#0284c7", penwidth=1.0, fontcolor="#0369a1", fontsize=8];
+    uc_add_variant -> uc_create_prod [label="<<extend>>"];
+    uc_config_specs -> uc_create_prod [label="<<include>>"];
+    uc_delete_prod -> uc_check_order_ref [label="<<include>>"];
+    uc_filter_specs -> uc_view_options [label="<<include>>"];
+}

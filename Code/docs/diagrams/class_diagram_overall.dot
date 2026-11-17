@@ -1,0 +1,121 @@
+
+digraph UML_Class_Diagram {
+    rankdir=BT;
+    dpi=300;
+    nodesep=0.5;
+    ranksep=0.7;
+    fontname="Arial";
+    node [fontname="Arial", shape=record, fontsize=9];
+    edge [fontname="Arial", fontsize=9];
+
+    // Domain Entities
+    Category [
+        fillcolor="#f8fafc", style=filled, color="#334155",
+        label="{Category|+ category_id: Long\n+ name: String\n+ description: String|+ getProducts(): List\<Product\>}"
+    ];
+
+    Product [
+        fillcolor="#f8fafc", style=filled, color="#334155",
+        label="{Product|+ product_id: Long\n+ name: String\n+ brand: String\n+ category_id: Long\n+ description: String\n+ created_at: Timestamp|+ getVariants(): List\<ProductVariant\>\n+ getSpecs(): List\<ProductSpec\>\n+ getTotalStock(): Integer\n+ getPriceRange(): PriceRange}"
+    ];
+
+    ProductVariant [
+        fillcolor="#f8fafc", style=filled, color="#334155",
+        label="{ProductVariant|+ variant_id: Long\n+ product_id: Long\n+ sku: String\n+ price: Decimal\n+ stock_quantity: Integer\n+ low_stock_threshold: Integer|+ isLowStock(): Boolean\n+ isOutOfStock(): Boolean\n+ adjustStock(delta: Integer): Void}"
+    ];
+
+    Spec [
+        fillcolor="#f8fafc", style=filled, color="#334155",
+        label="{Spec|+ spec_id: Long\n+ spec_name: String|+ getDistinctValues(): List\<String\>}"
+    ];
+
+    ProductSpec [
+        fillcolor="#f8fafc", style=filled, color="#334155",
+        label="{ProductSpec|+ product_id: Long\n+ spec_id: Long\n+ spec_value: String|}"
+    ];
+
+    InventoryTransaction [
+        fillcolor="#f8fafc", style=filled, color="#334155",
+        label="{InventoryTransaction|+ transaction_id: Long\n+ variant_id: Long\n+ change_quantity: Integer\n+ transaction_type: String\n+ notes: String\n+ created_by: Long\n+ created_at: Timestamp|+ recordMovement(): Void}"
+    ];
+
+    Role [
+        fillcolor="#f8fafc", style=filled, color="#334155",
+        label="{Role|+ role_id: Long\n+ role_name: String|+ getPermissions(): List\<String\>}"
+    ];
+
+    User [
+        fillcolor="#f8fafc", style=filled, color="#334155",
+        label="{User|+ user_id: Long\n+ username: String\n+ password_hash: String\n+ full_name: String\n+ email: String\n+ phone: String\n+ role_id: Long\n+ is_active: Boolean\n+ last_login_at: Timestamp\n+ created_at: Timestamp|+ authenticate(password: String): Boolean\n+ hasRole(roleName: String): Boolean}"
+    ];
+
+    Order [
+        fillcolor="#f8fafc", style=filled, color="#334155",
+        label="{Order|+ order_id: Long\n+ user_id: Long\n+ session_id: String\n+ total_amount: Decimal\n+ status: String\n+ payment_method: String\n+ created_at: Timestamp|+ calculateTotal(): Decimal\n+ updateStatus(newStatus: String): Void}"
+    ];
+
+    OrderItem [
+        fillcolor="#f8fafc", style=filled, color="#334155",
+        label="{OrderItem|+ item_id: Long\n+ order_id: Long\n+ variant_id: Long\n+ quantity: Integer\n+ unit_price: Decimal|+ getSubtotal(): Decimal}"
+    ];
+
+    WebsiteVisit [
+        fillcolor="#f8fafc", style=filled, color="#334155",
+        label="{WebsiteVisit|+ session_id: String\n+ user_id: Long\n+ visited_at: Timestamp|}"
+    ];
+
+    // Service Layer
+    ProductService [
+        fillcolor="#e0e7ff", style=filled, color="#3730a3",
+        label="{ProductService||+ listProducts(filters: ProductQueryDTO): PageResult\n+ getProduct(id: Long): ProductDTO\n+ createProduct(dto: CreateProductDTO): ProductDTO\n+ updateProduct(id: Long, dto: UpdateProductDTO): ProductDTO\n+ deleteProduct(id: Long): Boolean\n+ getFilterOptions(): FilterOptionsDTO}"
+    ];
+
+    InventoryService [
+        fillcolor="#e0e7ff", style=filled, color="#3730a3",
+        label="{InventoryService||+ listInventory(filters: InvQueryDTO): InvPageResult\n+ getLowStockAlerts(): List\<AlertDTO\>\n+ batchRestock(dto: BatchRestockDTO, actorId: Long): BatchResultDTO\n+ adjustStock(variantId: Long, dto: AdjustStockDTO, actorId: Long): VariantDTO\n+ deductStockForOrder(client: Client, items: List\<OrderItem\>): Void}"
+    ];
+
+    CategoryService [
+        fillcolor="#e0e7ff", style=filled, color="#3730a3",
+        label="{CategoryService||+ listCategories(): List\<Category\>\n+ getCategory(id: Long): Category\n+ createCategory(dto: CategoryDTO): Category\n+ deleteCategory(id: Long): Boolean}"
+    ];
+
+    // Relationships (Arrows point from child/dependent to parent/target in BT rankdir)
+    // Association Product -> Category
+    Product -> Category [arrowtail=none, arrowhead=none, taillabel="*", headlabel="1", label="belongs to"];
+
+    // Composition: Product *-- ProductVariant
+    ProductVariant -> Product [arrowtail=diamond, arrowhead=none, dir=both, taillabel="1..*", headlabel="1", label="composed of"];
+
+    // Composition: Product *-- ProductSpec
+    ProductSpec -> Product [arrowtail=diamond, arrowhead=none, dir=both, taillabel="*", headlabel="1"];
+
+    // Aggregation: Spec o-- ProductSpec
+    ProductSpec -> Spec [arrowtail=ediamond, arrowhead=none, dir=both, taillabel="*", headlabel="1"];
+
+    // Composition: Order *-- OrderItem
+    OrderItem -> Order [arrowtail=diamond, arrowhead=none, dir=both, taillabel="1..*", headlabel="1"];
+
+    // Association: OrderItem -> ProductVariant
+    OrderItem -> ProductVariant [arrowtail=none, arrowhead=none, taillabel="*", headlabel="1"];
+
+    // Association: InventoryTransaction -> ProductVariant
+    InventoryTransaction -> ProductVariant [arrowtail=none, arrowhead=none, taillabel="*", headlabel="1"];
+
+    // Association: Role o-- User
+    User -> Role [arrowtail=none, arrowhead=none, taillabel="*", headlabel="1", label="assigned to"];
+
+    // Association: Order -> User
+    Order -> User [arrowtail=none, arrowhead=none, taillabel="*", headlabel="1", label="placed by"];
+
+    // Association: WebsiteVisit -> User
+    WebsiteVisit -> User [arrowtail=none, arrowhead=none, taillabel="*", headlabel="0..1"];
+
+    // Dependencies from Services to Entities
+    edge [style=dashed, arrowhead=open, color="#475569"];
+    ProductService -> Product;
+    ProductService -> ProductVariant;
+    InventoryService -> ProductVariant;
+    InventoryService -> InventoryTransaction;
+    CategoryService -> Category;
+}
