@@ -153,3 +153,60 @@ td strong { color: var(--ink); }
   .metric-top { font-size: 10px; }
   .topbar-right { display: none; }
 }
+
+/* =========================================================
+   Member 2 Styles: Products, Specs, Inventory & Catalog
+   ========================================================= */
+
+/* Inventory Badges */
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 650; }
+.badge-in-stock { background: #e6f9f0; color: #0d7048; border: 1px solid #b7ecd3; }
+.badge-low-stock { background: #fff5e6; color: #b76200; border: 1px solid #fedfa3; }
+.badge-out-stock { background: #feecef; color: #b91c1c; border: 1px solid #fecdd3; }
+.badge-critical { background: #991b1b; color: #ffffff; }
+.badge-warning { background: #d97706; color: #ffffff; }
+
+/* Spec Tags */
+.spec-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.spec-tag { background: #f0f4fa; color: #374761; font-size: 11px; padding: 2px 7px; border-radius: 4px; border: 1px solid #e1e7f0; }
+
+/* Alert Banner */
+.alert-banner { background: #fff8f5; border: 1px solid #fed2be; border-radius: 12px; padding: 16px 20px; margin-bottom: 24px; }
+.alert-banner-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.alert-banner-title { font-weight: 750; color: #b43403; display: flex; align-items: center; gap: 8px; font-size: 15px; }
+.alert-items-list { display: flex; flex-direction: column; gap: 8px; }
+.alert-item-card { display: flex; justify-content: space-between; align-items: center; background: #ffffff; border: 1px solid #f9d8cb; border-radius: 8px; padding: 10px 14px; font-size: 13px; }
+
+/* Action Toolbar */
+.toolbar-actions { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+.btn-primary { background: var(--blue); color: #fff; border: none; padding: 9px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; transition: background .15s; }
+.btn-primary:hover { background: #2554e2; }
+.btn-secondary { background: #ffffff; border: 1px solid var(--line); color: var(--ink); padding: 9px 14px; border-radius: 8px; font-weight: 600; }
+.btn-danger { background: #ef4444; color: #fff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+
+/* Modals */
+.modal-overlay { position: fixed; inset: 0; background: rgba(16, 24, 39, 0.65); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; z-index: 999; padding: 16px; }
+.modal-box { background: #ffffff; border-radius: 14px; width: 100%; max-width: 620px; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 45px rgba(0,0,0,0.25); display: flex; flex-direction: column; }
+.modal-header { padding: 18px 24px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+.modal-header h3 { margin: 0; font-size: 18px; font-weight: 750; }
+.modal-close { background: none; border: none; font-size: 20px; color: var(--muted); cursor: pointer; }
+.modal-body { padding: 22px 24px; display: flex; flex-direction: column; gap: 16px; }
+.modal-footer { padding: 16px 24px; border-top: 1px solid var(--line); display: flex; justify-content: flex-end; gap: 10px; background: #fbfcfe; }
+
+/* Catalog / Storefront Grid */
+.catalog-layout { display: grid; grid-template-columns: 280px 1fr; gap: 24px; }
+.filter-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px; position: sticky; top: 20px; max-height: 85vh; overflow-y: auto; }
+.filter-section { margin-bottom: 20px; }
+.filter-title { font-size: 13px; font-weight: 750; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 10px; }
+.filter-options { display: flex; flex-direction: column; gap: 6px; max-height: 160px; overflow-y: auto; }
+.filter-checkbox { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; }
+.catalog-cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+.prod-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; transition: transform .15s, box-shadow .15s; }
+.prod-card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+.prod-brand { font-size: 11px; text-transform: uppercase; font-weight: 750; color: var(--blue); }
+.prod-name { font-size: 15px; font-weight: 700; margin: 4px 0 8px; line-height: 1.35; color: var(--ink); }
+.prod-price { font-size: 16px; font-weight: 800; color: #b43403; margin-top: 8px; }
+.prod-stock-info { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* Restock dynamic rows */
+.restock-row { display: grid; grid-template-columns: 2fr 1fr auto; gap: 8px; align-items: center; margin-bottom: 8px; }
