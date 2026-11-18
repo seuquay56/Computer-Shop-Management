@@ -267,14 +267,16 @@
     placeholder = 'Chọn một mục...',
     value = '',
     searchPlaceholder = 'Tìm kiếm nhanh...',
+    showSearch = true,
+    allowCustom = false,
     onSelect = () => {},
   }) {
     container.classList.add('custom-search-dropdown');
     let currentOptions = [...options];
     let selectedOption = currentOptions.find(o => String(o.value) === String(value));
     let currentVal = selectedOption ? selectedOption.value : (value || '');
-    let currentLabel = selectedOption ? selectedOption.label : placeholder;
-    let isPlaceholder = !selectedOption;
+    let currentLabel = selectedOption ? selectedOption.label : (value || placeholder);
+    let isPlaceholder = !selectedOption && !value;
 
     container.innerHTML = `
       <button type="button" class="csd-trigger">
@@ -283,10 +285,12 @@
       </button>
       <input type="hidden" class="csd-hidden-input" value="${escapeHtml(String(currentVal))}">
       <div class="csd-menu">
-        <div class="csd-search-wrap">
-          <i class="bi bi-search"></i>
-          <input type="text" class="csd-search-input" placeholder="${escapeHtml(searchPlaceholder)}">
-        </div>
+        ${showSearch ? `
+          <div class="csd-search-wrap">
+            <i class="bi bi-search"></i>
+            <input type="text" class="csd-search-input" placeholder="${escapeHtml(searchPlaceholder)}">
+          </div>
+        ` : ''}
         <div class="csd-list"></div>
       </div>
     `;
@@ -297,25 +301,43 @@
     const searchInput = container.querySelector('.csd-search-input');
     const listEl = container.querySelector('.csd-list');
 
-    function renderList(items) {
+    function renderList(items, customCandidate = '') {
+      let html = '';
       if (!items.length) {
-        listEl.innerHTML = '<div class="csd-empty">Không tìm thấy kết quả phù hợp.</div>';
-        return;
-      }
-      listEl.innerHTML = items.map(o => {
-        const isActive = String(o.value) === String(hiddenInput.value);
-        return `
-          <div class="csd-item ${isActive ? 'active' : ''}" data-value="${escapeHtml(String(o.value))}">
-            <div style="min-width:0; flex:1;">
-              <div style="font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(o.label)}</div>
-              ${o.sublabel ? `<small class="subtle" style="font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(o.sublabel)}</small>` : ''}
+        if (allowCustom && customCandidate) {
+          html = `
+            <div class="csd-item custom-candidate" data-custom="${escapeHtml(customCandidate)}" style="background:#f0fdf4; border:1px dashed #86efac;">
+              <div><i class="bi bi-plus-circle" style="color:#16a34a; margin-right:6px;"></i>Dùng thông số: <strong>"${escapeHtml(customCandidate)}"</strong></div>
             </div>
-            ${isActive ? '<i class="bi bi-check2" style="font-size:16px; color:#0f766e; flex-shrink:0;"></i>' : ''}
-          </div>
-        `;
-      }).join('');
+          `;
+        } else {
+          html = '<div class="csd-empty">Không tìm thấy kết quả phù hợp.</div>';
+        }
+      } else {
+        html = items.map(o => {
+          const isActive = String(o.value) === String(hiddenInput.value);
+          return `
+            <div class="csd-item ${isActive ? 'active' : ''}" data-value="${escapeHtml(String(o.value))}">
+              <div style="min-width:0; flex:1;">
+                <div style="font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(o.label)}</div>
+                ${o.sublabel ? `<small class="subtle" style="font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(o.sublabel)}</small>` : ''}
+              </div>
+              ${isActive ? '<i class="bi bi-check2" style="font-size:16px; color:#0f766e; flex-shrink:0;"></i>' : ''}
+            </div>
+          `;
+        }).join('');
 
-      listEl.querySelectorAll('.csd-item').forEach(el => {
+        if (allowCustom && customCandidate && !items.some(i => i.value.toLowerCase() === customCandidate.toLowerCase())) {
+          html += `
+            <div class="csd-item custom-candidate" data-custom="${escapeHtml(customCandidate)}" style="background:#f8fafc; border-top:1px dashed #cbd5e1; margin-top:4px;">
+              <div><i class="bi bi-pencil-square" style="color:#0f766e; margin-right:6px;"></i>Nhập tùy biến: <strong>"${escapeHtml(customCandidate)}"</strong></div>
+            </div>
+          `;
+        }
+      }
+      listEl.innerHTML = html;
+
+      listEl.querySelectorAll('.csd-item[data-value]').forEach(el => {
         el.addEventListener('click', (e) => {
           e.stopPropagation();
           const chosenVal = el.dataset.value;
@@ -329,20 +351,47 @@
           }
         });
       });
+
+      listEl.querySelectorAll('.custom-candidate').forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const customVal = el.dataset.custom;
+          hiddenInput.value = customVal;
+          labelEl.textContent = customVal;
+          labelEl.classList.remove('placeholder');
+          closeMenu();
+          onSelect(customVal, { value: customVal, label: customVal });
+        });
+      });
     }
 
     function openMenu() {
       document.querySelectorAll('.custom-search-dropdown.open').forEach(el => {
         if (el !== container) el.classList.remove('open');
       });
+
+      // Smart dropup check
+      const rect = trigger.getBoundingClientRect();
+      const spaceBelow = window.innerHeight - rect.bottom;
+      if (spaceBelow < 250 && rect.top > 250) {
+        container.classList.add('open-up');
+      } else {
+        container.classList.remove('open-up');
+      }
+
       container.classList.add('open');
-      searchInput.value = '';
-      renderList(currentOptions);
-      setTimeout(() => searchInput.focus(), 50);
+      if (searchInput) {
+        searchInput.value = '';
+        renderList(currentOptions);
+        setTimeout(() => searchInput.focus(), 50);
+      } else {
+        renderList(currentOptions);
+      }
     }
 
     function closeMenu() {
       container.classList.remove('open');
+      container.classList.remove('open-up');
     }
 
     trigger.addEventListener('click', (e) => {
@@ -351,15 +400,18 @@
       else openMenu();
     });
 
-    searchInput.addEventListener('click', (e) => e.stopPropagation());
-    searchInput.addEventListener('input', (e) => {
-      const q = removeVietnameseTones(e.target.value.toLowerCase().trim());
-      const filtered = currentOptions.filter(o => {
-        const text = removeVietnameseTones(`${o.label} ${o.sublabel || ''} ${o.value}`).toLowerCase();
-        return text.includes(q);
+    if (searchInput) {
+      searchInput.addEventListener('click', (e) => e.stopPropagation());
+      searchInput.addEventListener('input', (e) => {
+        const raw = e.target.value.trim();
+        const q = removeVietnameseTones(raw.toLowerCase());
+        const filtered = currentOptions.filter(o => {
+          const text = removeVietnameseTones(`${o.label} ${o.sublabel || ''} ${o.value}`).toLowerCase();
+          return text.includes(q);
+        });
+        renderList(filtered, raw);
       });
-      renderList(filtered);
-    });
+    }
 
     renderList(currentOptions);
 
@@ -369,11 +421,14 @@
 
     return {
       getValue: () => hiddenInput.value,
-      setValue: (newVal) => {
+      setValue: (newVal, newLabel = null) => {
         hiddenInput.value = newVal;
         const opt = currentOptions.find(o => String(o.value) === String(newVal));
         if (opt) {
           labelEl.textContent = opt.label;
+          labelEl.classList.remove('placeholder');
+        } else if (newLabel || newVal) {
+          labelEl.textContent = newLabel || newVal;
           labelEl.classList.remove('placeholder');
         } else {
           labelEl.textContent = placeholder;
@@ -389,7 +444,8 @@
           labelEl.classList.add('placeholder');
         }
         renderList(currentOptions);
-      }
+      },
+      close: closeMenu
     };
   }
 
@@ -898,12 +954,29 @@
     const s = data.summary;
     const c = data.conversion;
     content.innerHTML = `
-      <div class="page-heading">
-        <div><h2>Tổng quan Hoạt động Kinh doanh</h2><p class="subtle">Thống kê theo dữ liệu đơn hàng và lượt truy cập phiên</p></div>
-        <form class="date-filter" id="dashboard-date-form">
-          <div class="field"><label>Từ ngày</label><input type="date" name="from" value="${escapeHtml(state.dateRange.from)}"></div>
-          <div class="field"><label>Đến ngày</label><input type="date" name="to" value="${escapeHtml(state.dateRange.to)}"></div>
-          <button class="btn-primary" type="submit">Lọc</button>
+      <div class="dashboard-header-wrap">
+        <div>
+          <h2>Tổng quan Hoạt động Kinh doanh</h2>
+          <p class="subtle">Thống kê theo dữ liệu đơn hàng và lượt truy cập phiên</p>
+        </div>
+        <form class="dashboard-date-bar" id="dashboard-date-form">
+          <div class="date-input-pair">
+            <span class="date-field-label"><i class="bi bi-calendar-event"></i> Từ ngày:</span>
+            <input type="date" name="from" id="dash-date-from" value="${escapeHtml(state.dateRange.from)}" class="date-picker-input">
+          </div>
+          <span class="date-arrow-icon"><i class="bi bi-arrow-right"></i></span>
+          <div class="date-input-pair">
+            <span class="date-field-label"><i class="bi bi-calendar-event"></i> Đến ngày:</span>
+            <input type="date" name="to" id="dash-date-to" value="${escapeHtml(state.dateRange.to)}" class="date-picker-input">
+          </div>
+          <button class="btn-primary btn-date-submit" type="submit">
+            <i class="bi bi-funnel-fill"></i> Lọc
+          </button>
+          <div class="date-quick-tags">
+            <button type="button" class="btn-date-preset" data-days="0">Hôm nay</button>
+            <button type="button" class="btn-date-preset" data-days="7">7 ngày</button>
+            <button type="button" class="btn-date-preset" data-days="30">30 ngày</button>
+          </div>
         </form>
       </div>
       <div class="metrics">
@@ -921,8 +994,8 @@
                 <tr>
                   <td><strong>#${o.order_id}</strong></td>
                   <td>${escapeHtml(o.customer_name || 'Khách vãng lai')}</td>
-                  <td><span class="badge">${escapeHtml(o.payment_method)}</span></td>
-                  <td><span class="badge ${o.status === 'Completed' || o.status === 'Paid' ? 'badge-in-stock' : 'badge-low-stock'}">${escapeHtml(o.status)}</span></td>
+                  <td><span class="badge" style="background:#f1f5f9; color:#334155;">${escapeHtml(formatPaymentMethodName(o.payment_method))}</span></td>
+                  <td>${renderStatusBadge(o.status)}</td>
                   <td><strong>${escapeHtml(formatCurrency(o.total_amount))}</strong></td>
                   <td>${new Date(o.created_at).toLocaleDateString('vi-VN')}</td>
                 </tr>
@@ -938,6 +1011,22 @@
       state.dateRange.from = fd.get('from');
       state.dateRange.to = fd.get('to');
       loadDashboardPage();
+    });
+
+    content.querySelectorAll('.btn-date-preset').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const days = Number(btn.dataset.days);
+        const today = new Date();
+        const toStr = today.toISOString().slice(0, 10);
+        let fromDate = new Date();
+        if (days > 0) {
+          fromDate.setDate(today.getDate() - days);
+        }
+        const fromStr = fromDate.toISOString().slice(0, 10);
+        state.dateRange.from = fromStr;
+        state.dateRange.to = toStr;
+        loadDashboardPage();
+      });
     });
   }
 
@@ -960,6 +1049,17 @@
     }
   }
 
+  function renderRoleBadge(role) {
+    const r = String(role || 'Customer').toLowerCase();
+    if (r === 'admin') {
+      return `<span class="badge badge-role-admin"><i class="bi bi-shield-lock-fill"></i> Admin</span>`;
+    }
+    if (r === 'staff') {
+      return `<span class="badge badge-role-staff"><i class="bi bi-person-badge-fill"></i> Staff</span>`;
+    }
+    return `<span class="badge badge-role-customer"><i class="bi bi-person-fill"></i> Customer</span>`;
+  }
+
   function renderUsers(content) {
     content.innerHTML = `
       <div class="page-heading">
@@ -976,7 +1076,7 @@
                   <td><strong>${escapeHtml(u.username)}</strong></td>
                   <td>${escapeHtml(u.full_name || '—')}</td>
                   <td>${escapeHtml(u.email || '—')}</td>
-                  <td><span class="badge badge-in-stock">${escapeHtml(u.role)}</span></td>
+                  <td>${renderRoleBadge(u.role)}</td>
                   <td><span class="badge ${u.is_active ? 'badge-in-stock' : 'badge-out-stock'}">${u.is_active ? 'Hoạt động' : 'Bị khóa'}</span></td>
                   <td>
                     ${u.user_id !== state.user?.userId ? `
@@ -1139,16 +1239,44 @@
     });
   }
 
+  const HARDWARE_SPEC_OPTIONS = [
+    { value: 'Socket', label: 'Socket', sublabel: 'LGA1700, AM5, AM4 (CPU & Bo mạch chủ)' },
+    { value: 'RAM Support', label: 'RAM Support', sublabel: 'DDR4, DDR5 (Chuẩn RAM Mainboard hỗ trợ)' },
+    { value: 'RAM Type', label: 'RAM Type', sublabel: 'DDR4, DDR5 (Chuẩn bộ nhớ thanh RAM)' },
+    { value: 'Wattage', label: 'Wattage', sublabel: 'Công suất nguồn (vd: 650W, 750W, 850W)' },
+    { value: 'Recommended PSU', label: 'Recommended PSU', sublabel: 'Khuyến nghị nguồn GPU (vd: 750W)' },
+    { value: 'Chipset', label: 'Chipset', sublabel: 'B650, Z790, B760, X670 (Bo mạch chủ)' },
+    { value: 'VRAM', label: 'VRAM', sublabel: 'Dung lượng bộ nhớ đồ họa (8GB, 12GB, 16GB)' },
+    { value: 'Form Factor', label: 'Form Factor', sublabel: 'ATX, Micro-ATX, Mini-ITX' },
+    { value: 'Cores / Threads', label: 'Cores / Threads', sublabel: 'Số nhân / luồng CPU (vd: 8C / 16T)' },
+    { value: 'Base Clock', label: 'Base Clock', sublabel: 'Xung nhịp cơ bản (vd: 3.4GHz)' },
+    { value: 'Boost Clock', label: 'Boost Clock', sublabel: 'Xung nhịp tối đa (vd: 5.6GHz)' },
+    { value: 'TDP', label: 'TDP', sublabel: 'Công suất tỏa nhiệt (vd: 65W, 125W)' },
+    { value: 'Capacity', label: 'Capacity', sublabel: 'Dung lượng RAM / SSD (16GB, 1TB, 2TB)' },
+    { value: 'Bus Speed', label: 'Bus Speed', sublabel: 'Tốc độ bus RAM (3200MHz, 6000MHz)' },
+    { value: 'Interface', label: 'Interface', sublabel: 'Chuẩn giao tiếp (PCIe 4.0 NVMe, SATA 3)' },
+    { value: 'Read Speed', label: 'Read Speed', sublabel: 'Tốc độ đọc SSD (vd: 7450 MB/s)' },
+    { value: 'Write Speed', label: 'Write Speed', sublabel: 'Tốc độ ghi SSD (vd: 6900 MB/s)' },
+    { value: 'Screen Size', label: 'Screen Size', sublabel: 'Kích thước màn hình (vd: 27 inch)' },
+    { value: 'Resolution', label: 'Resolution', sublabel: 'Độ phân giải (vd: 2K QHD 2560x1440)' },
+    { value: 'Refresh Rate', label: 'Refresh Rate', sublabel: 'Tần số quét màn hình (165Hz, 240Hz)' },
+    { value: 'Panel Type', label: 'Panel Type', sublabel: 'Tấm nền màn hình (Fast IPS, OLED)' },
+    { value: 'Switch Type', label: 'Switch Type', sublabel: 'Loại switch phím cơ (ROG RX, Cherry MX)' },
+    { value: 'Connection', label: 'Connection', sublabel: 'Chuẩn kết nối (Wireless 2.4GHz, Type-C)' },
+    { value: 'DPI', label: 'DPI', sublabel: 'Độ phân giải chuột (vd: 26.000 DPI)' },
+    { value: 'Sensor', label: 'Sensor', sublabel: 'Cảm biến quang học (AimPoint, Focus Pro)' }
+  ];
+
   function openCreateProductModal() {
     modalContainer.innerHTML = `
       <div class="modal-overlay">
-        <div class="modal-box">
+        <div class="modal-box" style="max-width:720px; overflow:visible;">
           <div class="modal-header">
             <h3>Thêm Linh Kiện & Thông Số Kỹ Thuật Mới</h3>
             <button class="modal-close" id="modal-close-btn">&times;</button>
           </div>
           <form id="create-prod-form">
-            <div class="modal-body">
+            <div class="modal-body" style="overflow:visible;">
               <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
                 <div class="field"><label>Tên linh kiện *</label><input name="name" required placeholder="vd: Intel Core i9-14900K"></div>
                 <div class="field"><label>Thương hiệu *</label><input name="brand" required placeholder="vd: Intel, ASUS, Corsair"></div>
@@ -1176,12 +1304,7 @@
                   <h4 style="margin:0;">Thông số kỹ thuật (Specs Management)</h4>
                   <button type="button" class="btn-secondary" id="btn-add-spec-row" style="font-size:12px; padding:4px 8px;">+ Thêm thông số</button>
                 </div>
-                <div id="specs-container" style="display:flex; flex-direction:column; gap:8px;">
-                  <div class="restock-row">
-                    <input placeholder="Tên thông số (vd: Socket, VRAM, RAM Bus, TDP)" class="spec-name-input">
-                    <input placeholder="Giá trị (vd: LGA1700, 16GB, 6000MHz)" class="spec-val-input">
-                    <button type="button" class="btn-danger remove-spec-row" style="padding:4px 8px;">×</button>
-                  </div>
+                <div id="specs-container" style="display:flex; flex-direction:column; gap:10px; min-height:160px; overflow:visible;">
                 </div>
               </div>
             </div>
@@ -1198,30 +1321,55 @@
     document.getElementById('modal-cancel-btn').addEventListener('click', close);
 
     const specsContainer = document.getElementById('specs-container');
-    document.getElementById('btn-add-spec-row').addEventListener('click', () => {
+
+    function appendSpecRow(specName = '', specVal = '') {
       const row = document.createElement('div');
-      row.className = 'restock-row';
+      row.className = 'spec-builder-row';
       row.innerHTML = `
-        <input placeholder="Tên thông số (vd: Socket, Bus, TDP)" class="spec-name-input">
-        <input placeholder="Giá trị (vd: AM5, 6000MHz)" class="spec-val-input">
-        <button type="button" class="btn-danger remove-spec-row" style="padding:4px 8px;">×</button>
+        <div class="spec-dropdown-slot" style="min-width:0;"></div>
+        <input placeholder="Giá trị (vd: LGA1700, 16GB, 6000MHz)" class="spec-val-input" value="${escapeHtml(specVal)}" required>
+        <button type="button" class="btn-danger remove-spec-row" style="padding:6px 10px;" title="Xóa thông số">×</button>
       `;
+      const slot = row.querySelector('.spec-dropdown-slot');
+      const valInput = row.querySelector('.spec-val-input');
+
+      createSearchableDropdown({
+        container: slot,
+        options: HARDWARE_SPEC_OPTIONS,
+        placeholder: 'Chọn / tìm thông số...',
+        value: specName,
+        searchPlaceholder: 'Tìm thông số hoặc gõ tùy biến...',
+        allowCustom: true,
+        onSelect: (chosenVal) => {
+          if (chosenVal === 'Socket') valInput.placeholder = 'vd: LGA1700 hoặc AM5';
+          else if (chosenVal === 'RAM Support' || chosenVal === 'RAM Type') valInput.placeholder = 'vd: DDR5 hoặc DDR4';
+          else if (chosenVal === 'Wattage' || chosenVal === 'Recommended PSU') valInput.placeholder = 'vd: 750W hoặc 850W';
+          else if (chosenVal === 'VRAM' || chosenVal === 'Capacity') valInput.placeholder = 'vd: 16GB hoặc 1TB';
+          else if (chosenVal === 'Bus Speed') valInput.placeholder = 'vd: 3200MHz hoặc 6000MHz';
+          else if (chosenVal === 'Chipset') valInput.placeholder = 'vd: B650, Z790, B760...';
+          else valInput.placeholder = 'vd: Giá trị thông số kỹ thuật...';
+        }
+      });
+
       row.querySelector('.remove-spec-row').addEventListener('click', () => row.remove());
       specsContainer.appendChild(row);
-    });
+    }
 
-    specsContainer.querySelectorAll('.remove-spec-row').forEach(b => {
-      b.addEventListener('click', (e) => e.target.closest('.restock-row').remove());
+    // Default 1 spec row
+    appendSpecRow('Socket', 'LGA1700');
+
+    document.getElementById('btn-add-spec-row').addEventListener('click', () => {
+      appendSpecRow();
     });
 
     document.getElementById('create-prod-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       const fd = new FormData(e.currentTarget);
       const specs = [];
-      specsContainer.querySelectorAll('.restock-row').forEach(r => {
-        const k = r.querySelector('.spec-name-input').value.trim();
-        const v = r.querySelector('.spec-val-input').value.trim();
-        if (k && v) specs.push({ specName: k, specValue: v });
+      specsContainer.querySelectorAll('.spec-builder-row').forEach(r => {
+        const k = r.querySelector('.csd-hidden-input')?.value.trim() || r.querySelector('.csd-label')?.textContent.trim();
+        const v = r.querySelector('.spec-val-input')?.value.trim();
+        if (k && v && k !== 'Chọn / tìm thông số...') specs.push({ specName: k, specValue: v });
       });
 
       const body = {
@@ -1353,14 +1501,12 @@
       </div>
 
       <div class="toolbar-actions">
-        <div style="display:flex; gap:8px; align-items:center; flex:1; max-width:540px;">
-          <input type="text" id="inv-search-input" placeholder="Tìm kiếm SKU, tên linh kiện, hãng..." value="${escapeHtml(state.inventorySearch)}" style="padding:9px 13px; border:1.5px solid #cbd5e1; border-radius:8px; flex:1;">
-          <select id="inv-filter-select" class="sidebar-filter-select" style="min-width:180px;">
-            <option value="all" ${state.inventoryFilter === 'all' ? 'selected' : ''}>Tất cả trạng thái</option>
-            <option value="low_stock" ${state.inventoryFilter === 'low_stock' ? 'selected' : ''}>⚠️ Sắp hết hàng</option>
-            <option value="out_of_stock" ${state.inventoryFilter === 'out_of_stock' ? 'selected' : ''}>⛔ Đã hết hàng (0 tồn)</option>
-            <option value="in_stock" ${state.inventoryFilter === 'in_stock' ? 'selected' : ''}>✅ Đủ hàng</option>
-          </select>
+        <div class="inv-toolbar-left">
+          <div class="inv-search-wrap">
+            <i class="bi bi-search"></i>
+            <input type="text" id="inv-search-input" placeholder="Tìm kiếm nhanh mã SKU, tên linh kiện, thương hiệu..." value="${escapeHtml(state.inventorySearch)}">
+          </div>
+          <div id="inv-filter-dropdown-slot"></div>
         </div>
         <button class="btn-primary" id="btn-open-batch-restock">📥 Nhập Kho Theo Lô (Batch Restock)</button>
       </div>
@@ -1408,21 +1554,34 @@
         </div>
       </div>`;
 
-    const filterSelect = document.getElementById('inv-filter-select');
     const searchInput = document.getElementById('inv-search-input');
+    const filterSlot = document.getElementById('inv-filter-dropdown-slot');
 
-    filterSelect?.addEventListener('change', () => {
-      state.inventoryFilter = filterSelect.value;
-      state.inventorySearch = searchInput ? searchInput.value.trim() : '';
-      loadInventoryPage();
-    });
+    if (filterSlot) {
+      createSearchableDropdown({
+        container: filterSlot,
+        options: [
+          { value: 'all', label: 'Tất cả trạng thái' },
+          { value: 'low_stock', label: '⚠️ Sắp hết hàng' },
+          { value: 'out_of_stock', label: '⛔ Đã hết hàng (0 tồn)' },
+          { value: 'in_stock', label: '✅ Đủ hàng' },
+        ],
+        value: state.inventoryFilter || 'all',
+        showSearch: false,
+        placeholder: 'Lọc trạng thái kho...',
+        onSelect: (val) => {
+          state.inventoryFilter = val;
+          state.inventorySearch = searchInput ? searchInput.value.trim() : '';
+          loadInventoryPage();
+        }
+      });
+    }
 
     let invDebounceTimer;
     searchInput?.addEventListener('input', () => {
       clearTimeout(invDebounceTimer);
       invDebounceTimer = setTimeout(() => {
         state.inventorySearch = searchInput.value.trim();
-        state.inventoryFilter = filterSelect ? filterSelect.value : 'all';
         loadInventoryPage();
       }, 250);
     });
@@ -1444,13 +1603,13 @@
   function openBatchRestockModal(prefillAlerts = []) {
     modalContainer.innerHTML = `
       <div class="modal-overlay">
-        <div class="modal-box" style="max-width:720px; overflow:visible;">
+        <div class="modal-box" style="max-width:760px; overflow:visible;">
           <div class="modal-header">
             <h3>Nhập Kho Linh Kiện Theo Lô (Inward Shipment)</h3>
             <button class="modal-close" id="modal-close-btn">&times;</button>
           </div>
           <form id="batch-restock-form">
-            <div class="modal-body" style="overflow:visible;">
+            <div class="modal-body" style="overflow:visible; min-height:360px; padding-bottom:30px;">
               <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
                 <div class="field"><label>Mã lô hàng (Batch Code)</label><input name="batchCode" value="BATCH-${new Date().toISOString().slice(0,10).replace(/-/g,'')}-01" required></div>
                 <div class="field"><label>Ghi chú / Chứng từ nhập kho</label><input name="notes" placeholder="Nhập từ Synnex FPT / ASUS VN..." value="Nhập bổ sung linh kiện tồn kho"></div>
@@ -1461,7 +1620,7 @@
                   <h4 style="margin:0;">Danh sách mã SKU và số lượng nhập</h4>
                   <button type="button" class="btn-secondary" id="btn-add-restock-item" style="font-size:12px; padding:4px 8px;">+ Thêm dòng</button>
                 </div>
-                <div id="restock-items-list" style="display:flex; flex-direction:column; gap:10px; max-height:300px; overflow-y:auto; padding-right:4px;">
+                <div id="restock-items-list" style="display:flex; flex-direction:column; gap:10px; min-height:220px; overflow:visible; padding-bottom:20px;">
                 </div>
               </div>
             </div>
