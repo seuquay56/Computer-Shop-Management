@@ -461,10 +461,11 @@
 
   function logout(showMessage = true) {
     setToken('');
-    state.user = null;
+    state.user = { role: 'Customer', username: 'guest', fullName: 'Khách vãng lai' };
     state.dashboard = null;
     state.users = [];
-    renderAuth();
+    state.page = 'storefront';
+    renderApp();
     if (showMessage) showToast('Bạn đã đăng xuất.');
   }
 
@@ -474,96 +475,123 @@
   }
 
   // ==========================================
-  // Auth Views
+  // Auth Modal Dialog (Popup Over Website)
   // ==========================================
-  function renderAuth() {
-    state.authMode = state.authMode === 'register' ? 'register' : 'login';
-    const isRegister = state.authMode === 'register';
-    app.innerHTML = `
-      <main class="auth-layout">
-        <section class="auth-intro">
-          <div class="brand"><span class="brand-mark">TZ</span><span>TechZone Computer</span></div>
-          <div class="intro-copy">
-            <div class="eyebrow">Hệ thống Phân phối Linh kiện TechZone</div>
-            <h1>Cửa hàng Linh kiện Máy tính & PC Gaming Chính Hãng.</h1>
-            <p>Hệ thống cung cấp phần cứng máy tính hàng đầu: CPU Gen mới, Card đồ họa RTX, Bo mạch chủ, RAM DDR5 với bảo hành 36 tháng chính hãng.</p>
-          </div>
-          <div class="intro-foot">TechZone Computer · Hệ Thống Bán Lẻ Công Nghệ Cao</div>
-        </section>
-        <section class="auth-panel">
-          <div class="auth-card">
-            <h2>${isRegister ? 'Tạo tài khoản' : 'Đăng nhập hệ thống'}</h2>
-            <p class="subtle">${isRegister ? 'Đăng ký tài khoản khách hàng mới.' : 'Đăng nhập quản trị viên, nhân viên hoặc khách hàng.'}</p>
-            <div class="auth-tabs">
-              <button class="auth-tab ${!isRegister ? 'active' : ''}" data-auth-mode="login" type="button">Đăng nhập</button>
-              <button class="auth-tab ${isRegister ? 'active' : ''}" data-auth-mode="register" type="button">Đăng ký</button>
-            </div>
-            <form id="auth-form">
-              ${isRegister ? `
-                <div class="field"><label for="fullName">Họ và tên</label><input id="fullName" name="fullName" maxlength="100" autocomplete="name" placeholder="Nguyễn Văn A"></div>
-              ` : ''}
-              <div class="field"><label for="identifier">${isRegister ? 'Tên đăng nhập' : 'Username hoặc email'}</label><input id="identifier" name="${isRegister ? 'username' : 'identifier'}" required autocomplete="${isRegister ? 'username' : 'username'}" placeholder="${isRegister ? 'vd: customer01' : 'admin / staff / customer'}"></div>
-              ${isRegister ? `
-                <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="ban@example.com"></div>
-                <div class="field"><label for="phone">Số điện thoại</label><input id="phone" name="phone" maxlength="20" autocomplete="tel" placeholder="0900000000"></div>
-              ` : ''}
-              <div class="field"><label for="password">Mật khẩu</label><input id="password" name="password" type="password" required minlength="${isRegister ? '8' : '1'}" autocomplete="${isRegister ? 'new-password' : 'current-password'}" placeholder="${isRegister ? 'Ít nhất 8 ký tự' : 'Nhập mật khẩu'}"></div>
-              <button class="primary-btn" type="submit">${isRegister ? 'Tạo tài khoản' : 'Đăng nhập'}</button>
-              <div id="auth-error" class="alert" hidden></div>
-            </form>
-            <div style="margin-top: 15px; text-align: center;">
-              <button class="ghost-btn" id="guest-catalog-btn" type="button"><i class="bi bi-arrow-left"></i> Quay lại Cửa Hàng (Chế độ Khách)</button>
-            </div>
-            <p class="subtle auth-note">Tài khoản demo:<br>• Admin: <code>admin</code> / <code>AdminSecurePassword123!</code><br>• Staff: <code>demo_staff</code> / <code>StaffPassword123!</code><br>• Customer: <code>demo_customer</code> / <code>DemoCustomer123!</code></p>
-          </div>
-        </section>
-      </main>`;
-
-    app.querySelectorAll('[data-auth-mode]').forEach((button) => {
-      button.addEventListener('click', () => {
-        state.authMode = button.dataset.authMode;
-        renderAuth();
-      });
-    });
-    document.getElementById('auth-form').addEventListener('submit', handleAuthSubmit);
-    document.getElementById('guest-catalog-btn').addEventListener('click', () => {
-      state.user = { role: 'Customer', username: 'guest', fullName: 'Khách vãng lai' };
-      state.page = 'storefront';
-      renderApp();
-    });
+  function openAuthModal(initialMode = 'login') {
+    state.authMode = initialMode === 'register' ? 'register' : 'login';
+    renderAuthModal();
   }
 
-  async function handleAuthSubmit(event) {
-    event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const isRegister = state.authMode === 'register';
-    const button = event.currentTarget.querySelector('button[type="submit"]');
-    const errorBox = document.getElementById('auth-error');
-    button.disabled = true;
-    button.textContent = 'Đang xử lý...';
-    errorBox.hidden = true;
+  function renderAuth() {
+    openAuthModal('login');
+  }
 
-    try {
-      const body = isRegister
-        ? {
-            username: form.get('username'), email: form.get('email'), password: form.get('password'),
-            fullName: form.get('fullName'), phone: form.get('phone'),
-          }
-        : { identifier: form.get('identifier'), password: form.get('password') };
-      const data = await api(isRegister ? '/auth/register' : '/auth/login', {
-        method: 'POST', body: JSON.stringify(body),
+  function renderAuthModal() {
+    const isRegister = state.authMode === 'register';
+    modalContainer.innerHTML = `
+      <div class="modal-overlay" id="auth-modal-overlay">
+        <div class="auth-modal-box">
+          <div class="auth-modal-header">
+            <div class="auth-modal-tabs">
+              <button class="auth-modal-tab ${!isRegister ? 'active' : ''}" data-auth-mode="login" type="button">Đăng nhập</button>
+              <button class="auth-modal-tab ${isRegister ? 'active' : ''}" data-auth-mode="register" type="button">Đăng ký</button>
+            </div>
+            <button class="modal-close" id="auth-modal-close" type="button">&times;</button>
+          </div>
+          <div style="padding: 22px 24px 24px;">
+            <div style="margin-bottom: 16px;">
+              <h3 style="margin:0 0 4px; font-size:18px; font-weight:800; color:var(--slate-900);">
+                ${isRegister ? 'Tạo Tài Khoản Khách Hàng' : 'Đăng Nhập Hệ Thống TechZone'}
+              </h3>
+              <p class="subtle" style="margin:0; font-size:12px;">
+                ${isRegister ? 'Đăng ký tài khoản để quản lý đơn hàng & tích điểm bảo hành' : 'Đăng nhập tài khoản Quản trị viên, Nhân viên hoặc Khách hàng'}
+              </p>
+            </div>
+
+            <form id="auth-modal-form">
+              ${isRegister ? `
+                <div class="field" style="margin-bottom:10px;"><label for="modal-fullName">Họ và tên</label><input id="modal-fullName" name="fullName" maxlength="100" autocomplete="name" placeholder="Nguyễn Văn A" required></div>
+              ` : ''}
+              <div class="field" style="margin-bottom:10px;"><label for="modal-identifier">${isRegister ? 'Tên đăng nhập' : 'Tên đăng nhập hoặc Email'}</label><input id="modal-identifier" name="${isRegister ? 'username' : 'identifier'}" required autocomplete="username" placeholder="${isRegister ? 'vd: khachhang01' : 'admin / staff / customer'}"></div>
+              ${isRegister ? `
+                <div class="field" style="margin-bottom:10px;"><label for="modal-email">Email</label><input id="modal-email" name="email" type="email" autocomplete="email" placeholder="ban@example.com" required></div>
+                <div class="field" style="margin-bottom:10px;"><label for="modal-phone">Số điện thoại</label><input id="modal-phone" name="phone" maxlength="20" autocomplete="tel" placeholder="0901234567" required></div>
+              ` : ''}
+              <div class="field" style="margin-bottom:14px;"><label for="modal-password">Mật khẩu</label><input id="modal-password" name="password" type="password" required minlength="${isRegister ? '8' : '1'}" autocomplete="${isRegister ? 'new-password' : 'current-password'}" placeholder="${isRegister ? 'Tối thiểu 8 ký tự' : 'Nhập mật khẩu'}"></div>
+              <button class="primary-btn" type="submit" style="width:100%; justify-content:center; padding:10px; font-size:14px; font-weight:700;">${isRegister ? 'Tạo tài khoản ngay' : 'Đăng nhập hệ thống'}</button>
+              <div id="modal-auth-error" class="alert" hidden style="margin-top:10px;"></div>
+            </form>
+
+            <div style="margin-top:16px; border-top:1px solid #f1f5f9; padding-top:12px;">
+              <small class="subtle" style="font-size:11px; display:block; margin-bottom:6px; font-weight:650;">Tài khoản Demo thử nghiệm 1-click:</small>
+              <div class="auth-quick-demos">
+                <button type="button" class="auth-demo-btn" data-user="admin" data-pass="AdminSecurePassword123!">Admin</button>
+                <button type="button" class="auth-demo-btn" data-user="demo_staff" data-pass="StaffPassword123!">Staff</button>
+                <button type="button" class="auth-demo-btn" data-user="demo_customer" data-pass="DemoCustomer123!">Customer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    const close = () => { modalContainer.innerHTML = ''; };
+    document.getElementById('auth-modal-close')?.addEventListener('click', close);
+    document.getElementById('auth-modal-overlay')?.addEventListener('click', (e) => {
+      if (e.target.id === 'auth-modal-overlay') close();
+    });
+
+    modalContainer.querySelectorAll('[data-auth-mode]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.authMode = btn.dataset.authMode;
+        renderAuthModal();
       });
-      setToken(data.token);
-      state.user = data.user;
-      state.page = (state.user.role === 'Admin') ? 'dashboard' : (state.user.role === 'Staff' ? 'products' : 'storefront');
-      renderApp();
-      showToast(isRegister ? 'Tạo tài khoản thành công.' : `Đăng nhập thành công (${data.user.role}).`);
-    } catch (error) {
-      errorBox.textContent = error.message;
-      errorBox.hidden = false;
-      button.disabled = false;
-      button.textContent = isRegister ? 'Tạo tài khoản' : 'Đăng nhập';
-    }
+    });
+
+    modalContainer.querySelectorAll('.auth-demo-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const uInput = document.getElementById('modal-identifier');
+        const pInput = document.getElementById('modal-password');
+        if (uInput && pInput) {
+          uInput.value = btn.dataset.user;
+          pInput.value = btn.dataset.pass;
+          document.getElementById('auth-modal-form')?.dispatchEvent(new Event('submit'));
+        }
+      });
+    });
+
+    document.getElementById('auth-modal-form')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = new FormData(e.currentTarget);
+      const isReg = state.authMode === 'register';
+      const button = e.currentTarget.querySelector('button[type="submit"]');
+      const errorBox = document.getElementById('modal-auth-error');
+      button.disabled = true;
+      button.textContent = 'Đang xác thực...';
+      errorBox.hidden = true;
+
+      try {
+        const body = isReg
+          ? {
+              username: form.get('username'), email: form.get('email'), password: form.get('password'),
+              fullName: form.get('fullName'), phone: form.get('phone'),
+            }
+          : { identifier: form.get('identifier'), password: form.get('password') };
+        const data = await api(isReg ? '/auth/register' : '/auth/login', {
+          method: 'POST', body: JSON.stringify(body),
+        });
+        setToken(data.token);
+        state.user = data.user;
+        close();
+        renderApp();
+        showToast(isReg ? 'Tạo tài khoản thành công!' : `Đăng nhập thành công (${data.user.role}).`);
+      } catch (err) {
+        errorBox.textContent = err.message;
+        errorBox.hidden = false;
+        button.disabled = false;
+        button.textContent = isReg ? 'Tạo tài khoản ngay' : 'Đăng nhập hệ thống';
+      }
+    });
   }
 
   // ==========================================
@@ -697,7 +725,7 @@
       document.getElementById('gvn-btn-orders')?.addEventListener('click', () => {
         if (isGuest) {
           showToast('Vui lòng đăng nhập để tra cứu lịch sử đơn hàng của bạn.');
-          renderAuth();
+          openAuthModal('login');
         } else {
           state.page = 'orders';
           renderApp();
@@ -710,8 +738,33 @@
       });
 
       document.getElementById('gvn-btn-login')?.addEventListener('click', () => {
-        renderAuth();
+        openAuthModal('login');
       });
+
+      // Back to Top button
+      if (!document.getElementById('btn-back-to-top')) {
+        const btt = document.createElement('button');
+        btt.type = 'button';
+        btt.className = 'btn-back-to-top';
+        btt.id = 'btn-back-to-top';
+        btt.title = 'Cuộn lên đầu trang';
+        btt.innerHTML = '<i class="bi bi-chevron-up"></i>';
+        btt.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        document.body.appendChild(btt);
+      }
+
+      if (!state.globalScrollBound) {
+        state.globalScrollBound = true;
+        window.addEventListener('scroll', () => {
+          const btt = document.getElementById('btn-back-to-top');
+          if (btt) {
+            if (window.scrollY > 300) btt.classList.add('visible');
+            else btt.classList.remove('visible');
+          }
+        }, { passive: true });
+      }
 
       const userBtn = document.getElementById('gvn-btn-user');
       const userMenu = document.getElementById('gvn-user-menu');
@@ -927,7 +980,7 @@
                   <td><span class="badge ${u.is_active ? 'badge-in-stock' : 'badge-out-stock'}">${u.is_active ? 'Hoạt động' : 'Bị khóa'}</span></td>
                   <td>
                     ${u.user_id !== state.user?.userId ? `
-                      <select class="user-role-select" data-id="${u.user_id}" style="padding:4px 8px; border-radius:6px;">
+                      <select class="user-role-select" data-id="${u.user_id}">
                         <option value="Customer" ${u.role === 'Customer' ? 'selected' : ''}>Customer</option>
                         <option value="Staff" ${u.role === 'Staff' ? 'selected' : ''}>Staff</option>
                         <option value="Admin" ${u.role === 'Admin' ? 'selected' : ''}>Admin</option>
@@ -1102,7 +1155,7 @@
               </div>
               <div class="field">
                 <label>Danh mục phần cứng *</label>
-                <select name="categoryId" required style="padding:8px 12px; border:1px solid var(--line); border-radius:8px; width:100%;">
+                <select name="categoryId" required class="form-select-custom">
                   ${state.categories.map(c => `<option value="${c.category_id}">${escapeHtml(c.name)}</option>`).join('')}
                 </select>
               </div>
@@ -1302,7 +1355,7 @@
       <div class="toolbar-actions">
         <div style="display:flex; gap:8px; align-items:center; flex:1; max-width:540px;">
           <input type="text" id="inv-search-input" placeholder="Tìm kiếm SKU, tên linh kiện, hãng..." value="${escapeHtml(state.inventorySearch)}" style="padding:9px 13px; border:1.5px solid #cbd5e1; border-radius:8px; flex:1;">
-          <select id="inv-filter-select" style="padding:9px 13px; border:1.5px solid #cbd5e1; border-radius:8px; min-width:180px;">
+          <select id="inv-filter-select" class="sidebar-filter-select" style="min-width:180px;">
             <option value="all" ${state.inventoryFilter === 'all' ? 'selected' : ''}>Tất cả trạng thái</option>
             <option value="low_stock" ${state.inventoryFilter === 'low_stock' ? 'selected' : ''}>⚠️ Sắp hết hàng</option>
             <option value="out_of_stock" ${state.inventoryFilter === 'out_of_stock' ? 'selected' : ''}>⛔ Đã hết hàng (0 tồn)</option>
@@ -1693,12 +1746,12 @@
   function attachProductCardEvents(cardEl, prod) {
     cardEl.querySelectorAll('[data-product-id]').forEach(el => {
       if (el.tagName !== 'BUTTON') {
-        el.addEventListener('click', () => openProductDetail(prod.product_id));
+        el.addEventListener('click', () => navigateToProductDetail(prod.product_id));
       }
     });
     cardEl.querySelector('.btn-card-detail')?.addEventListener('click', (e) => {
       e.stopPropagation();
-      openProductDetail(prod.product_id);
+      navigateToProductDetail(prod.product_id);
     });
     cardEl.querySelector('.btn-quick-add')?.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -1735,109 +1788,143 @@
     const catId = state.productFilters.categoryId ? String(state.productFilters.categoryId) : '';
     const relevantSpecs = (catId && opts.categorySpecs && opts.categorySpecs[catId]) ? opts.categorySpecs[catId] : [];
 
-    const currentPricePreset = (state.productFilters.minPrice !== '' || state.productFilters.maxPrice !== '')
-      ? `${state.productFilters.minPrice || 0}-${state.productFilters.maxPrice || 999999999}`
-      : '';
+    const currMinPrice = Number(state.productFilters.minPrice) || 0;
+    const currMaxPrice = state.productFilters.maxPrice ? Number(state.productFilters.maxPrice) : 50000000;
 
     // Active filters summary list
     const activeFiltersList = [];
     if (state.productFilters.search) activeFiltersList.push({ key: 'search', label: `Tìm: "${state.productFilters.search}"` });
     if (state.productFilters.brand) activeFiltersList.push({ key: 'brand', label: `Hãng: ${state.productFilters.brand}` });
-    if (state.productFilters.minPrice !== '' || state.productFilters.maxPrice !== '') activeFiltersList.push({ key: 'price', label: 'Khoảng giá đã chọn' });
+    if (state.productFilters.minPrice !== '' || state.productFilters.maxPrice !== '') {
+      const minText = state.productFilters.minPrice ? formatCurrency(Number(state.productFilters.minPrice)) : '0 ₫';
+      const maxText = state.productFilters.maxPrice ? formatCurrency(Number(state.productFilters.maxPrice)) : '50.000.000+ ₫';
+      activeFiltersList.push({ key: 'price', label: `${minText} - ${maxText}` });
+    }
     if (state.productFilters.inStock) activeFiltersList.push({ key: 'inStock', label: 'Chỉ còn hàng' });
     for (const [sk, sv] of Object.entries(state.productFilters.specs || {})) {
       if (sv) activeFiltersList.push({ key: `spec_${sk}`, label: `${sk}: ${sv}`, specName: sk });
     }
 
     content.innerHTML = `
-      <!-- Horizontal Smart Filter Bar -->
-      <div class="gvn-filter-bar">
-        <div class="gvn-filter-row">
-          <div class="gvn-filter-label">
-            <i class="bi bi-funnel-fill"></i>
-            <span>Bộ lọc:</span>
+      <div class="storefront-body-layout">
+        <!-- Sticky Left Filter Sidebar -->
+        <aside class="storefront-filter-sidebar">
+          <div class="sidebar-filter-block">
+            <div class="sidebar-filter-title">
+              <span><i class="bi bi-funnel-fill" style="color:var(--teal-primary);"></i> Bộ Lọc Tìm Kiếm</span>
+              ${activeFiltersList.length > 0 ? `
+                <button class="sidebar-reset-btn" id="btn-sidebar-reset" type="button" title="Xóa tất cả bộ lọc">Xóa lọc</button>
+              ` : ''}
+            </div>
           </div>
 
           <!-- Brand Filter -->
-          <select class="gvn-select-pill" id="filter-brand-select">
-            <option value="">Thương hiệu: Tất cả</option>
-            ${brands.map(b => `<option value="${escapeHtml(b)}" ${state.productFilters.brand === b ? 'selected' : ''}>${escapeHtml(b)}</option>`).join('')}
-          </select>
+          <div class="sidebar-filter-block">
+            <div class="sidebar-filter-title"><span>Thương Hiệu</span></div>
+            <select class="sidebar-filter-select" id="sidebar-filter-brand" style="width:100%;">
+              <option value="">Tất cả thương hiệu (${brands.length})</option>
+              ${brands.map(b => `<option value="${escapeHtml(b)}" ${state.productFilters.brand === b ? 'selected' : ''}>${escapeHtml(b)}</option>`).join('')}
+            </select>
+          </div>
 
-          <!-- Price Preset Filter -->
-          <select class="gvn-select-pill" id="filter-price-preset-select">
-            <option value="">Mức giá: Tất cả</option>
-            <option value="0-5000000" ${currentPricePreset === '0-5000000' ? 'selected' : ''}>Dưới 5 triệu</option>
-            <option value="5000000-15000000" ${currentPricePreset === '5000000-15000000' ? 'selected' : ''}>5 - 15 triệu</option>
-            <option value="15000000-30000000" ${currentPricePreset === '15000000-30000000' ? 'selected' : ''}>15 - 30 triệu</option>
-            <option value="30000000-999999999" ${currentPricePreset === '30000000-999999999' ? 'selected' : ''}>Trên 30 triệu</option>
-          </select>
+          <!-- Dual-Thumb Price Range Slider -->
+          <div class="sidebar-filter-block">
+            <div class="sidebar-filter-title"><span>Khoảng Giá (VNĐ)</span></div>
+            <div class="dual-range-wrapper">
+              <div class="dual-range-values">
+                <span id="slider-min-val">${formatCurrency(currMinPrice)}</span>
+                <span>—</span>
+                <span id="slider-max-val">${currMaxPrice >= 50000000 ? '50.000.000+ ₫' : formatCurrency(currMaxPrice)}</span>
+              </div>
+              <div class="dual-range-slider-container">
+                <div class="dual-range-track" id="price-slider-highlight"></div>
+                <input type="range" id="price-slider-min" min="0" max="50000000" step="500000" value="${currMinPrice}">
+                <input type="range" id="price-slider-max" min="0" max="50000000" step="500000" value="${currMaxPrice}">
+              </div>
+            </div>
+          </div>
 
           <!-- In-Stock Toggle -->
-          <button type="button" class="gvn-check-pill ${state.productFilters.inStock ? 'active' : ''}" id="filter-instock-toggle">
-            <i class="bi bi-check-circle${state.productFilters.inStock ? '-fill' : ''}"></i>
-            <span>Chỉ còn hàng</span>
-          </button>
+          <div class="sidebar-filter-block">
+            <div class="sidebar-filter-title"><span>Tình Trạng Kho</span></div>
+            <label style="display:flex; align-items:center; gap:8px; cursor:pointer; font-size:13px; font-weight:600; color:#334155;">
+              <input type="checkbox" id="sidebar-filter-instock" ${state.productFilters.inStock ? 'checked' : ''} style="width:16px; height:16px; accent-color:var(--teal-primary);">
+              <span>Chỉ hiển thị còn hàng</span>
+            </label>
+          </div>
 
           <!-- Dynamic Category Specs Filters -->
-          ${relevantSpecs.map(sp => `
-            <select class="gvn-select-pill spec-filter-select" data-spec="${escapeHtml(sp.spec_name)}">
-              <option value="">${escapeHtml(sp.spec_name)}: Tất cả</option>
-              ${sp.values.map(v => `<option value="${escapeHtml(v)}" ${state.productFilters.specs?.[sp.spec_name] === v ? 'selected' : ''}>${escapeHtml(v)}</option>`).join('')}
-            </select>
-          `).join('')}
+          ${relevantSpecs.length > 0 ? `
+            <div class="sidebar-filter-block">
+              <div class="sidebar-filter-title"><span>Thông Số Kỹ Thuật</span></div>
+              <div style="display:flex; flex-direction:column; gap:10px;">
+                ${relevantSpecs.map(sp => `
+                  <div>
+                    <label style="font-size:11.5px; font-weight:700; color:#64748b; margin-bottom:4px; display:block;">${escapeHtml(sp.spec_name)}</label>
+                    <select class="sidebar-filter-select spec-filter-select" data-spec="${escapeHtml(sp.spec_name)}" style="width:100%;">
+                      <option value="">Tất cả</option>
+                      ${sp.values.map(v => `<option value="${escapeHtml(v)}" ${state.productFilters.specs?.[sp.spec_name] === v ? 'selected' : ''}>${escapeHtml(v)}</option>`).join('')}
+                    </select>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+        </aside>
 
-          <!-- Sort Select -->
-          <div style="margin-left: auto;">
-            <select class="gvn-select-pill" id="store-sort-select">
-              <option value="newest" ${state.productFilters.sortBy === 'newest' ? 'selected' : ''}>Sắp xếp: Mới nhất</option>
-              <option value="price_asc" ${state.productFilters.sortBy === 'price_asc' ? 'selected' : ''}>Giá: Thấp đến Cao</option>
-              <option value="price_desc" ${state.productFilters.sortBy === 'price_desc' ? 'selected' : ''}>Giá: Cao đến Thấp</option>
-              <option value="name_asc" ${state.productFilters.sortBy === 'name_asc' ? 'selected' : ''}>Tên A-Z</option>
-            </select>
+        <!-- Right Product Section -->
+        <main class="storefront-product-section" style="flex:1; min-width:0;">
+          <!-- Top Sort & Active Filters Toolbar -->
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+            <div style="font-size:14px; font-weight:750; color:var(--slate-800);">
+              Tìm thấy <span style="color:#b43403;">${state.catalogPagination?.total || state.catalogProducts.length}</span> linh kiện
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:12.5px; color:#64748b; font-weight:600;">Sắp xếp:</span>
+              <select class="sidebar-filter-select" id="store-sort-select" style="min-width:180px;">
+                <option value="newest" ${state.productFilters.sortBy === 'newest' ? 'selected' : ''}>Mới nhất</option>
+                <option value="price_asc" ${state.productFilters.sortBy === 'price_asc' ? 'selected' : ''}>Giá: Thấp đến Cao</option>
+                <option value="price_desc" ${state.productFilters.sortBy === 'price_desc' ? 'selected' : ''}>Giá: Cao đến Thấp</option>
+                <option value="name_asc" ${state.productFilters.sortBy === 'name_asc' ? 'selected' : ''}>Tên A-Z</option>
+              </select>
+            </div>
           </div>
 
           ${activeFiltersList.length > 0 ? `
-            <button class="gvn-reset-btn" id="btn-reset-filters" type="button" title="Xóa tất cả bộ lọc">
-              <i class="bi bi-x-circle"></i> Xóa lọc
-            </button>
+            <div class="gvn-filter-tags-row" style="margin-bottom:14px;">
+              <span style="font-size:12px; color:var(--muted); font-weight:600;">Đang lọc:</span>
+              ${activeFiltersList.map(item => `
+                <span class="gvn-active-tag">
+                  ${escapeHtml(item.label)}
+                  <button type="button" data-clear-key="${item.key}" ${item.specName ? `data-clear-spec="${escapeHtml(item.specName)}"` : ''}>✕</button>
+                </span>
+              `).join('')}
+            </div>
           ` : ''}
-        </div>
 
-        ${activeFiltersList.length > 0 ? `
-          <div class="gvn-filter-tags-row">
-            <span style="font-size:12px; color:var(--muted); font-weight:600;">Đang lọc theo:</span>
-            ${activeFiltersList.map(item => `
-              <span class="gvn-active-tag">
-                ${escapeHtml(item.label)}
-                <button type="button" data-clear-key="${item.key}" ${item.specName ? `data-clear-spec="${escapeHtml(item.specName)}"` : ''}>✕</button>
-              </span>
-            `).join('')}
+          <!-- Product Cards Grid -->
+          <div class="gvn-store-grid" id="gvn-store-grid">
+            ${state.catalogProducts.length === 0 ? `
+              <div style="grid-column:1/-1; text-align:center; padding:60px 20px; background:#fff; border-radius:14px; border:1px solid #e2e8f0; color:var(--muted);">
+                <i class="bi bi-search" style="font-size:36px; color:#cbd5e1; display:block; margin-bottom:12px;"></i>
+                <strong style="color:var(--slate-800); font-size:16px;">Không tìm thấy linh kiện nào phù hợp.</strong>
+                <p style="margin:8px 0 16px;">Vui lòng thử điều chỉnh lại bộ lọc hoặc tìm kiếm từ khóa khác.</p>
+                <button class="btn-primary" id="btn-grid-reset-filters"><i class="bi bi-arrow-repeat"></i> Xóa tất cả bộ lọc</button>
+              </div>
+            ` : state.catalogProducts.map(renderProductCardHtml).join('')}
+            ${state.catalogProducts.length > 0 ? `
+              <div id="storefront-load-more-sentinel" style="grid-column:1/-1; text-align:center; padding:24px 10px;">
+                ${state.catalogPagination && state.catalogPagination.page < state.catalogPagination.totalPages ? `
+                  <button type="button" class="btn-secondary" id="btn-manual-load-more" style="padding:10px 24px; font-weight:700; font-size:13.5px; border-radius:9px;">
+                    <i class="bi bi-arrow-down-circle"></i> Tải thêm sản phẩm (${state.catalogProducts.length}/${state.catalogPagination.total})
+                  </button>
+                ` : `
+                  <span class="subtle" style="font-size:12px;"><i class="bi bi-check-circle"></i> Đã hiển thị toàn bộ ${state.catalogPagination?.total || state.catalogProducts.length} sản phẩm</span>
+                `}
+              </div>
+            ` : ''}
           </div>
-        ` : ''}
-      </div>
-
-      <!-- Full-Width Product Cards Grid -->
-      <div class="gvn-store-grid" id="gvn-store-grid">
-        ${state.catalogProducts.length === 0 ? `
-          <div style="grid-column:1/-1; text-align:center; padding:60px 20px; background:#fff; border-radius:14px; border:1px solid #e2e8f0; color:var(--muted);">
-            <i class="bi bi-search" style="font-size:36px; color:#cbd5e1; display:block; margin-bottom:12px;"></i>
-            <strong style="color:var(--slate-800); font-size:16px;">Không tìm thấy linh kiện nào phù hợp.</strong>
-            <p style="margin:8px 0 16px;">Vui lòng thử điều chỉnh lại bộ lọc hoặc tìm kiếm từ khóa khác.</p>
-            <button class="btn-primary" id="btn-grid-reset-filters"><i class="bi bi-arrow-repeat"></i> Xóa tất cả bộ lọc</button>
-          </div>
-        ` : state.catalogProducts.map(renderProductCardHtml).join('')}
-        ${state.catalogProducts.length > 0 ? `
-          <div id="storefront-load-more-sentinel" style="grid-column:1/-1; text-align:center; padding:24px 10px;">
-            ${state.catalogPagination && state.catalogPagination.page < state.catalogPagination.totalPages ? `
-              <button type="button" class="btn-secondary" id="btn-manual-load-more" style="padding:10px 24px; font-weight:700; font-size:13.5px; border-radius:9px;">
-                <i class="bi bi-arrow-down-circle"></i> Tải thêm sản phẩm (${state.catalogProducts.length}/${state.catalogPagination.total})
-              </button>
-            ` : `
-              <span class="subtle" style="font-size:12px;"><i class="bi bi-check-circle"></i> Đã hiển thị toàn bộ ${state.catalogPagination?.total || state.catalogProducts.length} sản phẩm</span>
-            `}
-          </div>
-        ` : ''}
+        </main>
       </div>
     `;
 
@@ -1861,30 +1948,56 @@
 
   function attachStorefrontEvents(content) {
     // Brand Select
-    document.getElementById('filter-brand-select')?.addEventListener('change', (e) => {
+    document.getElementById('sidebar-filter-brand')?.addEventListener('change', (e) => {
       state.productFilters.brand = e.target.value;
       loadStorefrontPage();
     });
 
-    // Price Preset Select
-    document.getElementById('filter-price-preset-select')?.addEventListener('change', (e) => {
-      const val = e.target.value;
-      if (!val) {
-        state.productFilters.minPrice = '';
-        state.productFilters.maxPrice = '';
-      } else {
-        const [min, max] = val.split('-');
-        state.productFilters.minPrice = min || '';
-        state.productFilters.maxPrice = (max === '999999999') ? '' : max;
-      }
+    // In-Stock Toggle
+    document.getElementById('sidebar-filter-instock')?.addEventListener('change', (e) => {
+      state.productFilters.inStock = e.target.checked;
       loadStorefrontPage();
     });
 
-    // In-Stock Toggle
-    document.getElementById('filter-instock-toggle')?.addEventListener('click', () => {
-      state.productFilters.inStock = !state.productFilters.inStock;
-      loadStorefrontPage();
-    });
+    // Dual-Thumb Price Range Slider
+    const minSlider = document.getElementById('price-slider-min');
+    const maxSlider = document.getElementById('price-slider-max');
+    const minValLabel = document.getElementById('slider-min-val');
+    const maxValLabel = document.getElementById('slider-max-val');
+    const highlight = document.getElementById('price-slider-highlight');
+
+    function updateDualSliderVisual() {
+      if (!minSlider || !maxSlider || !highlight) return;
+      let minVal = parseInt(minSlider.value) || 0;
+      let maxVal = parseInt(maxSlider.value) || 50000000;
+      if (minVal > maxVal) {
+        minSlider.value = maxVal;
+        minVal = maxVal;
+      }
+      const minPercent = (minVal / 50000000) * 100;
+      const maxPercent = (maxVal / 50000000) * 100;
+      highlight.style.left = `${minPercent}%`;
+      highlight.style.width = `${maxPercent - minPercent}%`;
+      if (minValLabel) minValLabel.textContent = formatCurrency(minVal);
+      if (maxValLabel) maxValLabel.textContent = maxVal >= 50000000 ? '50.000.000+ ₫' : formatCurrency(maxVal);
+    }
+    updateDualSliderVisual();
+
+    let sliderDebounceTimer;
+    const handleSliderInput = () => {
+      updateDualSliderVisual();
+      clearTimeout(sliderDebounceTimer);
+      sliderDebounceTimer = setTimeout(() => {
+        const minVal = parseInt(minSlider.value) || 0;
+        const maxVal = parseInt(maxSlider.value) || 50000000;
+        state.productFilters.minPrice = minVal > 0 ? String(minVal) : '';
+        state.productFilters.maxPrice = maxVal < 50000000 ? String(maxVal) : '';
+        loadStorefrontPage();
+      }, 350);
+    };
+
+    minSlider?.addEventListener('input', handleSliderInput);
+    maxSlider?.addEventListener('input', handleSliderInput);
 
     // Dynamic Specs Selects
     content.querySelectorAll('.spec-filter-select').forEach((sel) => {
@@ -1922,7 +2035,7 @@
       if (searchBox) searchBox.value = '';
       loadStorefrontPage();
     };
-    document.getElementById('btn-reset-filters')?.addEventListener('click', resetFilters);
+    document.getElementById('btn-sidebar-reset')?.addEventListener('click', resetFilters);
     document.getElementById('btn-grid-reset-filters')?.addEventListener('click', resetFilters);
 
     // Clear individual active tags
@@ -1950,28 +2063,30 @@
       });
     });
 
-    // Quick Add to Cart
-    content.querySelectorAll('.btn-quick-add').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const pid = Number(btn.dataset.productId);
-        const prod = state.catalogProducts.find(p => Number(p.product_id) === pid);
-        if (!prod) return;
-        const defaultVar = (prod.variants || []).find(v => Number(v.stock_quantity) > 0) || prod.variants?.[0];
-        addToCart(prod, defaultVar, 1);
-        updateHeaderCartBadge();
-        showToast(`Đã thêm "${prod.name}" vào giỏ hàng!`);
-      });
-    });
+    // Delegated click handler on product grid for both initial and dynamically loaded cards
+    const grid = document.getElementById('gvn-store-grid');
+    if (grid) {
+      grid.addEventListener('click', (e) => {
+        const quickAdd = e.target.closest('.btn-quick-add');
+        if (quickAdd) {
+          e.stopPropagation();
+          const pid = Number(quickAdd.dataset.productId);
+          const prod = state.catalogProducts.find(p => Number(p.product_id) === pid);
+          if (prod) {
+            const defaultVar = (prod.variants || []).find(v => Number(v.stock_quantity) > 0) || prod.variants?.[0];
+            addToCart(prod, defaultVar, 1);
+            updateHeaderCartBadge();
+            showToast(`Đã thêm "${prod.name}" vào giỏ hàng!`);
+          }
+          return;
+        }
 
-    // Navigate to Product Detail on card / button click
-    content.querySelectorAll('.gvn-card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('.btn-quick-add')) return;
-        const pid = card.dataset.productId;
-        navigateToProductDetail(pid);
+        const card = e.target.closest('.gvn-card');
+        if (card && card.dataset.productId) {
+          navigateToProductDetail(card.dataset.productId);
+        }
       });
-    });
+    }
   }
 
   function navigateToProductDetail(productId) {
@@ -2004,8 +2119,8 @@
     try {
       const data = await api(`/products/${pid}`);
       const product = data.product;
-      const relatedRes = await api(`/products?categoryId=${product.category_id}&limit=4`);
-      const relatedProducts = (relatedRes.products || []).filter(p => Number(p.product_id) !== Number(pid)).slice(0, 4);
+      const relatedRes = await api(`/products?categoryId=${product.category_id}&limit=20`);
+      const relatedProducts = (relatedRes.products || []).filter(p => Number(p.product_id) !== Number(pid));
       renderProductDetailPage(content, product, relatedProducts);
     } catch (err) {
       content.innerHTML = `<div class="detail-page-container"><div class="alert">${escapeHtml(err.message)}</div><button class="btn-secondary" id="btn-detail-back"><i class="bi bi-arrow-left"></i> Quay lại cửa hàng</button></div>`;
@@ -2172,19 +2287,27 @@
           </div>
         </div>
 
-        <!-- Related Products Section -->
+        <!-- Related Products Section (Horizontal Carousel) -->
         ${relatedProducts.length > 0 ? `
-          <div style="margin-top: 32px;">
-            <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 16px; color: var(--slate-900);">
-              <i class="bi bi-collection"></i> Sản Phẩm Cùng Danh Mục Đề Xuất
-            </h3>
-            <div class="gvn-store-grid">
+          <div class="related-carousel-section">
+            <div class="related-carousel-header">
+              <h3><i class="bi bi-collection-play"></i> Sản Phẩm Cùng Danh Mục Đề Xuất (${relatedProducts.length})</h3>
+              <div class="carousel-nav-controls">
+                <button class="carousel-arrow-btn" id="carousel-prev-btn" title="Cuộn sang trái" type="button">
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+                <button class="carousel-arrow-btn" id="carousel-next-btn" title="Cuộn sang phải" type="button">
+                  <i class="bi bi-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+            <div class="related-carousel-track" id="related-carousel-track">
               ${relatedProducts.map(rp => {
                 const rVars = Array.isArray(rp.variants) ? rp.variants : [];
                 const rVar = rVars.find(v => Number(v.stock_quantity) > 0) || rVars[0] || {};
                 const rImg = rp.image_url || '/images/products/placeholder.jpg';
                 return `
-                  <div class="gvn-card related-card" data-product-id="${rp.product_id}">
+                  <div class="gvn-card related-card" data-product-id="${rp.product_id}" style="cursor:pointer;">
                     <div class="gvn-card-img">
                       <img src="${escapeHtml(rImg)}" alt="${escapeHtml(rp.name)}" loading="lazy">
                     </div>
@@ -2198,7 +2321,7 @@
                         <span class="gvn-card-price-cur">${formatCurrency(rVar.price || 0)}</span>
                       </div>
                     </div>
-                    <button class="btn-card-detail" data-product-id="${rp.product_id}" type="button" style="width:100%; justify-content:center;">
+                    <button class="btn-card-detail" data-product-id="${rp.product_id}" type="button" style="width:100%; justify-content:center; margin-top:8px;">
                       <i class="bi bi-eye"></i> Xem chi tiết
                     </button>
                   </div>
@@ -2293,6 +2416,50 @@
       state.page = 'cart';
       renderApp();
     });
+
+    // Related Products Carousel Controls & Auto-Scroll
+    const track = document.getElementById('related-carousel-track');
+    const prevBtn = document.getElementById('carousel-prev-btn');
+    const nextBtn = document.getElementById('carousel-next-btn');
+
+    if (track) {
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          track.scrollBy({ left: -260, behavior: 'smooth' });
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          track.scrollBy({ left: 260, behavior: 'smooth' });
+        });
+      }
+
+      let autoScrollTimer = null;
+      const startCarouselAutoScroll = () => {
+        if (autoScrollTimer) clearInterval(autoScrollTimer);
+        autoScrollTimer = setInterval(() => {
+          if (!track || !document.contains(track)) {
+            clearInterval(autoScrollTimer);
+            return;
+          }
+          if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 15) {
+            track.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            track.scrollBy({ left: 240, behavior: 'smooth' });
+          }
+        }, 2800);
+      };
+
+      startCarouselAutoScroll();
+      track.addEventListener('mouseenter', () => {
+        if (autoScrollTimer) clearInterval(autoScrollTimer);
+      });
+      track.addEventListener('mouseleave', () => {
+        startCarouselAutoScroll();
+      });
+    }
 
     // Related Products Click
     content.querySelectorAll('.related-card').forEach(card => {
@@ -2699,7 +2866,7 @@
 
     const loginBtn = document.getElementById('btn-login-to-checkout');
     if (loginBtn) {
-      loginBtn.addEventListener('click', () => logout(false));
+      loginBtn.addEventListener('click', () => openAuthModal('login'));
       return;
     }
 
