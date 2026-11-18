@@ -2829,8 +2829,7 @@
           <div class="panel">
             <div class="panel-heading">
               <div>
-                <h3>Linh kiện trong giỏ (${validation.totalItems} sản phẩm)</h3>
-                <p>Giá và tồn kho được đồng bộ trực tiếp từ cơ sở dữ liệu PostgreSQL</p>
+                <h3 style="margin:0;">Linh kiện trong giỏ (${validation.totalItems} sản phẩm)</h3>
               </div>
               <button class="btn-secondary" id="btn-clear-cart" type="button">Xóa giỏ hàng</button>
             </div>
@@ -2874,8 +2873,7 @@
             </div>
             <div class="field">
               <label>Số điện thoại liên hệ <span style="color:#e11d48;">*</span></label>
-              <input name="customerPhone" id="input-customer-phone" placeholder="0901234567 hoặc +84901234567" required>
-              <small class="subtle" style="font-size:11.5px; margin-top:3px; display:block;">Yêu cầu đúng 10 số di động Việt Nam (+84 hoặc 03, 05, 07, 08, 09)</small>
+              <input name="customerPhone" id="input-customer-phone" placeholder="0901234567" required>
             </div>
 
             <div style="margin:14px 0 10px;">
@@ -2936,7 +2934,7 @@
               <label class="payment-option ${state.selectedPaymentMethod === 'VietQR' ? 'selected' : ''}">
                 <input type="radio" name="paymentMethod" value="VietQR" ${state.selectedPaymentMethod === 'VietQR' ? 'checked' : ''}>
                 <div>
-                  <strong><i class="bi bi-qr-code-scan"></i> Chuyển khoản Ngân hàng (VietQR / SePay)</strong>
+                  <strong><i class="bi bi-qr-code-scan"></i> Chuyển khoản Ngân hàng</strong>
                   <small>Quét mã QR tự động xác nhận & khớp lệnh thanh toán trong tích tắc</small>
                 </div>
               </label>
@@ -3102,7 +3100,7 @@
       const rawPhone = (fd.get('customerPhone') || '').trim().replace(/[\s.-]/g, '');
       const VN_PHONE_REGEX = /^(0|\+84)(3[2-9]|5[2689]|7[06-9]|8[1-9]|9[0-9])[0-9]{7}$/;
       if (!VN_PHONE_REGEX.test(rawPhone)) {
-        showToast('Số điện thoại không hợp lệ! Vui lòng nhập đúng 10 số thuộc nhà mạng Việt Nam (+84 hoặc 03, 05, 07, 08, 09).');
+        showToast('Số điện thoại liên hệ không hợp lệ. Vui lòng kiểm tra lại.');
         return;
       }
 
