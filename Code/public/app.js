@@ -3148,6 +3148,9 @@
         state.cart = [];
         saveCart();
 
+        state.lastPlacedOrderId = res.order.order_id;
+        try { sessionStorage.setItem('techzone_last_order', String(res.order.order_id)); } catch (_) {}
+
         if (res.order.payment_method === 'COD') {
           showToast(`Đặt hàng COD #${res.order.order_id} thành công! Đơn đang được đóng gói.`);
           state.page = 'orders';
@@ -3373,11 +3376,18 @@
     const content = document.getElementById('page-content');
     content.innerHTML = '<div class="empty-state">Đang tra cứu dữ liệu đơn hàng...</div>';
     try {
-      let data;
-      if (state.token && !searchQuery) {
-        data = await api('/orders/my?limit=50');
+      let data = { orders: [] };
+      if (state.token) {
+        data = await api('/orders/my?limit=50' + (searchQuery ? `&search=${encodeURIComponent(searchQuery)}` : ''));
       } else {
-        data = await api(`/orders/track?q=${encodeURIComponent(searchQuery)}`);
+        const storedOrder = sessionStorage.getItem('techzone_last_order');
+        const q = searchQuery || (state.lastPlacedOrderId ? String(state.lastPlacedOrderId) : (storedOrder || ''));
+        if (q) {
+          data = await api(`/orders/track?q=${encodeURIComponent(q)}`);
+          if (!searchQuery && q) searchQuery = `#${q}`;
+        } else {
+          data = { orders: [] };
+        }
       }
       state.myOrders = data.orders || [];
       renderMyOrders(content, searchQuery);
@@ -3408,14 +3418,21 @@
       </div>
 
       ${state.myOrders.length === 0 ? `
-        <div class="panel" style="text-align:center; padding:45px;">
-          <p class="subtle">${searchQuery ? `Không tìm thấy đơn hàng nào khớp với "${escapeHtml(searchQuery)}".` : 'Chưa có đơn hàng nào được tìm thấy. Bạn có thể nhập mã đơn hoặc SĐT ở trên để tra cứu.'}</p>
+        <div class="panel" style="text-align:center; padding:50px 20px;">
+          <div style="font-size:38px; color:#0d9488; margin-bottom:12px;"><i class="bi bi-shield-lock-fill"></i></div>
+          <h3 style="margin:0 0 8px; font-weight:800;">Tra cứu tiến độ Đơn hàng</h3>
+          <p class="subtle" style="max-width:540px; margin:0 auto 18px; line-height:1.6;">
+            ${searchQuery 
+              ? `Không tìm thấy đơn hàng nào khớp với từ khóa "<strong>${escapeHtml(searchQuery)}</strong>". Vui lòng kiểm tra lại mã đơn hoặc số điện thoại.`
+              : 'Để bảo vệ quyền riêng tư, thông tin đơn hàng không hiển thị công khai. Vui lòng nhập <strong>Mã đơn hàng</strong> (ví dụ: <code>#3</code> hoặc <code>3</code>) hoặc <strong>Số điện thoại đặt hàng</strong> vào ô phía trên để tra cứu.'
+            }
+          </p>
         </div>
       ` : `
         <div style="display:grid; gap:16px;">
           ${state.myOrders.map((o) => `
             <div class="panel">
-              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-bottom:12px; border-bottom:1px solid #f1f5f9;">
                 <div>
                   <strong style="font-size:16px;">Đơn hàng #${o.order_id}</strong>
                   <span style="margin-left:8px;">${renderStatusBadge(o.status)}</span>
@@ -3433,8 +3450,10 @@
                   ${o.status === 'Pending' ? `<button class="btn-danger btn-cancel-my-order" data-id="${o.order_id}">Hủy</button>` : ''}
                 </div>
               </div>
+              <div style="margin: 14px 0 10px;">
+                ${renderOrderStepper(o.status, o.payment_method)}
+              </div>
               ${renderOrderItemsPreview(o.items)}
-              ${renderOrderStepper(o.status, o.payment_method)}
             </div>
           `).join('')}
         </div>

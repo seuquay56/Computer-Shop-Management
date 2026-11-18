@@ -314,9 +314,22 @@ async function trackPublicOrders(queryStr) {
   const orderIdMatch = clean.match(/^CSORDER(\d+)$/i);
   if (orderIdMatch) clean = orderIdMatch[1];
 
+  // Privacy protection: if no specific query provided, do not dump database orders to guests
+  if (!clean) {
+    return {
+      orders: [],
+      pagination: {
+        page: 1,
+        limit: 10,
+        total: 0,
+        totalPages: 0,
+      },
+    };
+  }
+
   const result = await orderRepo.listOrders({
     search: clean,
-    limit: clean ? 10 : 20,
+    limit: 10,
   });
 
   return {

@@ -235,7 +235,7 @@ async function listOrders({ userId = null, page = 1, limit = 20, status = '', pa
   if (paymentMethod) conditions.push(`o.payment_method = ${add(paymentMethod)}`);
   if (search) {
     const p = add(`%${search}%`);
-    conditions.push(`(CAST(o.order_id AS TEXT) ILIKE ${p} OR u.username ILIKE ${p} OR COALESCE(u.full_name, '') ILIKE ${p} OR COALESCE(o.session_id, '') ILIKE ${p})`);
+    conditions.push(`(CAST(o.order_id AS TEXT) ILIKE ${p} OR u.username ILIKE ${p} OR COALESCE(u.full_name, '') ILIKE ${p} OR COALESCE(u.phone, '') ILIKE ${p} OR COALESCE(o.session_id, '') ILIKE ${p})`);
   }
 
   const where = conditions.length ? `WHERE ${conditions.join(' AND ')}` : '';
