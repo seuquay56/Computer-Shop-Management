@@ -1299,6 +1299,10 @@ td strong { color: var(--slate-900); }
   max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 45px rgba(15,23,42,0.25);
   display: flex; flex-direction: column; position: relative;
 }
+.modal-box[style*="overflow:visible"],
+.modal-box[style*="overflow: visible"] {
+  overflow: visible !important;
+}
 .modal-header { padding: 18px 24px; border-bottom: 1px solid var(--slate-200); display: flex; justify-content: space-between; align-items: center; }
 .modal-header h3 { margin: 0; font-size: 17px; font-weight: 800; color: var(--slate-900); }
 .modal-close { background: none; border: none; font-size: 22px; color: var(--muted); cursor: pointer; }
@@ -1411,12 +1415,13 @@ td strong { color: var(--slate-900); }
   position: absolute; top: calc(100% + 5px); left: 0; right: 0;
   background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 10px !important;
   box-shadow: 0 14px 30px -4px rgba(15, 23, 42, 0.22), 0 8px 12px -6px rgba(15, 23, 42, 0.12);
-  z-index: 99999 !important; overflow: hidden; display: none; animation: csdFadeIn .15s ease-out;
+  z-index: 99999 !important; overflow: hidden !important; display: none; animation: csdFadeIn .15s ease-out;
 }
 .custom-search-dropdown.open .csd-menu { display: block; }
 .custom-search-dropdown.open-up .csd-menu {
   top: auto;
   bottom: calc(100% + 5px);
+  border-radius: 10px !important;
   box-shadow: 0 -14px 30px -4px rgba(15, 23, 42, 0.22), 0 -8px 12px -6px rgba(15, 23, 42, 0.12);
 }
 @keyframes csdFadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
@@ -1431,8 +1436,8 @@ td strong { color: var(--slate-900); }
   max-height: 220px;
   overflow-y: auto;
   padding: 4px;
-  border-bottom-left-radius: 9px;
-  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px !important;
+  border-bottom-right-radius: 9px !important;
 }
 .csd-list::-webkit-scrollbar {
   width: 6px;
@@ -1643,15 +1648,21 @@ td strong { color: var(--slate-900); }
   flex: 1;
   min-width: 0;
 }
-.order-item-thumb {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 2px;
-  flex-shrink: 0;
+.order-item-thumb,
+.order-item-mini-img,
+.order-item-card img,
+.order-card img {
+  width: 52px !important;
+  height: 52px !important;
+  min-width: 52px !important;
+  max-width: 52px !important;
+  max-height: 52px !important;
+  object-fit: contain !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  padding: 3px !important;
+  flex-shrink: 0 !important;
 }
 .order-item-info {
   min-width: 0;

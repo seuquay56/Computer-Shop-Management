@@ -175,7 +175,7 @@
     return method || 'Chuyển khoản';
   }
 
-  const VN_LOCATIONS = {
+  const VN_LOCATIONS = (typeof window !== 'undefined' && window.VN_LOCATIONS) ? window.VN_LOCATIONS : {
     'TP. Hồ Chí Minh': [
       'Phường Bến Nghé, Quận 1', 'Phường Bến Thành, Quận 1', 'Phường Cầu Kho, Quận 1', 'Phường Đa Kao, Quận 1',
       'Phường Võ Thị Sáu, Quận 3', 'Phường 1, Quận 3', 'Phường 9, Quận 3',
@@ -370,10 +370,24 @@
         if (el !== container) el.classList.remove('open');
       });
 
-      // Smart dropup check
+      // Smart dropup check (supports viewport and modals)
       const rect = trigger.getBoundingClientRect();
-      const spaceBelow = window.innerHeight - rect.bottom;
-      if (spaceBelow < 250 && rect.top > 250) {
+      const modalBox = container.closest('.modal-box');
+      let shouldOpenUp = false;
+      if (modalBox) {
+        const modalRect = modalBox.getBoundingClientRect();
+        const spaceBelowInModal = modalRect.bottom - rect.bottom;
+        const spaceAboveInModal = rect.top - modalRect.top;
+        if (spaceBelowInModal < 240 && spaceAboveInModal > 180) {
+          shouldOpenUp = true;
+        }
+      } else {
+        const spaceBelow = window.innerHeight - rect.bottom;
+        if (spaceBelow < 250 && rect.top > 250) {
+          shouldOpenUp = true;
+        }
+      }
+      if (shouldOpenUp) {
         container.classList.add('open-up');
       } else {
         container.classList.remove('open-up');
@@ -455,39 +469,41 @@
     const hidden = items.slice(3);
     const hasMore = hidden.length > 0;
 
+    const renderItemRow = (i) => `
+      <div class="order-item-card">
+        <div class="order-item-card-left">
+          ${i.image_url ? `<img src="${escapeHtml(i.image_url)}" class="order-item-thumb" alt="${escapeHtml(i.product_name)}">` : `<div class="order-item-thumb" style="display:grid; place-items:center; background:#f8fafc; color:#94a3b8;"><i class="bi bi-box-seam" style="font-size:20px;"></i></div>`}
+          <div class="order-item-info">
+            <div class="order-item-name" title="${escapeHtml(i.product_name)}">${escapeHtml(i.product_name)}</div>
+            <div class="order-item-meta">
+              <span class="subtle">Mã: <code>${escapeHtml(i.sku || 'SKU')}</code></span>
+              <span class="order-item-qty-badge">SL: ${i.quantity}</span>
+              ${i.unit_price ? `<span class="subtle">· Đơn giá: ${escapeHtml(formatCurrency(i.unit_price))}</span>` : ''}
+            </div>
+          </div>
+        </div>
+        <div class="order-item-card-right">
+          <div class="order-item-price-total">${escapeHtml(formatCurrency(i.unit_price * i.quantity))}</div>
+        </div>
+      </div>
+    `;
+
     return `
       <div class="order-items-preview">
-        ${visible.map(i => `
-          <div class="order-item-mini">
-            <div class="order-item-mini-info">
-              ${i.image_url ? `<img src="${escapeHtml(i.image_url)}" class="order-item-mini-img" alt="${escapeHtml(i.product_name)}">` : ''}
-              <div style="min-width:0;">
-                <div class="order-item-mini-name" title="${escapeHtml(i.product_name)}">${escapeHtml(i.product_name)}</div>
-                <small class="subtle">Mã: <code>${escapeHtml(i.sku || 'SKU')}</code> · SL: <strong>${i.quantity}</strong></small>
-              </div>
+        <div class="order-items-preview-header">
+          <i class="bi bi-box2-fill" style="color:var(--teal-primary);"></i> Danh sách sản phẩm (${items.length} món)
+        </div>
+        <div class="order-items-list-container">
+          ${visible.map(renderItemRow).join('')}
+          ${hasMore ? `
+            <div class="order-items-hidden" style="display:none; flex-direction:column; gap:8px;">
+              ${hidden.map(renderItemRow).join('')}
             </div>
-            <div class="order-item-mini-price">${escapeHtml(formatCurrency(i.unit_price * i.quantity))}</div>
-          </div>
-        `).join('')}
-        ${hasMore ? `
-          <div class="order-items-hidden" style="display:none; flex-direction:column; gap:8px;">
-            ${hidden.map(i => `
-              <div class="order-item-mini">
-                <div class="order-item-mini-info">
-                  ${i.image_url ? `<img src="${escapeHtml(i.image_url)}" class="order-item-mini-img" alt="${escapeHtml(i.product_name)}">` : ''}
-                  <div style="min-width:0;">
-                    <div class="order-item-mini-name" title="${escapeHtml(i.product_name)}">${escapeHtml(i.product_name)}</div>
-                    <small class="subtle">Mã: <code>${escapeHtml(i.sku || 'SKU')}</code> · SL: <strong>${i.quantity}</strong></small>
-                  </div>
-                </div>
-                <div class="order-item-mini-price">${escapeHtml(formatCurrency(i.unit_price * i.quantity))}</div>
-              </div>
-            `).join('')}
-          </div>
-          <button type="button" class="btn-expand-order-items">
-            <i class="bi bi-chevron-down"></i> Xem thêm ${hidden.length} sản phẩm khác
-          </button>
-        ` : ''}
+            <button type="button" class="btn-expand-order-items">
+              <i class="bi bi-chevron-down"></i> Xem thêm ${hidden.length} sản phẩm khác trong đơn này (▼)
+            </button>
+          ` : ''}
+        </div>
       </div>
     `;
   }
@@ -2993,7 +3009,8 @@
       searchPlaceholder: 'Tìm kiếm nhanh tỉnh / thành phố...',
       onSelect: (selectedCity) => {
         state.checkoutCity = selectedCity;
-        const wards = VN_LOCATIONS[selectedCity] || [];
+        const currentLocs = (typeof window !== 'undefined' && window.VN_LOCATIONS) ? window.VN_LOCATIONS : VN_LOCATIONS;
+        const wards = currentLocs[selectedCity] || [];
         state.checkoutWard = wards[0] || '';
         if (wardDropdownInstance) {
           wardDropdownInstance.updateOptions(wards.map(w => ({ value: w, label: w })), true);
@@ -3002,7 +3019,8 @@
       }
     });
 
-    const initialWards = VN_LOCATIONS[initialCity] || [];
+    const activeLocs = (typeof window !== 'undefined' && window.VN_LOCATIONS) ? window.VN_LOCATIONS : VN_LOCATIONS;
+    const initialWards = activeLocs[initialCity] || [];
     const initialWard = state.checkoutWard && initialWards.includes(state.checkoutWard) ? state.checkoutWard : (initialWards[0] || '');
     state.checkoutWard = initialWard;
 
@@ -3011,7 +3029,8 @@
       options: initialWards.map(w => ({ value: w, label: w })),
       placeholder: 'Chọn Phường / Xã / Quận...',
       value: initialWard,
-      searchPlaceholder: 'Tìm kiếm nhanh phường / xã...',
+      searchPlaceholder: 'Tìm kiếm nhanh phường / xã hoặc gõ tùy biến...',
+      allowCustom: true,
       onSelect: (selectedWard) => {
         state.checkoutWard = selectedWard;
       }
@@ -3350,30 +3369,47 @@
       </div>`;
   }
 
-  async function loadMyOrdersPage() {
+  async function loadMyOrdersPage(searchQuery = '') {
     const content = document.getElementById('page-content');
-    content.innerHTML = '<div class="empty-state">Đang tải lịch sử đơn hàng của bạn...</div>';
+    content.innerHTML = '<div class="empty-state">Đang tra cứu dữ liệu đơn hàng...</div>';
     try {
-      const data = await api('/orders/my?limit=50');
+      let data;
+      if (state.token && !searchQuery) {
+        data = await api('/orders/my?limit=50');
+      } else {
+        data = await api(`/orders/track?q=${encodeURIComponent(searchQuery)}`);
+      }
       state.myOrders = data.orders || [];
-      renderMyOrders(content);
+      renderMyOrders(content, searchQuery);
     } catch (err) {
       content.innerHTML = `<div class="alert">${escapeHtml(err.message)}</div>`;
     }
   }
 
-  function renderMyOrders(content) {
+  function renderMyOrders(content, searchQuery = '') {
     content.innerHTML = `
       <div class="page-heading">
         <div>
-          <h2>Theo dõi Đơn hàng của tôi</h2>
-          <p class="subtle">Tra cứu tiến độ xử lý đơn hàng và thanh toán lại qua Chuyển khoản VietQR nếu đơn đang chờ</p>
+          <h2>Theo dõi Đơn hàng ${state.token ? 'của tôi' : 'trực tuyến'}</h2>
+          <p class="subtle">Tra cứu tiến độ xử lý đơn hàng theo mã đơn, số điện thoại hoặc mã chuyển khoản ngân hàng (không cần đăng nhập)</p>
         </div>
         <button class="btn-primary" id="btn-shop-more">🛒 Tiếp tục mua linh kiện</button>
       </div>
+
+      <div class="panel" style="margin-bottom:16px; padding:14px 18px;">
+        <form id="order-search-form" style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+          <div style="position:relative; flex:1; min-width:260px;">
+            <i class="bi bi-search" style="position:absolute; left:12px; top:50%; transform:translateY(-50%); color:#94a3b8;"></i>
+            <input type="text" id="order-search-input" placeholder="Tìm theo Mã đơn hàng (vd: #3), Số điện thoại, hoặc Mã chuyển khoản..." value="${escapeHtml(searchQuery)}" style="width:100%; padding:9px 12px 9px 34px; border:1.5px solid #cbd5e1; border-radius:8px;">
+          </div>
+          <button type="submit" class="btn-primary" style="padding:9px 18px;"><i class="bi bi-funnel-fill"></i> Tra cứu đơn</button>
+          ${searchQuery ? `<button type="button" class="btn-secondary" id="btn-clear-order-search" style="padding:9px 14px;">Đặt lại</button>` : ''}
+        </form>
+      </div>
+
       ${state.myOrders.length === 0 ? `
         <div class="panel" style="text-align:center; padding:45px;">
-          <p class="subtle">Bạn chưa có đơn hàng nào.</p>
+          <p class="subtle">${searchQuery ? `Không tìm thấy đơn hàng nào khớp với "${escapeHtml(searchQuery)}".` : 'Chưa có đơn hàng nào được tìm thấy. Bạn có thể nhập mã đơn hoặc SĐT ở trên để tra cứu.'}</p>
         </div>
       ` : `
         <div style="display:grid; gap:16px;">
@@ -3403,6 +3439,15 @@
           `).join('')}
         </div>
       `}`;
+
+    document.getElementById('order-search-form')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const q = document.getElementById('order-search-input')?.value.trim() || '';
+      loadMyOrdersPage(q);
+    });
+    document.getElementById('btn-clear-order-search')?.addEventListener('click', () => {
+      loadMyOrdersPage('');
+    });
 
     document.getElementById('btn-shop-more').addEventListener('click', () => {
       state.page = 'storefront';
@@ -3482,7 +3527,15 @@
                 <tbody>
                   ${(order.items || []).map((i) => `
                     <tr>
-                      <td><strong>${escapeHtml(i.product_name)}</strong><br><small class="subtle">${escapeHtml(i.brand)} · ${escapeHtml(i.category_name)}</small></td>
+                      <td>
+                        <div style="display:flex; align-items:center; gap:10px;">
+                          ${i.image_url ? `<img src="${escapeHtml(i.image_url)}" class="order-item-thumb" alt="${escapeHtml(i.product_name)}">` : `<div class="order-item-thumb" style="display:grid; place-items:center; background:#f8fafc; color:#94a3b8;"><i class="bi bi-box-seam"></i></div>`}
+                          <div>
+                            <strong>${escapeHtml(i.product_name)}</strong><br>
+                            <small class="subtle">${escapeHtml(i.brand || '')} ${i.category_name ? '· ' + escapeHtml(i.category_name) : ''}</small>
+                          </div>
+                        </div>
+                      </td>
                       <td><code>${escapeHtml(i.sku)}</code></td>
                       <td>${i.quantity}</td>
                       <td>${escapeHtml(formatCurrency(i.unit_price))}</td>

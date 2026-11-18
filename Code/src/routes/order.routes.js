@@ -1,6 +1,6 @@
 const express = require('express');
 const controller = require('../controllers/order.controller');
-const { authenticate } = require('../middlewares/auth.middleware');
+const { authenticate, optionalAuth } = require('../middlewares/auth.middleware');
 
 const router = express.Router();
 
@@ -9,12 +9,13 @@ router.post('/cart/validate', controller.validateCart);
 
 // Public tracking endpoint (FR-12 & guest order tracking)
 router.get('/track', controller.trackPublicOrders);
+router.get('/track/:orderId', controller.getOrderDetail);
 
-// Authenticated customer & staff order endpoints
+// Customer & staff order endpoints (optionalAuth allows guest order tracking by direct ID)
 router.post('/checkout', authenticate, controller.checkout);
 router.get('/my', authenticate, controller.listMyOrders);
-router.get('/:orderId', authenticate, controller.getOrderDetail);
-router.get('/:orderId/payment-status', authenticate, controller.getOrderPaymentStatus);
-router.post('/:orderId/cancel', authenticate, controller.cancelMyOrder);
+router.get('/:orderId', optionalAuth, controller.getOrderDetail);
+router.get('/:orderId/payment-status', optionalAuth, controller.getOrderPaymentStatus);
+router.post('/:orderId/cancel', optionalAuth, controller.cancelMyOrder);
 
 module.exports = router;

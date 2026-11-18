@@ -159,9 +159,11 @@ async function checkAndReconcileOrderPayment(orderId, requester) {
   if (!order) {
     throw new AppError('Order not found.', 404);
   }
-  const isStaffOrAdmin = requester.role === 'Admin' || requester.role === 'Staff';
-  if (!isStaffOrAdmin && Number(order.user_id) !== Number(requester.userId)) {
-    throw new AppError('Forbidden.', 403);
+  if (requester) {
+    const isStaffOrAdmin = requester.role === 'Admin' || requester.role === 'Staff';
+    if (!isStaffOrAdmin && Number(order.user_id) !== Number(requester.userId)) {
+      throw new AppError('Forbidden.', 403);
+    }
   }
 
   const transferContent = sepay.buildOrderTransferContent(order.order_id, env.orderPrefix);

@@ -43,4 +43,43 @@ const authenticate = asyncHandler(async (req, _res, next) => {
   next();
 });
 
-module.exports = { authenticate };
+const optionalAuth = asyncHandler(async (req, _res, next) => {
+  const authorization = req.headers.authorization || '';
+  const [scheme, token] = authorization.split(' ');
+
+  if (scheme !== 'Bearer' || !token) {
+    req.user = null;
+    return next();
+  }
+
+  try {
+    const payload = jwt.verify(token, env.jwtSecret);
+    const result = await query(
+      `SELECT u.user_id, u.username, u.full_name, u.email, u.is_active,
+              r.role_name AS role
+         FROM users u
+         JOIN roles r ON r.role_id = u.role_id
+        WHERE u.user_id = $1`,
+      [payload.userId]
+    );
+
+    const user = result.rows[0];
+    if (user && user.is_active) {
+      req.user = {
+        userId: user.user_id,
+        username: user.username,
+        fullName: user.full_name,
+        email: user.email,
+        role: user.role,
+      };
+    } else {
+      req.user = null;
+    }
+  } catch (_error) {
+    req.user = null;
+  }
+
+  next();
+});
+
+module.exports = { authenticate, optionalAuth };

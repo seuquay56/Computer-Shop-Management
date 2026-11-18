@@ -344,9 +344,11 @@ async function getOrderDetail(orderId, requester) {
   if (!order) {
     throw new AppError('Order not found.', 404);
   }
-  const isStaffOrAdmin = requester.role === 'Admin' || requester.role === 'Staff';
-  if (!isStaffOrAdmin && Number(order.user_id) !== Number(requester.userId)) {
-    throw new AppError('You do not have permission to view this order.', 403);
+  if (requester) {
+    const isStaffOrAdmin = requester.role === 'Admin' || requester.role === 'Staff';
+    if (!isStaffOrAdmin && Number(order.user_id) !== Number(requester.userId)) {
+      throw new AppError('You do not have permission to view this order.', 403);
+    }
   }
 
   return {
@@ -418,13 +420,13 @@ async function cancelMyOrder(orderId, user) {
   if (!order) {
     throw new AppError('Order not found.', 404);
   }
-  if (Number(order.user_id) !== Number(user.userId)) {
+  if (user && Number(order.user_id) !== Number(user.userId)) {
     throw new AppError('You can only cancel your own orders.', 403);
   }
   if (order.status !== 'Pending') {
     throw new AppError('Only Pending orders can be cancelled by customers.', 400);
   }
-  return updateOrderStatus(orderId, 'Cancelled', user);
+  return updateOrderStatus(orderId, 'Cancelled', user || { username: 'Guest Customer', role: 'Customer' });
 }
 
 module.exports = {
