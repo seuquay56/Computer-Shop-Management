@@ -28,6 +28,12 @@ const listMyOrders = asyncHandler(async (req, res) => {
   return success(res, data, 200, 'Customer orders retrieved.');
 });
 
+const trackPublicOrders = asyncHandler(async (req, res) => {
+  const q = String(req.query.q || '').trim();
+  const data = await orderService.trackPublicOrders(q);
+  return success(res, data, 200, 'Orders retrieved successfully.');
+});
+
 const getOrderDetail = asyncHandler(async (req, res) => {
   const orderId = parseOrderId(req.params.orderId);
   const data = await orderService.getOrderDetail(orderId, req.user);
@@ -66,6 +72,7 @@ module.exports = {
   getOrderPaymentStatus,
   listAdminOrders,
   listMyOrders,
+  trackPublicOrders,
   updateAdminOrderStatus,
   validateCart,
 };

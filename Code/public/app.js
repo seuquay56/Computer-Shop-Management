@@ -779,13 +779,8 @@
       });
 
       document.getElementById('gvn-btn-orders')?.addEventListener('click', () => {
-        if (isGuest) {
-          showToast('Vui lòng đăng nhập để tra cứu lịch sử đơn hàng của bạn.');
-          openAuthModal('login');
-        } else {
-          state.page = 'orders';
-          renderApp();
-        }
+        state.page = 'orders';
+        renderApp();
       });
 
       document.getElementById('gvn-btn-cart')?.addEventListener('click', () => {
@@ -1080,12 +1075,10 @@
                   <td><span class="badge ${u.is_active ? 'badge-in-stock' : 'badge-out-stock'}">${u.is_active ? 'Hoạt động' : 'Bị khóa'}</span></td>
                   <td>
                     ${u.user_id !== state.user?.userId ? `
-                      <select class="user-role-select" data-id="${u.user_id}">
-                        <option value="Customer" ${u.role === 'Customer' ? 'selected' : ''}>Customer</option>
-                        <option value="Staff" ${u.role === 'Staff' ? 'selected' : ''}>Staff</option>
-                        <option value="Admin" ${u.role === 'Admin' ? 'selected' : ''}>Admin</option>
-                      </select>
-                      <button class="btn-secondary toggle-status-btn" data-id="${u.user_id}" data-active="${u.is_active}">${u.is_active ? 'Khóa' : 'Mở khóa'}</button>
+                      <div style="display:flex; align-items:center; gap:8px;">
+                        <div class="user-role-dropdown-slot" data-id="${u.user_id}" style="min-width:130px;"></div>
+                        <button class="btn-secondary toggle-status-btn" data-id="${u.user_id}" data-active="${u.is_active}">${u.is_active ? 'Khóa' : 'Mở khóa'}</button>
+                      </div>
                     ` : '<small class="subtle">Tài khoản của bạn</small>'}
                   </td>
                 </tr>
@@ -1095,13 +1088,27 @@
         </div>
       </div>`;
 
-    content.querySelectorAll('.user-role-select').forEach(sel => {
-      sel.addEventListener('change', async (e) => {
-        try {
-          await api(`/users/${sel.dataset.id}/role`, { method: 'PATCH', body: JSON.stringify({ role: e.target.value }) });
-          showToast('Đã cập nhật vai trò người dùng.');
-          loadUsersPage();
-        } catch (err) { showToast(err.message); }
+    content.querySelectorAll('.user-role-dropdown-slot').forEach(slot => {
+      const uid = slot.dataset.id;
+      const u = (state.users || []).find(x => String(x.user_id) === String(uid));
+      createSearchableDropdown({
+        container: slot,
+        options: [
+          { value: 'Customer', label: 'Customer' },
+          { value: 'Staff', label: 'Staff' },
+          { value: 'Admin', label: 'Admin' },
+        ],
+        placeholder: 'Chọn vai trò...',
+        value: u?.role || 'Customer',
+        showSearch: false,
+        onSelect: async (newRole) => {
+          if (!newRole || newRole === u?.role) return;
+          try {
+            await api(`/users/${uid}/role`, { method: 'PATCH', body: JSON.stringify({ role: newRole }) });
+            showToast(`Đã cập nhật vai trò người dùng thành ${newRole}.`);
+            loadUsersPage();
+          } catch (err) { showToast(err.message); loadUsersPage(); }
+        }
       });
     });
 
@@ -1283,9 +1290,8 @@
               </div>
               <div class="field">
                 <label>Danh mục phần cứng *</label>
-                <select name="categoryId" required class="form-select-custom">
-                  ${state.categories.map(c => `<option value="${c.category_id}">${escapeHtml(c.name)}</option>`).join('')}
-                </select>
+                <div id="modal-category-slot"></div>
+                <input type="hidden" name="categoryId" id="modal-category-input" value="${state.categories[0]?.category_id || ''}" required>
               </div>
               <div class="field"><label>Mô tả chi tiết</label><textarea name="description" rows="2" style="padding:8px 12px; border:1px solid var(--line); border-radius:8px; width:100%; font-family:inherit;" placeholder="Mô tả công nghệ, tính năng tản nhiệt, chuẩn kết nối..."></textarea></div>
 
@@ -1319,6 +1325,22 @@
     const close = () => { modalContainer.innerHTML = ''; };
     document.getElementById('modal-close-btn').addEventListener('click', close);
     document.getElementById('modal-cancel-btn').addEventListener('click', close);
+
+    const catSlot = document.getElementById('modal-category-slot');
+    const catInput = document.getElementById('modal-category-input');
+    if (catSlot && state.categories.length > 0) {
+      createSearchableDropdown({
+        container: catSlot,
+        options: state.categories.map(c => ({ value: String(c.category_id), label: c.name })),
+        placeholder: 'Chọn danh mục phần cứng...',
+        value: String(state.categories[0].category_id),
+        searchPlaceholder: 'Tìm nhanh danh mục...',
+        showSearch: true,
+        onSelect: (val) => {
+          if (catInput) catInput.value = val;
+        }
+      });
+    }
 
     const specsContainer = document.getElementById('specs-container');
 
@@ -1980,10 +2002,7 @@
           <!-- Brand Filter -->
           <div class="sidebar-filter-block">
             <div class="sidebar-filter-title"><span>Thương Hiệu</span></div>
-            <select class="sidebar-filter-select" id="sidebar-filter-brand" style="width:100%;">
-              <option value="">Tất cả thương hiệu (${brands.length})</option>
-              ${brands.map(b => `<option value="${escapeHtml(b)}" ${state.productFilters.brand === b ? 'selected' : ''}>${escapeHtml(b)}</option>`).join('')}
-            </select>
+            <div id="sidebar-brand-slot" style="width:100%;"></div>
           </div>
 
           <!-- Dual-Thumb Price Range Slider -->
@@ -2020,10 +2039,7 @@
                 ${relevantSpecs.map(sp => `
                   <div>
                     <label style="font-size:11.5px; font-weight:700; color:#64748b; margin-bottom:4px; display:block;">${escapeHtml(sp.spec_name)}</label>
-                    <select class="sidebar-filter-select spec-filter-select" data-spec="${escapeHtml(sp.spec_name)}" style="width:100%;">
-                      <option value="">Tất cả</option>
-                      ${sp.values.map(v => `<option value="${escapeHtml(v)}" ${state.productFilters.specs?.[sp.spec_name] === v ? 'selected' : ''}>${escapeHtml(v)}</option>`).join('')}
-                    </select>
+                    <div class="sidebar-spec-slot" data-spec="${escapeHtml(sp.spec_name)}" style="width:100%;"></div>
                   </div>
                 `).join('')}
               </div>
@@ -2040,12 +2056,7 @@
             </div>
             <div style="display:flex; align-items:center; gap:8px;">
               <span style="font-size:12.5px; color:#64748b; font-weight:600;">Sắp xếp:</span>
-              <select class="sidebar-filter-select" id="store-sort-select" style="min-width:180px;">
-                <option value="newest" ${state.productFilters.sortBy === 'newest' ? 'selected' : ''}>Mới nhất</option>
-                <option value="price_asc" ${state.productFilters.sortBy === 'price_asc' ? 'selected' : ''}>Giá: Thấp đến Cao</option>
-                <option value="price_desc" ${state.productFilters.sortBy === 'price_desc' ? 'selected' : ''}>Giá: Cao đến Thấp</option>
-                <option value="name_asc" ${state.productFilters.sortBy === 'name_asc' ? 'selected' : ''}>Tên A-Z</option>
-              </select>
+              <div id="store-sort-slot" style="min-width:190px;"></div>
             </div>
           </div>
 
@@ -2088,7 +2099,7 @@
     `;
 
     ensureVisitTracked();
-    attachStorefrontEvents(content);
+    attachStorefrontEvents(content, { brands, relevantSpecs });
     document.getElementById('btn-manual-load-more')?.addEventListener('click', loadMoreStorefrontProducts);
 
     if (!state.storefrontScrollBound) {
@@ -2105,12 +2116,29 @@
     }
   }
 
-  function attachStorefrontEvents(content) {
-    // Brand Select
-    document.getElementById('sidebar-filter-brand')?.addEventListener('change', (e) => {
-      state.productFilters.brand = e.target.value;
-      loadStorefrontPage();
-    });
+  function attachStorefrontEvents(content, opts = {}) {
+    const brands = opts.brands || [];
+    const relevantSpecs = opts.relevantSpecs || [];
+
+    // Custom Searchable Dropdown for Brand
+    const brandSlot = document.getElementById('sidebar-brand-slot');
+    if (brandSlot) {
+      createSearchableDropdown({
+        container: brandSlot,
+        options: [
+          { value: '', label: `Tất cả thương hiệu (${brands.length})` },
+          ...brands.map(b => ({ value: b, label: b }))
+        ],
+        placeholder: `Tất cả thương hiệu (${brands.length})`,
+        value: state.productFilters.brand || '',
+        searchPlaceholder: 'Tìm nhanh thương hiệu...',
+        showSearch: true,
+        onSelect: (val) => {
+          state.productFilters.brand = val;
+          loadStorefrontPage();
+        }
+      });
+    }
 
     // In-Stock Toggle
     document.getElementById('sidebar-filter-instock')?.addEventListener('change', (e) => {
@@ -2158,25 +2186,53 @@
     minSlider?.addEventListener('input', handleSliderInput);
     maxSlider?.addEventListener('input', handleSliderInput);
 
-    // Dynamic Specs Selects
-    content.querySelectorAll('.spec-filter-select').forEach((sel) => {
-      sel.addEventListener('change', () => {
-        const specName = sel.dataset.spec;
-        if (!state.productFilters.specs) state.productFilters.specs = {};
-        if (sel.value) {
-          state.productFilters.specs[specName] = sel.value;
-        } else {
-          delete state.productFilters.specs[specName];
+    // Custom Searchable Dropdowns for Category Specs
+    content.querySelectorAll('.sidebar-spec-slot').forEach((slot) => {
+      const specName = slot.dataset.spec;
+      const specData = relevantSpecs.find(s => s.spec_name === specName);
+      if (!specData) return;
+      createSearchableDropdown({
+        container: slot,
+        options: [
+          { value: '', label: `Tất cả ${specName}` },
+          ...specData.values.map(v => ({ value: v, label: v }))
+        ],
+        placeholder: `Tất cả ${specName}`,
+        value: state.productFilters.specs?.[specName] || '',
+        searchPlaceholder: `Tìm ${specName}...`,
+        showSearch: specData.values.length > 5,
+        onSelect: (val) => {
+          if (!state.productFilters.specs) state.productFilters.specs = {};
+          if (val) {
+            state.productFilters.specs[specName] = val;
+          } else {
+            delete state.productFilters.specs[specName];
+          }
+          loadStorefrontPage();
         }
-        loadStorefrontPage();
       });
     });
 
-    // Sort Select
-    document.getElementById('store-sort-select')?.addEventListener('change', (e) => {
-      state.productFilters.sortBy = e.target.value;
-      loadStorefrontPage();
-    });
+    // Custom Searchable Dropdown for Storefront Sort
+    const sortSlot = document.getElementById('store-sort-slot');
+    if (sortSlot) {
+      createSearchableDropdown({
+        container: sortSlot,
+        options: [
+          { value: 'newest', label: 'Mới nhất' },
+          { value: 'price_asc', label: 'Giá: Thấp đến Cao' },
+          { value: 'price_desc', label: 'Giá: Cao đến Thấp' },
+          { value: 'name_asc', label: 'Tên A-Z' },
+        ],
+        placeholder: 'Sắp xếp...',
+        value: state.productFilters.sortBy || 'newest',
+        showSearch: false,
+        onSelect: (val) => {
+          state.productFilters.sortBy = val;
+          loadStorefrontPage();
+        }
+      });
+    }
 
     // Reset All Filters
     const resetFilters = () => {
@@ -3494,17 +3550,11 @@
           <p class="subtle">Quy trình: Pending → Paid → Packing → Shipped → Completed (tự động trừ/hoàn kho)</p>
         </div>
       </div>
-      <div class="toolbar">
-        <input id="admin-order-search" placeholder="Tìm mã đơn, khách hàng, session..." value="${escapeHtml(state.adminOrderFilter.search)}">
-        <select id="admin-order-status">
-          <option value="">Tất cả trạng thái</option>
-          ${['Pending', 'Paid', 'Packing', 'Shipped', 'Completed', 'Cancelled'].map((s) => `<option value="${s}" ${state.adminOrderFilter.status === s ? 'selected' : ''}>${s}</option>`).join('')}
-        </select>
-        <select id="admin-order-method">
-          <option value="">Tất cả thanh toán</option>
-          ${['VietQR', 'ZaloPay', 'COD'].map((m) => `<option value="${m}" ${state.adminOrderFilter.paymentMethod === m ? 'selected' : ''}>${m}</option>`).join('')}
-        </select>
-        <button class="btn-primary" id="btn-filter-admin-orders">Lọc</button>
+      <div class="toolbar" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+        <input id="admin-order-search" placeholder="Tìm mã đơn, khách hàng, session..." value="${escapeHtml(state.adminOrderFilter.search)}" style="flex:1; min-width:220px;">
+        <div id="admin-order-status-slot" style="min-width:180px;"></div>
+        <div id="admin-order-method-slot" style="min-width:180px;"></div>
+        <button class="btn-primary" id="btn-filter-admin-orders"><i class="bi bi-funnel"></i> Lọc</button>
       </div>
       <div class="panel">
         <div class="table-wrap">
@@ -3518,7 +3568,14 @@
                 const nextOptions = allowedMap[o.status] || [];
                 return `
                   <tr>
-                    <td><strong>#${o.order_id}</strong></td>
+                    <td>
+                      <strong>#${o.order_id}</strong>
+                      <div style="margin-top:4px;">
+                        <button type="button" class="btn-subtle toggle-admin-items" data-id="${o.order_id}" style="font-size:11px; padding:2px 7px; border:1px solid #cbd5e1; border-radius:5px; background:#f8fafc; cursor:pointer;">
+                          <i class="bi bi-box-seam"></i> ${o.items?.length || o.item_count || 0} linh kiện ▾
+                        </button>
+                      </div>
+                    </td>
                     <td>${escapeHtml(o.customer_name || o.username)}<br><small class="subtle">${new Date(o.created_at).toLocaleString('vi-VN')}</small></td>
                     <td><code>${escapeHtml(o.transferContent)}</code></td>
                     <td><span class="badge" style="background:#f1f5f9; color:#334155;">${escapeHtml(formatPaymentMethodName(o.payment_method))}</span></td>
@@ -3526,13 +3583,15 @@
                     <td>${renderStatusBadge(o.status)}</td>
                     <td>
                       ${nextOptions.length > 0 ? `
-                        <select class="admin-order-next-status user-role-select" data-id="${o.order_id}">
-                          <option value="">— Chọn bước tiếp —</option>
-                          ${nextOptions.map((st) => `<option value="${st}">${st}</option>`).join('')}
-                        </select>
+                        <div class="admin-next-status-slot" data-id="${o.order_id}" style="min-width:160px;"></div>
                       ` : '<small class="subtle">Đã kết thúc</small>'}
                     </td>
                     <td><button class="btn-secondary admin-view-order" data-id="${o.order_id}">Chi tiết</button></td>
+                  </tr>
+                  <tr id="admin-items-row-${o.order_id}" style="display:none; background:#f8fafc;">
+                    <td colspan="8" style="padding:12px 18px;">
+                      ${renderOrderItemsPreview(o.items)}
+                    </td>
                   </tr>`;
               }).join('')}
             </tbody>
@@ -3541,19 +3600,99 @@
       </div>`;
 
     const adminSearchInput = document.getElementById('admin-order-search');
-    const adminStatusSelect = document.getElementById('admin-order-status');
-    const adminMethodSelect = document.getElementById('admin-order-method');
 
-    adminStatusSelect?.addEventListener('change', () => {
-      state.adminOrderFilter.status = adminStatusSelect.value;
-      state.adminOrderFilter.search = adminSearchInput ? adminSearchInput.value.trim() : '';
-      loadAdminOrdersPage();
+    const statusSlot = document.getElementById('admin-order-status-slot');
+    if (statusSlot) {
+      createSearchableDropdown({
+        container: statusSlot,
+        options: [
+          { value: '', label: 'Tất cả trạng thái' },
+          ...['Pending', 'Paid', 'Packing', 'Shipped', 'Completed', 'Cancelled'].map(s => ({ value: s, label: s }))
+        ],
+        placeholder: 'Tất cả trạng thái',
+        value: state.adminOrderFilter.status || '',
+        showSearch: false,
+        onSelect: (val) => {
+          state.adminOrderFilter.status = val;
+          loadAdminOrdersPage();
+        }
+      });
+    }
+
+    const methodSlot = document.getElementById('admin-order-method-slot');
+    if (methodSlot) {
+      createSearchableDropdown({
+        container: methodSlot,
+        options: [
+          { value: '', label: 'Tất cả thanh toán' },
+          ...['VietQR', 'ZaloPay', 'COD'].map(m => ({ value: m, label: m }))
+        ],
+        placeholder: 'Tất cả thanh toán',
+        value: state.adminOrderFilter.paymentMethod || '',
+        showSearch: false,
+        onSelect: (val) => {
+          state.adminOrderFilter.paymentMethod = val;
+          loadAdminOrdersPage();
+        }
+      });
+    }
+
+    content.querySelectorAll('.admin-next-status-slot').forEach(slot => {
+      const orderId = slot.dataset.id;
+      const o = state.adminOrders.find(x => String(x.order_id) === String(orderId));
+      const nextOptions = allowedMap[o?.status] || [];
+      if (nextOptions.length === 0) return;
+      createSearchableDropdown({
+        container: slot,
+        options: [
+          { value: '', label: '— Chọn bước tiếp —' },
+          ...nextOptions.map(st => ({ value: st, label: `→ ${st}` }))
+        ],
+        placeholder: '— Chọn bước tiếp —',
+        value: '',
+        showSearch: false,
+        onSelect: async (nextStatus) => {
+          if (!nextStatus) return;
+          try {
+            const res = await api(`/admin/orders/${orderId}/status`, {
+              method: 'PATCH',
+              body: JSON.stringify({ status: nextStatus }),
+            });
+            showToast(`Đơn #${orderId} → ${nextStatus}${res.stockChanged ? ' (Đã đồng bộ tồn kho)' : ''}.`);
+            loadAdminOrdersPage();
+          } catch (err) {
+            showToast(err.message);
+            loadAdminOrdersPage();
+          }
+        }
+      });
     });
 
-    adminMethodSelect?.addEventListener('change', () => {
-      state.adminOrderFilter.paymentMethod = adminMethodSelect.value;
-      state.adminOrderFilter.search = adminSearchInput ? adminSearchInput.value.trim() : '';
-      loadAdminOrdersPage();
+    content.querySelectorAll('.toggle-admin-items').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const row = document.getElementById(`admin-items-row-${btn.dataset.id}`);
+        if (!row) return;
+        const isHidden = row.style.display === 'none';
+        row.style.display = isHidden ? 'table-row' : 'none';
+        btn.innerHTML = isHidden ? '<i class="bi bi-box-seam"></i> Ẩn linh kiện ▲' : `<i class="bi bi-box-seam"></i> ${btn.textContent.trim().split(' ')[1] || ''} linh kiện ▾`;
+      });
+    });
+
+    content.querySelectorAll('.btn-expand-order-items').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const wrap = e.currentTarget.closest('.order-items-preview');
+        const hiddenWrap = wrap?.querySelector('.order-items-hidden');
+        if (!hiddenWrap) return;
+        const isHidden = hiddenWrap.style.display === 'none';
+        if (isHidden) {
+          hiddenWrap.style.display = 'flex';
+          btn.innerHTML = '<i class="bi bi-chevron-up"></i> Thu gọn danh sách (▲)';
+        } else {
+          hiddenWrap.style.display = 'none';
+          const count = hiddenWrap.children.length;
+          btn.innerHTML = `<i class="bi bi-chevron-down"></i> Xem thêm ${count} sản phẩm khác trong đơn này (▼)`;
+        }
+      });
     });
 
     let adminSearchTimer;
@@ -3565,29 +3704,9 @@
       }, 250);
     });
 
-    document.getElementById('btn-filter-admin-orders').addEventListener('click', () => {
+    document.getElementById('btn-filter-admin-orders')?.addEventListener('click', () => {
       state.adminOrderFilter.search = adminSearchInput.value.trim();
-      state.adminOrderFilter.status = adminStatusSelect.value;
-      state.adminOrderFilter.paymentMethod = adminMethodSelect.value;
       loadAdminOrdersPage();
-    });
-
-    content.querySelectorAll('.admin-order-next-status').forEach((sel) => {
-      sel.addEventListener('change', async (e) => {
-        const nextStatus = e.target.value;
-        if (!nextStatus) return;
-        try {
-          const res = await api(`/admin/orders/${sel.dataset.id}/status`, {
-            method: 'PATCH',
-            body: JSON.stringify({ status: nextStatus }),
-          });
-          showToast(`Đơn #${sel.dataset.id} → ${nextStatus}${res.stockChanged ? ' (Đã đồng bộ tồn kho)' : ''}.`);
-          loadAdminOrdersPage();
-        } catch (err) {
-          showToast(err.message);
-          loadAdminOrdersPage();
-        }
-      });
     });
 
     content.querySelectorAll('.admin-view-order').forEach((btn) => {

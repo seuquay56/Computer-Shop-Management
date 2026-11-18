@@ -7,6 +7,9 @@ const router = express.Router();
 // Public real-time stock & PC hardware compatibility check for storefront cart
 router.post('/cart/validate', controller.validateCart);
 
+// Public tracking endpoint (FR-12 & guest order tracking)
+router.get('/track', controller.trackPublicOrders);
+
 // Authenticated customer & staff order endpoints
 router.post('/checkout', authenticate, controller.checkout);
 router.get('/my', authenticate, controller.listMyOrders);

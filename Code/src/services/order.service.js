@@ -309,6 +309,25 @@ async function getMyOrders(userId, query) {
   };
 }
 
+async function trackPublicOrders(queryStr) {
+  let clean = String(queryStr || '').replace(/^#/, '').trim();
+  const orderIdMatch = clean.match(/^CSORDER(\d+)$/i);
+  if (orderIdMatch) clean = orderIdMatch[1];
+
+  const result = await orderRepo.listOrders({
+    search: clean,
+    limit: clean ? 10 : 20,
+  });
+
+  return {
+    ...result,
+    orders: result.orders.map((o) => ({
+      ...o,
+      transferContent: sepay.buildOrderTransferContent(o.order_id, env.orderPrefix),
+    })),
+  };
+}
+
 async function listAdminOrders(query) {
   const result = await orderRepo.listOrders(query);
   return {
@@ -417,6 +436,7 @@ module.exports = {
   getMyOrders,
   getOrderDetail,
   listAdminOrders,
+  trackPublicOrders,
   updateOrderStatus,
   validateCartAndCompatibility,
 };
