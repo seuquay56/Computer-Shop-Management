@@ -13,7 +13,7 @@ function errorHandler(error, _req, res, _next) {
     message = 'The supplied data is not valid.';
   }
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test') {
     console.error(error);
   }
 

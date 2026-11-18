@@ -11,7 +11,18 @@ const { errorHandler } = require('./middlewares/error.middleware');
 const app = express();
 
 app.disable('x-powered-by');
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https://cdn.jsdelivr.net'],
+      fontSrc: ["'self'", 'data:', 'https://cdn.jsdelivr.net'],
+      imgSrc: ["'self'", 'data:', 'https://qr.sepay.vn', 'https://img.vietqr.io'],
+      connectSrc: ["'self'"],
+    },
+  },
+}));
 app.use(cors({
   origin: env.clientOrigin.split(',').map((item) => item.trim()),
   credentials: true,

@@ -1,0 +1,4496 @@
+{
+  "source": "gearvn.com",
+  "categories": [
+    {
+      "name": "CPU",
+      "description": "Bộ vi xử lý trung tâm máy tính để bàn và máy trạm"
+    },
+    {
+      "name": "GPU",
+      "description": "Card màn hình đồ họa chuyên dụng Gaming và Render"
+    },
+    {
+      "name": "Mainboard",
+      "description": "Bo mạch chủ máy tính các chuẩn kích thước ATX, Micro-ATX"
+    },
+    {
+      "name": "RAM",
+      "description": "Bộ nhớ truy xuất ngẫu nhiên DDR4, DDR5 tốc độ cao"
+    },
+    {
+      "name": "Storage",
+      "description": "Ổ đĩa cứng SSD M.2 NVMe và HDD lưu trữ"
+    },
+    {
+      "name": "Power Supply",
+      "description": "Nguồn máy tính chuẩn 80 Plus Bronze, Gold, Platinum"
+    },
+    {
+      "name": "Laptop",
+      "description": "Laptop gaming, văn phòng và đồ họa chính hãng"
+    },
+    {
+      "name": "Keyboard",
+      "description": "Bàn phím cơ, bàn phím gaming và làm việc cao cấp"
+    },
+    {
+      "name": "Mouse",
+      "description": "Chuột gaming, chuột không dây công thái học chính hãng"
+    }
+  ],
+  "totalProducts": 180,
+  "products": [
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-amd-ryzen-7-9800x3d-4-7ghz-boost-5-2ghz-8-nhan-16-luong-104mb-am5-tray",
+      "name": "Bộ vi xử lý AMD Ryzen 7 9800X3D / 4.7GHz Boost 5.2GHz / 8 nhân 16 luồng / 104MB / AM5 (Tray)",
+      "brand": "AMD",
+      "price": 11990000,
+      "sku": "CPU-AMD-RYZ-7-9800X3D-TRAY",
+      "imageUrl": "/images/products/bo-vi-xu-ly-amd-ryzen-7-9800x3d-4-7ghz-boost-5-2ghz-8-nhan-16-luo.jpg",
+      "description": "Thông số kỹ thuật. Số nhân (Cores) 8. Số luồng (Threads) 16. Tốc độ xử lý. Xung cơ bản 4.7GHz, xung tối đa 5.2GHz. Bộ nhớ đệm L1 640 KB. Bộ nhớ đệm L2. 8 MB.",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "AM5"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "8 nhân 16 luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "4.7GHz"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-amd-ryzen-5-7500f-3-7ghz-boost-5-0ghz-6-nhan-12-luong-38mb-am5-tray",
+      "name": "Bộ vi xử lý AMD Ryzen 5 7500F / 3.7GHz Boost 5.0GHz / 6 nhân 12 luồng / 38MB / AM5 (Tray)",
+      "brand": "AMD",
+      "price": 4790000,
+      "sku": "CPU-AMD-RYZ-5-7500F-TRAY",
+      "imageUrl": "/images/products/bo-vi-xu-ly-amd-ryzen-5-7500f-3-7ghz-boost-5-0ghz-6-nhan-12-luong.jpg",
+      "description": "Thông số kỹ thuật. Model AMD Ryzen 5 7500F. Số nhân 6. Số luồng 12. Tốc độ cơ bản 3.7 Ghz. Tốc độ tối đa (Max Boost) 5.0 GHz. Bộ nhớ đệm 6MB (L2) + 32MB (L3).",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "AM5"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "6 nhân 12 luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "3.7GHz"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-amd-ryzen-7-9850x3d-4-7ghz-boost-5-6ghz-8-nhan-16-luong-104mb-am5",
+      "name": "Bộ vi xử lý AMD Ryzen 7 9850X3D / 4.7GHz Boost 5.6GHz / 8 nhân 16 luồng / 104MB / AM5",
+      "brand": "AMD",
+      "price": 15990000,
+      "sku": "CPU-AMD-RYZ-7-9850X3D",
+      "imageUrl": "/images/products/bo-vi-xu-ly-amd-ryzen-7-9850x3d-4-7ghz-boost-5-6ghz-8-nhan-16-luo.jpg",
+      "description": "Thông số kỹ thuật: Family Ryzen. Series Ryzen 9000 Series. Form Factor Desktops, Boxed Processor. Market Segment Enthusiast Desktop. AMD PRO Technologies No.",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "AM5"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "8 nhân 16 luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "4.7GHz"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-intel-core-ultra-7-265kf",
+      "name": "Bộ vi xử lý Intel Core Ultra 7 265KF / Turbo up to 5.5GHz / 20 Nhân 20 Luồng / 30MB / LGA 1851",
+      "brand": "Intel",
+      "price": 9690000,
+      "sku": "CPU-INT-CORE-ULT-7-265KF",
+      "imageUrl": "/images/products/bo-vi-xu-ly-intel-core-ultra-7-265kf.jpg",
+      "description": "⭐ GEARVN cam kết sản phẩm được Intel bảo hành chính hãng tại VN ⭐. Sản phẩm chỉ bán cùng Bo mạch chủ Z890. Khám phá bộ vi xử lý Intel Core Ultra 7 265KF /…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "20 Nhân 20 Luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "5.5GHz"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-intel-core-ultra-7-265k",
+      "name": "Bộ vi xử lý Intel Core Ultra 7 265K / Turbo up to 5.5GHz / 20 Nhân 20 Luồng / 30MB / LGA 1851",
+      "brand": "Intel",
+      "price": 10490000,
+      "sku": "CPU-INT-CORE-ULT-7-265K",
+      "imageUrl": "/images/products/bo-vi-xu-ly-intel-core-ultra-7-265k.jpg",
+      "description": "⭐ GEARVN cam kết sản phẩm được Intel bảo hành chính hãng tại VN ⭐. Sản phẩm chỉ bán cùng Bo mạch chủ Z890. Khám phá bộ vi xử lý Intel Core Ultra 7 265K / Turbo…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "20 Nhân 20 Luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "5.5GHz"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-intel-core-ultra-9-285k",
+      "name": "Bộ vi xử lý Intel Core Ultra 9 285K / Turbo up to 5.7GHz / 24 Nhân 24 Luồng / 36MB / LGA 1851",
+      "brand": "Intel",
+      "price": 19990000,
+      "sku": "CPU-INT-CORE-ULT-9-285K",
+      "imageUrl": "/images/products/bo-vi-xu-ly-intel-core-ultra-9-285k.jpg",
+      "description": "⭐ GEARVN cam kết sản phẩm được Intel bảo hành chính hãng tại VN ⭐. Khám phá bộ vi xử lý Intel Core Ultra 9 285K / Turbo up to 5.7GHz / 24 Nhân 24 Luồng / 36MB…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "24 Nhân 24 Luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "5.7GHz"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-intel-core-ultra-5-225",
+      "name": "Bộ vi xử lý Intel Core Ultra 5 225 / Turbo up to 4.9 GHz / 10 Nhân 10 Luồng / 20MB / LGA 1851",
+      "brand": "Intel",
+      "price": 5490000,
+      "sku": "CPU-INT-CORE-ULT-5-225",
+      "imageUrl": "/images/products/bo-vi-xu-ly-intel-core-ultra-5-225.jpg",
+      "description": "⭐ GEARVN cam kết sản phẩm được Intel bảo hành chính hãng tại VN ⭐. Sản phẩm chỉ bán cùng Bo mạch chủ Z890. Khám phá bộ vi xử lý Intel Core Ultra 5 225 / Turbo…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "10 Nhân 10 Luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "4.9 GHz"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-intel-core-ultra-5-245k",
+      "name": "Bộ vi xử lý Intel Core Ultra 5 245K / Turbo up to 5.2GHz / 14 Nhân 14 Luồng / 24MB / LGA 1851",
+      "brand": "Intel",
+      "price": 6690000,
+      "sku": "CPU-INT-CORE-ULT-5-245K",
+      "imageUrl": "/images/products/bo-vi-xu-ly-intel-core-ultra-5-245k.jpg",
+      "description": "⭐ GEARVN cam kết sản phẩm được Intel bảo hành chính hãng tại VN ⭐. Sản phẩm chỉ bán cùng Bo mạch chủ Z890. Khám phá bộ vi xử lý Intel Core Ultra 5 245K / Turbo…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "14 Nhân 14 Luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "5.2GHz"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-amd-ryzen-5-8400f",
+      "name": "Bộ vi xử lý AMD Ryzen 5 8400F / 4.2GHz Boost 4.7GHz / 6 nhân 12 luồng / 22MB / AM5",
+      "brand": "AMD",
+      "price": 4490000,
+      "sku": "CPU-AMD-RYZ-5-8400F",
+      "imageUrl": "/images/products/bo-vi-xu-ly-amd-ryzen-5-8400f.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: AMD. Bảo hành: 36 Tháng. ⭐ GEARVN cam kết sản phẩm được AMD bảo hành chính hãng tại VN ⭐. THÔNG SỐ KĨ THUẬT. Số nhân xử lý 6.",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "AM5"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "6 nhân 12 luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "4.2GHz"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-intel-core-ultra-5-245kf",
+      "name": "Bộ vi xử lý Intel Core Ultra 5 245KF / Turbo up to 5.2GHz / 14 Nhân 14 Luồng / 24MB / LGA 1851",
+      "brand": "Intel",
+      "price": 6290000,
+      "sku": "CPU-INT-CORE-ULT-5-245KF",
+      "imageUrl": "/images/products/bo-vi-xu-ly-intel-core-ultra-5-245kf.jpg",
+      "description": "⭐ GEARVN cam kết sản phẩm được Intel bảo hành chính hãng tại VN ⭐. Sản phẩm chỉ bán cùng Bo mạch chủ Z890. Khám phá bộ vi xử lý Intel Core Ultra 5 245KF /…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "14 Nhân 14 Luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "5.2GHz"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-intel-core-i5-12400-tray",
+      "name": "Bộ vi xử lý Intel Core i5 12400 / 2.5GHz Turbo 4.4GHz / 6 Nhân 12 Luồng / 18MB / LGA 1700 (TRAY)",
+      "brand": "Intel",
+      "price": 5490000,
+      "sku": "CPU-INT-I5-12400-TRAY",
+      "imageUrl": "/images/products/bo-vi-xu-ly-intel-core-i5-12400-tray.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: Intel. Bảo hành: 36 Tháng. Sản phẩm không đi kèm tản nhiệt và có VAT. ⭐ GEARVN cam kết sản phẩm được nhà phân phối Intel bảo…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1700"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "6 Nhân 12 Luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "2.5GHz"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-amd-ryzen-5-5500gt-3-6ghz-boost-4-4ghz-6-nhan-12-luong-19mb-am4",
+      "name": "Bộ vi xử lý AMD Ryzen 5 5500GT / 3.6GHz Boost 4.4GHz / 6 nhân 12 luồng / 19MB / AM4",
+      "brand": "AMD",
+      "price": 3990000,
+      "sku": "CPU-AMD-RYZ-5-5500GT",
+      "imageUrl": "/images/products/bo-vi-xu-ly-amd-ryzen-5-5500gt-3-6ghz-boost-4-4ghz-6-nhan-12-luon.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: AMD. Bảo hành: 36 Tháng. ⭐ GEARVN cam kết sản phẩm được AMD bảo hành chính hãng tại VN ⭐. Thông số kỹ thuật: Kiến trúc \"Zen 3\".",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "AM4"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "6 nhân 12 luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "3.6GHz"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-intel-core-i5-12400f-tray",
+      "name": "Bộ vi xử lý Intel Core i5 12400F / 2.5GHz Turbo 4.4GHz / 6 Nhân 12 Luồng / 18MB / LGA 1700 (TRAY)",
+      "brand": "Intel",
+      "price": 3990000,
+      "sku": "CPU-INT-I5-12400F-TRAY",
+      "imageUrl": "/images/products/bo-vi-xu-ly-intel-core-i5-12400f-tray.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: Intel. Bảo hành: 36 Tháng. Sản phẩm không đi kèm tản nhiệt và có VAT. ⭐ GEARVN cam kết sản phẩm được nhà phân phối Intel bảo…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1700"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "6 Nhân 12 Luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "2.5GHz"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-amd-ryzen-5-5600gt",
+      "name": "Bộ vi xử lý AMD Ryzen 5 5600GT / 3.6GHz Boost 4.6GHz / 6 nhân 12 luồng / 19MB / AM4",
+      "brand": "AMD",
+      "price": 4490000,
+      "sku": "CPU-AMD-RYZ-5-5600GT",
+      "imageUrl": "/images/products/bo-vi-xu-ly-amd-ryzen-5-5600gt.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: AMD. Bảo hành: 36 Tháng. ⭐ GEARVN cam kết sản phẩm được AMD bảo hành chính hãng tại VN ⭐. Thông số kỹ thuật: Kiến trúc \"Zen 3\".",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "AM4"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "6 nhân 12 luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "3.6GHz"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-amd-ryzen-5-8600g",
+      "name": "Bộ vi xử lý AMD Ryzen 5 8600G / 4.3GHz Boost 5.0GHz / 6 nhân 12 luồng / 22MB / AM5",
+      "brand": "AMD",
+      "price": 6990000,
+      "sku": "CPU-AMD-RYZ-5-8600G",
+      "imageUrl": "/images/products/bo-vi-xu-ly-amd-ryzen-5-8600g.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: AMD. Bảo hành: 36 Tháng. ⭐ GEARVN cam kết sản phẩm được AMD bảo hành chính hãng tại VN ⭐. Thông số kỹ thuật: Kiến trúc \"Zen 4\".",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "AM5"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "6 nhân 12 luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "4.3GHz"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-amd-ryzen-7-8700g",
+      "name": "Bộ vi xử lý AMD Ryzen 7 8700G / 4.2GHz Boost 5.1GHz / 8 nhân 16 luồng / 24MB / AM5",
+      "brand": "AMD",
+      "price": 9490000,
+      "sku": "CPU-AMD-RYZ-7-8700G",
+      "imageUrl": "/images/products/bo-vi-xu-ly-amd-ryzen-7-8700g.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: AMD. Bảo hành: 36 Tháng. ⭐ GEARVN cam kết sản phẩm được AMD bảo hành chính hãng tại VN ⭐. Thông số kỹ thuật: Kiến trúc \"Zen 4\".",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "AM5"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "8 nhân 16 luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "4.2GHz"
+        }
+      ],
+      "stockQuantity": 0,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-intel-core-i5-14500",
+      "name": "Bộ vi xử lý Intel Core i5 14500 / Turbo up to 5.0GHz / 14 Nhân 20 Luồng / 24MB / LGA 1700",
+      "brand": "Intel",
+      "price": 6690000,
+      "sku": "CPU-INT-I5-14500",
+      "imageUrl": "/images/products/bo-vi-xu-ly-intel-core-i5-14500.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: Intel. Bảo hành: 36 tháng. ⭐ GEARVN cam kết sản phẩm được Intel bảo hành chính hãng tại VN ⭐. Thông số kỹ thuật: Socket…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1700"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "14 Nhân 20 Luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "5.0GHz"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-intel-core-i7-14700",
+      "name": "Bộ vi xử lý Intel Core i7 14700 / Turbo up to 5.4GHz / 20 Nhân 28 Luồng / 33MB / LGA 1700",
+      "brand": "Intel",
+      "price": 10990000,
+      "sku": "CPU-INT-I7-14700",
+      "imageUrl": "/images/products/bo-vi-xu-ly-intel-core-i7-14700.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: Intel. Bảo hành: 60 tháng. ⭐ GEARVN cam kết sản phẩm được Intel bảo hành chính hãng tại VN ⭐. Thông số kỹ thuật: Socket…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1700"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "20 Nhân 28 Luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "5.4GHz"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-intel-core-i7-14700f",
+      "name": "Bộ vi xử lý Intel Core i7 14700F / Turbo up to 5.4GHz / 20 Nhân 28 Luồng / 33MB / LGA 1700",
+      "brand": "Intel",
+      "price": 10990000,
+      "sku": "CPU-INT-I7-14700F",
+      "imageUrl": "/images/products/bo-vi-xu-ly-intel-core-i7-14700f.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: Intel. Bảo hành: 60 tháng. ⭐ GEARVN cam kết sản phẩm được Intel bảo hành chính hãng tại VN ⭐. Thông số kỹ thuật: Socket…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1700"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "20 Nhân 28 Luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "5.4GHz"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "CPU",
+      "slug": "bo-vi-xu-ly-intel-core-i5-14400",
+      "name": "Bộ vi xử lý Intel Core i5 14400 / Turbo up to 4.7GHz / 10 Nhân 16 Luồng / 20MB / LGA 1700",
+      "brand": "Intel",
+      "price": 7390000,
+      "sku": "CPU-INT-I5-14400",
+      "imageUrl": "/images/products/bo-vi-xu-ly-intel-core-i5-14400.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: Intel. Bảo hành: 36 tháng. ⭐ GEARVN cam kết sản phẩm được Intel bảo hành chính hãng tại VN ⭐. Thông số kỹ thuật: Socket…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1700"
+        },
+        {
+          "specName": "Cores",
+          "specValue": "10 Nhân 16 Luồng"
+        },
+        {
+          "specName": "Max Boost Clock",
+          "specValue": "4.7GHz"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-leadtek-nvidia-rtx-pro-4000-blackwell-24gb-gddr7",
+      "name": "Card màn hình Leadtek NVIDIA RTX PRO 4000 Blackwell 24GB GDDR7",
+      "brand": "NVIDIA",
+      "price": 109990000,
+      "sku": "VGA-LEADTEK-RTX-PRO-4000-BLACKWELL-24GB",
+      "imageUrl": "/images/products/card-man-hinh-leadtek-nvidia-rtx-pro-4000-blackwell-24gb-gddr7.jpg",
+      "description": "Khám phá card màn hình Leadtek NVIDIA RTX PRO 4000 Blackwell 24GB GDDR7. Card đồ họa Leadtek NVIDIA RTX PRO 4000 Blackwell 24GB là dòng VGA workstation chuyên…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "24GB GDDR7"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "550W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-zotac-geforce-rtx-5060-ti-8gb-moon-white-oc",
+      "name": "Card màn hình Zotac GeForce RTX 5060 Ti 8GB Moon White OC",
+      "brand": "Zotac",
+      "price": 18990000,
+      "sku": "VGA-ZOT-RTX5060TI-MOON-WHITE-OC-8GB",
+      "imageUrl": "/images/products/card-man-hinh-zotac-geforce-rtx-5060-ti-8gb-moon-white-oc.jpg",
+      "description": "Khám phá card màn hình Zotac GeForce RTX 5060 Ti 8GB Moon White OC. ZOTAC GAMING GeForce RTX 5060 Ti 8GB MOON WHITE OC là mẫu card màn hình hướng tới người…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "650W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-zotac-gaming-geforce-rtx-5070-solid-oc-zt-b50700j-10p",
+      "name": "Card màn hình ZOTAC GAMING GeForce RTX 5070 SOLID OC (ZT-B50700J-10P)",
+      "brand": "Zotac",
+      "price": 29990000,
+      "sku": "VGA-ZOT-RTX5070-GAMING-SOLID-OC",
+      "imageUrl": "/images/products/card-man-hinh-zotac-gaming-geforce-rtx-5070-solid-oc-zt-b50700j-1.jpg",
+      "description": "Khám phá card màn hình ZOTAC GAMING GeForce RTX 5070 SOLID OC. ZOTAC GAMING GeForce RTX 5070 SOLID OC là mẫu card đồ họa hiệu năng cao thuộc chuẩn NVIDIA…",
+      "specs": [
+        {
+          "specName": "Recommended PSU",
+          "specValue": "650W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-leadtek-nvidia-rtx-pro-5000-blackwell-48gb-gddr7",
+      "name": "Card màn hình Leadtek NVIDIA RTX PRO 5000 Blackwell 48GB GDDR7",
+      "brand": "Leadtek",
+      "price": 330000000,
+      "sku": "VGA-LEADTEK-RTX-PRO-5000-BLACKWELL-48GB",
+      "imageUrl": "/images/products/card-man-hinh-leadtek-nvidia-rtx-pro-5000-blackwell-48gb-gddr7.jpg",
+      "description": "Khám phá card màn hình Leadtek NVIDIA RTX PRO 5000 Blackwell 48GB GDDR7. Leadtek NVIDIA RTX PRO 5000 Blackwell 48GB GDDR7 là card đồ họa workstation thuộc dòng…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "48GB GDDR7"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "550W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-msi-geforce-rtx-5060-ti-shadow-2x-oc-plus-8gb",
+      "name": "Card màn hình MSI GeForce RTX 5060 Ti Shadow 2X OC Plus 8GB",
+      "brand": "MSI",
+      "price": 16990000,
+      "sku": "VGA-MSI-RTX5060TI-SHADOW-2X-OC-PLUS-8GB",
+      "imageUrl": "/images/products/card-man-hinh-msi-geforce-rtx-5060-ti-shadow-2x-oc-plus-8gb.jpg",
+      "description": "Khám phá card màn hình MSI GeForce RTX 5060 Ti Shadow 2X OC Plus 8GB. MSI GeForce RTX 5060 Ti 8GB SHADOW 2X OC Plus là lựa chọn phù hợp cho game thủ muốn bước…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "650W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-msi-geforce-rtx-5060-ventus-2x-oc-v1-8gb",
+      "name": "Card màn hình MSI GeForce RTX 5060 Ventus 2X OC V1 8GB",
+      "brand": "MSI",
+      "price": 13990000,
+      "sku": "VGA-MSI-RTX5060-VENTUS-2X-OC-8GB-V1",
+      "imageUrl": "/images/products/card-man-hinh-msi-geforce-rtx-5060-ventus-2x-oc-v1-8gb.jpg",
+      "description": "Khám phá card màn hình MSI GeForce RTX 5060 Ventus 2X OC V1 8GB. MSI GeForce RTX 5060 Ventus 2X OC V1 8GB là lựa chọn phù hợp cho những cấu hình gaming tầm…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "550W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-zotac-geforce-rtx-5070ti-solid-core-oc-16gb",
+      "name": "Card màn hình Zotac GeForce RTX 5070Ti Solid Core OC 16GB",
+      "brand": "Zotac",
+      "price": 40990000,
+      "sku": "VGA-ZOT-RTX5070TI-SOLID-CORE-OC-16GB",
+      "imageUrl": "/images/products/card-man-hinh-zotac-geforce-rtx-5070ti-solid-core-oc-16gb.jpg",
+      "description": "Khám phá card màn hình Zotac GeForce RTX 5070Ti Solid Core OC 16GB. Zotac GeForce RTX 5070 Ti Solid Core OC 16GB được phát triển nhằm đáp ứng tốt cả hai nhu…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "750W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-asus-rog-astral-edition-20-geforce-rtx-5090-32gb-gddr7",
+      "name": "Card màn hình ASUS ROG Astral EDITION 20 GeForce RTX 5090 32GB GDDR7",
+      "brand": "ASUS",
+      "price": 254990000,
+      "sku": "VGA-ASU-RTX5090-ROG-AST-EDITION-20",
+      "imageUrl": "/images/products/card-man-hinh-asus-rog-astral-edition-20-geforce-rtx-5090-32gb-gd.jpg",
+      "description": "Khám phá card màn hình ASUS ROG Astral EDITION 20 GeForce RTX 5090 32GB GDDR7. Card màn hình ASUS ROG Astral EDITION 20 GeForce RTX 5090 32GB GDDR7 hướng đến…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "32GB GDDR7"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "850W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-gigabyte-geforce-rtx-5060-windforce-max-oc-8gb",
+      "name": "Card màn hình Gigabyte GeForce RTX 5060 Windforce Max OC 8GB",
+      "brand": "GIGABYTE",
+      "price": 14990000,
+      "sku": "VGA-GIG-RTX5060-WINDFORCE-MAX-OC-8GB",
+      "imageUrl": "/images/products/card-man-hinh-gigabyte-geforce-rtx-5060-windforce-max-oc-8gb.jpg",
+      "description": "Thông số kỹ thuật. Chipset GeForce RTX™ 5060. Core Clock 2512 MHz (Reference card : 2497 MHz). CUDA® Cores 3840. Memory Clock 28 Gbps. Memory Size 8 GB. Memory…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "550W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-zotac-geforce-rtx-5080-solid-core-oc-16gb",
+      "name": "Card màn hình Zotac GeForce RTX 5080 Solid Core OC 16GB",
+      "brand": "Zotac",
+      "price": 61990000,
+      "sku": "VGA-ZOT-RTX5080-SOLID-CORE-OC-16GB",
+      "imageUrl": "/images/products/card-man-hinh-zotac-geforce-rtx-5080-solid-core-oc-16gb.jpg",
+      "description": "Khám phá card màn hình Zotac GeForce RTX 5080 Solid Core OC 16GB. Trong phân khúc card màn hình cao cấp dành cho gaming và sáng tạo nội dung, Zotac GeForce RTX…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "750W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-zotac-geforce-rtx-5050-twin-edge-oc-8gb-gddr6",
+      "name": "Card màn hình Zotac GEFORCE RTX 5050 TWIN EDGE OC 8GB GDDR6",
+      "brand": "Zotac",
+      "price": 8990000,
+      "sku": "VGA-ZOT-RTX5050-TWIN-EDGE-OC-8GB",
+      "imageUrl": "/images/products/card-man-hinh-zotac-geforce-rtx-5050-twin-edge-oc-8gb-gddr6.jpg",
+      "description": "Thông số kỹ thuật. GPU NVIDIA GeForce RTX 5050 GPU. CUDA cores 2560. Video Memory 8GB GDDR6. Memory Bus 128-bit. Engine Clock 2602 MHz. Memory Clock 20 Gbps.",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "8GB GDDR6"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "550W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-zotac-geforce-rtx-5060-ti-16gb-twin-edge-oc-1",
+      "name": "Card màn hình Zotac GeForce RTX 5060 Ti 16GB Twin Edge OC",
+      "brand": "Zotac",
+      "price": 19990000,
+      "sku": "VGA-ZOT-RTX5060TI-TWIN-EDGE-OC-16GB",
+      "imageUrl": "/images/products/card-man-hinh-zotac-geforce-rtx-5060-ti-16gb-twin-edge-oc-1.jpg",
+      "description": "Khám phá card màn hình Zotac GeForce RTX 5060 Ti 16GB Twin Edge OC. Zotac GeForce RTX 5060 Ti 16GB Twin Edge OC là lựa chọn đáng chú ý dành cho game thủ và…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "650W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-zotac-geforce-rtx-5060-ti-8gb-twin-edge-gddr7",
+      "name": "Card màn hình Zotac GEFORCE RTX 5060 Ti 8GB TWIN EDGE GDDR7",
+      "brand": "Zotac",
+      "price": 12490000,
+      "sku": "VGA-ZOT-RTX5060TI-TWIN-EDGE-8GB",
+      "imageUrl": "/images/products/card-man-hinh-zotac-geforce-rtx-5060-ti-8gb-twin-edge-gddr7.jpg",
+      "description": "Thông số kỹ thuật. GPU NVIDIA GeForce RTX 5060 Ti GPU. Nhân CUDA 4608. Memoria Video 8GB GDDR7. Bus RAM 128-bit. Clock GPU 2602 MHz. Xung bộ nhớ 28 Gbps. AI…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "650W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 0,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-zotac-geforce-rtx-3050-twin-edge-oc-6gb-gddr6",
+      "name": "Card màn hình Zotac GEFORCE RTX 3050 TWIN EDGE OC 6GB GDDR6",
+      "brand": "Zotac",
+      "price": 6390000,
+      "sku": "VGA-ZOT-RTX3050-TWIN-EDGE-OC-6GB",
+      "imageUrl": "/images/products/card-man-hinh-zotac-geforce-rtx-3050-twin-edge-oc-6gb-gddr6.jpg",
+      "description": "Thông số kỹ thuật. GPU GeForce RTX 3050 6GB. Nhân CUDA 2304. Memoria Video 6GB GDDR6. Bus RAM 96-bit. Clock GPU Boost: 1477 MHz. Xung bộ nhớ 14 Gbps. PCI…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "6GB GDDR6"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "550W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-zotac-geforce-rtx-5060-twin-edge-oc-8gb",
+      "name": "Card màn hình Zotac GeForce RTX 5060 Twin Edge OC 8GB",
+      "brand": "Zotac",
+      "price": 11490000,
+      "sku": "VGA-ZOT-RTX5060-TWIN-EDGE-OC-8GB",
+      "imageUrl": "/images/products/card-man-hinh-zotac-geforce-rtx-5060-twin-edge-oc-8gb.jpg",
+      "description": "Thương hiệu: Zotac. Bảo hành: 36 Tháng. Thông số kỹ thuật: GPU NVIDIA GeForce RTX 5060. Bộ nhớ 8GB GDDR7, 128-bit. Bus tiêu chuẩn PCI Express 5.0. Xung nhịp…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "550W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-asus-rog-astral-geforce-rtx-5080-16gb-gddr7-oc-edition-rog-astral-rtx5080-o16g-gaming",
+      "name": "Card màn hình ASUS ROG Astral GeForce RTX 5080 16GB GDDR7 OC Edition (ROG-ASTRAL-RTX5080-O16G-GAMING) White Edition",
+      "brand": "ASUS",
+      "price": 78490000,
+      "sku": "VGA-ASU-RTX5080-ROG-AST-GAM-O16G-WHITE",
+      "imageUrl": "/images/products/card-man-hinh-asus-rog-astral-geforce-rtx-5080-16gb-gddr7-oc-edit.jpg",
+      "description": "Thương hiệu: ASUS. Bảo hành: 36 Tháng. Thông số kỹ thuật: Model ROG Astral GeForce RTX™ 5080 16GB GDDR7 WHITE OC Edition. Graphic Engine NVIDIA ® GeForce RTX™…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "16GB GDDR7"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "750W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-msi-geforce-rtx-5060-shadow-2x-oc-8gb",
+      "name": "Card màn hình MSI GeForce RTX 5060 Shadow 2X OC 8GB",
+      "brand": "MSI",
+      "price": 13990000,
+      "sku": "VGA-MSI-RTX5060-SHADOW-OC-8GB",
+      "imageUrl": "/images/products/card-man-hinh-msi-geforce-rtx-5060-shadow-2x-oc-8gb.jpg",
+      "description": "Thông số kỹ thuật. Marketing Name GeForce RTX™ 5060 8G SHADOW 2X OC. Memory 8GB GDDR7. Vi xử lý đồ họa NVIDIA® GeForce RTX™ 5060. Vi xử lý đồ họa PCI Express®…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "550W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-asus-rog-astral-geforce-rtx-5090-32gb-gddr7-oc-white-edition-rog-astral-rtx5090-o32g-gaming-white",
+      "name": "Card màn hình ASUS ROG Astral GeForce RTX 5090 32GB GDDR7 OC White Edition (ROG-ASTRAL-RTX5090-O32G-GAMING-WHITE)",
+      "brand": "ASUS",
+      "price": 239000000,
+      "sku": "VGA-ASU-RTX5090-ROG-AST-GAM-O32G-WHITE",
+      "imageUrl": "/images/products/card-man-hinh-asus-rog-astral-geforce-rtx-5090-32gb-gddr7-oc-whit.jpg",
+      "description": "Thông số kỹ thuật. Graphic Engine NVIDIA® GeForce RTX™ 5090. AI Performance 3593 TOPs. Bus Standard PCI Express 5.0. Bus Standard OpenGL®4.6. Video Memory 32GB…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "32GB GDDR7"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "850W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-gigabyte-geforce-rtx-4070-super-windforce-oc-12g",
+      "name": "Card màn hình GIGABYTE GeForce RTX 4070 SUPER WINDFORCE OC 12G (GV-N407SWF3OC-12GD)",
+      "brand": "GIGABYTE",
+      "price": 19490000,
+      "sku": "VGA-GIG-RTX4070S-WF3-OC-12G",
+      "imageUrl": "/images/products/card-man-hinh-gigabyte-geforce-rtx-4070-super-windforce-oc-12g.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: GIGABYTE. Mã sản phẩm: GV-N407SWF3OC-12GD. Bảo hành: 36 Tháng. Thông số kỹ thuật. Nhân đồ họa GeForce RTX™ 4070 SUPER. Bus tiêu…",
+      "specs": [
+        {
+          "specName": "Recommended PSU",
+          "specValue": "650W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "GPU",
+      "slug": "card-man-hinh-gigabyte-radeon-rx-9070-gaming-oc-16g-gv-r9070gaming-oc-16gd",
+      "name": "Card màn hình GIGABYTE Radeon RX 9070 GAMING OC 16G (GV-R9070GAMING OC-16GD)",
+      "brand": "GIGABYTE",
+      "price": 20490000,
+      "sku": "VGA-GIG-RX9070-RADE-GAM-OC-16G",
+      "imageUrl": "/images/products/card-man-hinh-gigabyte-radeon-rx-9070-gaming-oc-16g-gv-r9070gamin.jpg",
+      "description": "Thông số Chi tiết. Model GV-R9070GAMING OC-16GD. GPU AMD Radeon RX 9070. Bộ nhớ 16GB GDDR6. Băng thông bộ nhớ 256-bit. Chuẩn giao tiếp PCI Express 4.0. Xung…",
+      "specs": [
+        {
+          "specName": "VRAM",
+          "specValue": "16GB GDDR6"
+        },
+        {
+          "specName": "Recommended PSU",
+          "specValue": "550W"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "PCIe 4.0 x16"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-asus-h610m-f-wifi-ddr4",
+      "name": "Bo mạch chủ ASUS H610M-F WIFI DDR4",
+      "brand": "ASUS",
+      "price": 2290000,
+      "sku": "MB-ASUS-H610M-F-WF-D4",
+      "imageUrl": "/images/products/bo-mach-chu-asus-h610m-f-wifi-ddr4.jpg",
+      "description": "Thông số kỹ thuật. CPU Intel® Socket LGA1700 for Intel® Core™ 14th & 13th GenProcessors, Intel® Core™ 12th Gen, Pentium® Gold and Celeron® Processors*.",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1700"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR4"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-asus-prime-b760m-k-ddr5",
+      "name": "Bo mạch chủ ASUS PRIME B760M-K (DDR5)",
+      "brand": "ASUS",
+      "price": 2490000,
+      "sku": "MB-ASU-B760M-K-PRIME-D5",
+      "imageUrl": "/images/products/bo-mach-chu-asus-prime-b760m-k-ddr5.jpg",
+      "description": "Thông số kỹ thuật. Model PRIME B760M-K. CPU Intel® Socket LGA1700 for Intel® CoreTM 14th & 13th Gen Processors, Intel® CoreTM 12th Gen, Pentium® Gold and…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1700"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-asus-rog-maximus-z890-apex-ddr5",
+      "name": "Bo mạch chủ ASUS ROG MAXIMUS Z890 APEX (DDR5)",
+      "brand": "ASUS",
+      "price": 20290000,
+      "sku": "MB-ASU-Z890-ROG-MAXI-APEX",
+      "imageUrl": "/images/products/bo-mach-chu-asus-rog-maximus-z890-apex-ddr5.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: ASUS. Bảo hành: 36 tháng. Thông tin kỹ thuật: CPU. Hỗ trợ Bộ xử lý Intel Core™ Ultra (Series 2), LGA1851. Hỗ trợ Công nghệ…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Chipset",
+          "specValue": "Z890"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-asus-rog-crosshair-x870e-extreme-ddr5",
+      "name": "Bo mạch chủ ASUS ROG CROSSHAIR X870E EXTREME (DDR5)",
+      "brand": "ASUS",
+      "price": 31990000,
+      "sku": "MB-ASU-X870E-ROG-CROSS-EXTREME-D5",
+      "imageUrl": "/images/products/bo-mach-chu-asus-rog-crosshair-x870e-extreme-ddr5.jpg",
+      "description": "Bo mạch chủ ROG Crosshair X870E Hero – Sức mạnh tối thượng cho game thủ và nhà sáng tạo. Hiệu năng vượt trội – Chuẩn mực mới cho AMD Ryzen. ROG Crosshair X870E…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "AM5"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Chipset",
+          "specValue": "X870E"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-asus-b760m-ayw-wifi-d4",
+      "name": "Bo mạch chủ ASUS B760M-AYW WIFI D4",
+      "brand": "ASUS",
+      "price": 2990000,
+      "sku": "MB-ASU-B760M-AYW-WF-D4",
+      "imageUrl": "/images/products/bo-mach-chu-asus-b760m-ayw-wifi-d4.jpg",
+      "description": "Thông số kỹ thuật. Model B760M-AYW WIFI D4. CPU Intel® Socket LGA1700 for Intel® Core™ 14th & 13th Gen Processors, Intel® Core™ 12th Gen, Pentium® Gold and…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1700"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR4"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-asus-rog-maximus-z890-extreme-ddr5",
+      "name": "Bo mạch chủ ASUS ROG MAXIMUS Z890 EXTREME (DDR5)",
+      "brand": "ASUS",
+      "price": 28990000,
+      "sku": "MB-ASU-Z890-ROG-MAXI-EXTREME",
+      "imageUrl": "/images/products/bo-mach-chu-asus-rog-maximus-z890-extreme-ddr5.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: ASUS. Bảo hành: 36 tháng. Thông tin kỹ thuật: CPU. Hỗ trợ Bộ xử lý Intel Core™ Ultra (Dòng 2), LGA1851. Hỗ trợ Công nghệ Intel…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Chipset",
+          "specValue": "Z890"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-gigabyte-b760m-gaming-wifi-plus-ddr5",
+      "name": "Bo mạch chủ GIGABYTE B760M GAMING WIFI PLUS DDR5",
+      "brand": "GIGABYTE",
+      "price": 3690000,
+      "sku": "MB-GIG-B760M-GAM-WIFI-PLUS-D5",
+      "imageUrl": "/images/products/bo-mach-chu-gigabyte-b760m-gaming-wifi-plus-ddr5.jpg",
+      "description": "Thông số kỹ thuật. CPU LGA1700 socket: Support for the 14th, 13th, and 12th Generation Intel® Core™, Pentium® Gold and Celeron® Processors(Go to GIGABYTE's…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1700"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-gigabyte-a520m-k-v2",
+      "name": "Bo Mạch Chủ Gigabyte A520M-K V2",
+      "brand": "GIGABYTE",
+      "price": 1590000,
+      "sku": "MB-GIG-A520M-K-V2",
+      "imageUrl": "/images/products/bo-mach-chu-gigabyte-a520m-k-v2.jpg",
+      "description": "Thông số kỹ thuật. CPU AMD Socket AM4, support for: AMD Ryzen™ 5000 G-Series Processors/ AMD Ryzen™ 5000 Series Processors/ AMD Ryzen™ 4000 G-Series…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "AM4"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR4"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-msi-pro-a620am-b-evo-ddr5",
+      "name": "Bo mạch chủ MSI PRO A620AM-B EVO (DDR5)",
+      "brand": "MSI",
+      "price": 2290000,
+      "sku": "MB-MSI-A620AM-B-PRO-EVO-D5",
+      "imageUrl": "/images/products/bo-mach-chu-msi-pro-a620am-b-evo-ddr5.jpg",
+      "description": "Thông số kỹ thuật. Chipset AMD A620A. CPU Supports AMD Ryzen™ 9000/ 8000/ 7000 Series Desktop Processors. Socket AM5. Memory 2x DDR5, Maximum Memory Capacity…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "AM5"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-gigabyte-h610m-h-v3-ddr4",
+      "name": "Bo mạch chủ GIGABYTE H610M-H V3 (DDR4)",
+      "brand": "GIGABYTE",
+      "price": 1790000,
+      "sku": "MB-GIG-H610M-H-V3-D4",
+      "imageUrl": "/images/products/bo-mach-chu-gigabyte-h610m-h-v3-ddr4.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: GIGABYTE. Bảo hành: 36 tháng. Thông số kỹ thuật. CPU. Socket LGA1700: Hỗ trợ bộ xử lý Intel ® Core ™ i9 thế hệ thứ 12 / bộ xử lý…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1700"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR4"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 0,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-asus-proart-z890-creator-wifi-ddr5",
+      "name": "Bo mạch chủ ASUS ProArt Z890-CREATOR WIFI (DDR5)",
+      "brand": "ASUS",
+      "price": 14990000,
+      "sku": "MB-ASU-Z890-PRO-CREA-WIFI",
+      "imageUrl": "/images/products/bo-mach-chu-asus-proart-z890-creator-wifi-ddr5.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: ASUS. Bảo hành: 36 tháng. Thông tin kỹ thuật: CPU. Hỗ trợ Bộ xử lý Intel Core™ Ultra (Series 2), LGA1851*. Hỗ trợ Công nghệ…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Chipset",
+          "specValue": "Z890"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-asus-rog-maximus-z890-hero-ddr5",
+      "name": "Bo mạch chủ ASUS ROG MAXIMUS Z890 HERO (DDR5)",
+      "brand": "ASUS",
+      "price": 19990000,
+      "sku": "MB-ASU-Z890-ROG-MAXI-HERO",
+      "imageUrl": "/images/products/bo-mach-chu-asus-rog-maximus-z890-hero-ddr5.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: ASUS. Bảo hành: 36 tháng. Thông tin kỹ thuật: CPU. Hỗ trợ Bộ xử lý Intel Core™ Ultra (Series 2), LGA1851*. Hỗ trợ Công nghệ…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Chipset",
+          "specValue": "Z890"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-asus-rog-strix-z890-e-gaming-wifi-ddr5",
+      "name": "Bo mạch chủ ASUS ROG Strix Z890-E GAMING WIFI (DDR5)",
+      "brand": "ASUS",
+      "price": 15790000,
+      "sku": "MB-ASU-Z890-E-ROG-STRIX-GAM-WIFI",
+      "imageUrl": "/images/products/bo-mach-chu-asus-rog-strix-z890-e-gaming-wifi-ddr5.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: ASUS. Bảo hành: 36 tháng. Thông tin kỹ thuật: CPU. Intel Socket LGA1851 dành cho Bộ xử lý Intel Core™ Ultra (Dòng 2). Hỗ trợ…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Chipset",
+          "specValue": "Z890"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-asus-rog-strix-z890-a-gaming-wifi-ddr5",
+      "name": "Bo mạch chủ ASUS ROG Strix Z890-A GAMING WIFI (DDR5)",
+      "brand": "ASUS",
+      "price": 12990000,
+      "sku": "MB-ASU-Z890-A-ROG-STRIX-GAM-WIFI",
+      "imageUrl": "/images/products/bo-mach-chu-asus-rog-strix-z890-a-gaming-wifi-ddr5.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: ASUS. Bảo hành: 36 tháng. Thông tin kỹ thuật: CPU. Intel Socket LGA1851 dành cho Bộ xử lý Intel Core™ Ultra (Dòng 2)*. Hỗ trợ…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Chipset",
+          "specValue": "Z890"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-asus-rog-strix-z890-f-gaming-wifi-ddr5",
+      "name": "Bo mạch chủ ASUS ROG Strix Z890-F GAMING WIFI (DDR5)",
+      "brand": "ASUS",
+      "price": 13990000,
+      "sku": "MB-ASU-Z890-F-ROG-STRIX-GAM-WIFI",
+      "imageUrl": "/images/products/bo-mach-chu-asus-rog-strix-z890-f-gaming-wifi-ddr5.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: ASUS. Bảo hành: 36 tháng. Thông tin kỹ thuật: CPU. Intel Socket LGA1851 dành cho Bộ xử lý Intel Core™ Ultra (Dòng 2). Hỗ trợ…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Chipset",
+          "specValue": "Z890"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-asus-tuf-gaming-z890-pro-wifi-ddr5",
+      "name": "Bo mạch chủ ASUS TUF Gaming Z890-PRO WIFI (DDR5)",
+      "brand": "ASUS",
+      "price": 10490000,
+      "sku": "MB-ASU-Z890-TUF-GAM-PRO-WIFI",
+      "imageUrl": "/images/products/bo-mach-chu-asus-tuf-gaming-z890-pro-wifi-ddr5.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: ASUS. Bảo hành: 36 tháng. Thông tin kỹ thuật: CPU. Intel Socket LGA1851 dành cho Bộ xử lý Intel Core™ Ultra (Dòng 2)*. Hỗ trợ…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Chipset",
+          "specValue": "Z890"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-asus-tuf-gaming-z890-plus-wifi-ddr5",
+      "name": "Bo mạch chủ ASUS TUF Gaming Z890-PLUS WIFI (DDR5)",
+      "brand": "ASUS",
+      "price": 8990000,
+      "sku": "MB-ASU-Z890-TUF-GAM-PLUS-WIFI",
+      "imageUrl": "/images/products/bo-mach-chu-asus-tuf-gaming-z890-plus-wifi-ddr5.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: ASUS. Bảo hành: 36 tháng. Thông tin kỹ thuật: CPU. Intel Socket LGA1851 dành cho Bộ xử lý Intel Core™ Ultra (Dòng 2)*. Hỗ trợ…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Chipset",
+          "specValue": "Z890"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-msi-b450m-a-pro-max-ii",
+      "name": "Bo mạch chủ MSI B450M-A PRO MAX II",
+      "brand": "MSI",
+      "price": 1790000,
+      "sku": "MB-MSI-B450M-A-PRO-MAX-II",
+      "imageUrl": "/images/products/bo-mach-chu-msi-b450m-a-pro-max-ii.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: MSI. Mã sản phẩm: B450M-A PRO MAX II. Bảo hành: 36 tháng. Thông số kỹ thuật : CPU. Hỗ trợ AMD Ryzen™ 5000 Series, 5000 G-Series…",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "AM4"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR4"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-msi-mpg-z890-carbon-wifi-ddr5",
+      "name": "Bo mạch chủ MSI MPG Z890 CARBON WIFI (DDR5)",
+      "brand": "MSI",
+      "price": 16990000,
+      "sku": "MB-MSI-Z890-MPG-CARBON-WIFI",
+      "imageUrl": "/images/products/bo-mach-chu-msi-mpg-z890-carbon-wifi-ddr5.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: MSI. Bảo hành: 36 Tháng. Tình trạng: Mới. Thông số sản phẩm: Bộ xử lý. Hỗ trợ Bộ xử lý Intel® Core™ Ultra (Dòng 2). LGA 1851.",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Chipset",
+          "specValue": "Z890"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mainboard",
+      "slug": "bo-mach-chu-msi-mag-z890-tomahawk-wifi-ddr5",
+      "name": "Bo mạch chủ MSI MAG Z890 TOMAHAWK WIFI (DDR5)",
+      "brand": "MSI",
+      "price": 10990000,
+      "sku": "MB-MSI-Z890-MAG-TOMA-WIFI",
+      "imageUrl": "/images/products/bo-mach-chu-msi-mag-z890-tomahawk-wifi-ddr5.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: MSI. Bảo hành: 36 Tháng. Tình trạng: Mới. Thông số sản phẩm: Bộ xử lý. Hỗ trợ Bộ xử lý Intel® Core™ Ultra (Dòng 2). LGA 1851.",
+      "specs": [
+        {
+          "specName": "Socket",
+          "specValue": "LGA1851"
+        },
+        {
+          "specName": "RAM Support",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Chipset",
+          "specValue": "Z890"
+        },
+        {
+          "specName": "Form Factor",
+          "specValue": "ATX"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-laptop-crucial-ddr4-16gb-bus-3200",
+      "name": "Ram Laptop Crucial DDR4 16GB Bus 3200",
+      "brand": "Crucial",
+      "price": 3390000,
+      "sku": "RAM-CRUCIAL-LAP-16GB-3200-D4",
+      "imageUrl": "/images/products/ram-laptop-crucial-ddr4-16gb-bus-3200.jpg",
+      "description": "Khám phá Ram Laptop Crucial DDR4 16GB Bus 3200. RAM Laptop Crucial DDR4 16GB Bus 3200 là lựa chọn phù hợp cho người dùng muốn nâng cấp hiệu năng laptop mà…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR4"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "16GB"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-kingmax-blade-x-1x16gb-ddr4-bus-3200mhz",
+      "name": "Ram Kingmax Blade X 1x16GB DDR4 Bus 3200Mhz",
+      "brand": "KINGMAX",
+      "price": 3390000,
+      "sku": "RAM-KINGMAX-BLADE-X-16GB-3200-D4",
+      "imageUrl": "/images/products/ram-kingmax-blade-x-1x16gb-ddr4-bus-3200mhz.jpg",
+      "description": "Thông số kỹ thuật. Hãng sản xuất Kingmax. Loại RAM DDR4. Dung lượng 16GB. Bus 3200MHz. Độ trễ 16-18-18-38. Điện áp 1.35V. Đánh giá RAM Kingmax Blade X…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR4"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Bus Speed",
+          "specValue": "3200 MHz"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-corsair-dominator-titanium-black-96gb-2x48gb-rgb-6600-ddr5-cmp96gx5m2b6600c32",
+      "name": "RAM Corsair Dominator Titanium Black 96GB (2x48GB) RGB 6600 DDR5 (CMP96GX5M2B6600C32)",
+      "brand": "Corsair",
+      "price": 39990000,
+      "sku": "RAM-COR-TITANIUM-BLA-2X48GB-RGB6600-DDR5",
+      "imageUrl": "/images/products/ram-corsair-dominator-titanium-black-96gb-2x48gb-rgb-6600-ddr5-cm.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: Corsair. Mã sản phẩm: CMP96GX5M2B6600C32. Tình trạng: Mới. Bảo hành: 36 tháng. Thông số sản phẩm: Bao gồm quạt Không. Màu sắc…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "96GB"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-corsair-vengeance-rgb-16gb-1x16gb-6000-ddr5-cmh16gx5m1e6000z36-expo-xmp",
+      "name": "Ram Corsair Vengeance RGB 16GB (1x16GB) 6000 DDR5 (CMH16GX5M1E6000Z36) EXPO,XMP",
+      "brand": "Corsair",
+      "price": 6990000,
+      "sku": "RAM-COR-VENGEANCE-RGB-16GB-6000-DDR5",
+      "imageUrl": "/images/products/ram-corsair-vengeance-rgb-16gb-1x16gb-6000-ddr5-cmh16gx5m1e6000z3.jpg",
+      "description": "Khám phá RAM Corsair Vengeance RGB 16GB (1x16GB) 6000 DDR5. RAM Corsair Vengeance RGB Black DDR5 16GB Bus 6000 là lựa chọn phù hợp cho người dùng muốn nâng cấp…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "16GB"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-kingmax-horizon-16gb-ddr5-bus-5600mhz",
+      "name": "Ram Kingmax Horizon 16GB DDR5 Bus 5600Mhz",
+      "brand": "KINGMAX",
+      "price": 6490000,
+      "sku": "RAM-KINGMAX-HORIZON-16GB-5600-D5",
+      "imageUrl": "/images/products/ram-kingmax-horizon-16gb-ddr5-bus-5600mhz.jpg",
+      "description": "Thông số kỹ thuật. Frequency 5600MHz. Pin 288-Pin. Bandwidth 44.8GB/s. CAS Latency 36 / 38. Voltage (VDD) 1.25V. Capacity 16GB. Interal Banks 32. Operating…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Bus Speed",
+          "specValue": "5600 MHz"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-laptop-adata-premier-ddr4-8gb-bus-3200",
+      "name": "Ram Laptop Adata Premier DDR4 8GB Bus 3200",
+      "brand": "Adata",
+      "price": 2190000,
+      "sku": "RAM-ADATA-LAP-PREMIER-8GB-3200-D4",
+      "imageUrl": "/images/products/ram-laptop-adata-premier-ddr4-8gb-bus-3200.jpg",
+      "description": "Khám phá Ram Laptop Adata Premier DDR4 8GB Bus 3200. RAM Laptop Adata Premier DDR4 8GB Bus 3200 là lựa chọn phù hợp cho người dùng muốn cải thiện hiệu năng…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR4"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "8GB"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-corsair-vengeance-rgb-96gb-2x48gb-5600-ddr5-black-cmh96gx5m2b5600c40",
+      "name": "Ram Corsair Vengeance RGB 96GB (2x48GB) 5600 DDR5 Black (CMH96GX5M2B5600C40)",
+      "brand": "Corsair",
+      "price": 33990000,
+      "sku": "RAM-COR-VENGEANCE-RGB-96GB-5600-DDR5-BLACK",
+      "imageUrl": "/images/products/ram-corsair-vengeance-rgb-96gb-2x48gb-5600-ddr5-black-cmh96gx5m2b.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: Corsair. Mã sản phẩm: CMH96GX5M2B5600C40. Tình trạng: Mới. Bảo hành: 36 tháng. Thông số sản phẩm: Chất liệu Nhôm. LED RGB. Kích…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "96GB"
+        }
+      ],
+      "stockQuantity": 0,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-corsair-dominator-titanium-white-64gb-rgb-6000-ddr5",
+      "name": "RAM Corsair Dominator Titanium White 64GB (2x32GB) RGB 6000 DDR5 (CMP64GX5M2B6000C30W)",
+      "brand": "Corsair",
+      "price": 21490000,
+      "sku": "RAM-COR-TITANIUM-WHI-2X32GB-RGB6000-DDR5",
+      "imageUrl": "/images/products/ram-corsair-dominator-titanium-white-64gb-rgb-6000-ddr5.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: Corsair. Mã sản phẩm: CMP64GX5M2B6000C30W. Bảo hành: 36 tháng. RAM Corsair Dominator Titanium White 64GB (2x32GB) RGB 6000 DDR5.",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "64GB"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-corsair-dominator-titanium-black-64gb-2x32gb-rgb-6000-ddr5-cmp64gx5m2b6000c30",
+      "name": "RAM Corsair Dominator Titanium Black 64GB (2x32GB) RGB 6000 DDR5 (CMP64GX5M2B6000C30)",
+      "brand": "Corsair",
+      "price": 20490000,
+      "sku": "RAM-COR-TITANIUM-BLA-2X32GB-RGB6000-DDR5",
+      "imageUrl": "/images/products/ram-corsair-dominator-titanium-black-64gb-2x32gb-rgb-6000-ddr5-cm.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: Corsair. Mã sản phẩm: CMP64GX5M2B6000C30. Tình trạng: Mới. Bảo hành: 36 tháng. RAM Corsair Dominator Titanium 64GB (2x32GB) RGB…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "64GB"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-corsair-dominator-titanium-black-64gb-2x32gb-rgb-6600-ddr5-cmp64gx5m2x6600c32",
+      "name": "RAM Corsair Dominator Titanium Black 64GB (2x32GB) RGB 6600 DDR5 (CMP64GX5M2X6600C32)",
+      "brand": "Corsair",
+      "price": 27490000,
+      "sku": "RAM-COR-TITANIUM-BLA-2X32GB-RGB6600-DDR5",
+      "imageUrl": "/images/products/ram-corsair-dominator-titanium-black-64gb-2x32gb-rgb-6600-ddr5-cm.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: Corsair. Mã sản phẩm: CMP64GX5M2X6600C32. Tình trạng: Mới. Bảo hành: 36 tháng. RAM Corsair Dominator Titanium 64GB (2x32GB) RGB…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "64GB"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-corsair-dominator-titanium-white-64gb-2x32gb-rgb-6600-ddr5-cmp64gx5m2x6600c32w",
+      "name": "RAM Corsair Dominator Titanium White 64GB (2x32GB) RGB 6600 DDR5 (CMP64GX5M2X6600C32W)",
+      "brand": "Corsair",
+      "price": 20490000,
+      "sku": "RAM-COR-TITANIUM-WHI-2X32GB-RGB6600-DDR5",
+      "imageUrl": "/images/products/ram-corsair-dominator-titanium-white-64gb-2x32gb-rgb-6600-ddr5-cm.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: Corsair. Mã sản phẩm: CMP64GX5M2X6600C32W. Tình trạng: Mới. Bảo hành: 36 tháng. Thông số sản phẩm: Bao gồm quạt Không. Màu sắc…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "64GB"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-t-group-t-force-delta-1x8gb-3600-rgb-black",
+      "name": "Ram T-Group T-Force Delta 1x8GB 3600 RGB Black",
+      "brand": "Team Group",
+      "price": 1990000,
+      "sku": "RAM-TEAM-DELTA-1X8G-3600-RGB-BLACK",
+      "imageUrl": "/images/products/ram-t-group-t-force-delta-1x8gb-3600-rgb-black.jpg",
+      "description": "Thông tin chung: Thương hiệu: TeamGroup. Loại RAM: DDR4. Dung lượng: 8GB. Số lượng: 1 thanh. Bus: 3600MHz. Bảo hành: 60 tháng. THÔNG SỐ KĨ THUẬT : Chuẩn RAM…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR4"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Bus Speed",
+          "specValue": "3600 MHz"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-corsair-dominator-titanium-white-96gb-2x48gb-rgb-6600-ddr5-cmp96gx5m2b6600c32w",
+      "name": "RAM Corsair Dominator Titanium White 96GB (2x48GB) RGB 6600 DDR5 (CMP96GX5M2B6600C32W)",
+      "brand": "Corsair",
+      "price": 38990000,
+      "sku": "RAM-COR-TITANIUM-WHI-2X48GB-RGB6600-DDR5",
+      "imageUrl": "/images/products/ram-corsair-dominator-titanium-white-96gb-2x48gb-rgb-6600-ddr5-cm.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: Corsair. Mã sản phẩm: CMP96GX5M2B6600C32W. Tình trạng: Mới. Bảo hành: 36 tháng. Thông số sản phẩm: Bao gồm quạt Không. Màu sắc…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "96GB"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-corsair-vengeance-rgb-32gb-2x16gb-5600-ddr5-cmh32gx5m2b5600c40k",
+      "name": "Ram Corsair Vengeance RGB 32GB (2x16GB) 5600 DDR5 (CMH32GX5M2B5600C40K)",
+      "brand": "Corsair",
+      "price": 13890000,
+      "sku": "RAM-COR-VENGEANCE-RGB-32GB-5600-DDR5-V3",
+      "imageUrl": "/images/products/ram-corsair-vengeance-rgb-32gb-2x16gb-5600-ddr5-cmh32gx5m2b5600c4.jpg",
+      "description": "Nhà sản xuất: CORSAIR. Mã part: CMH32GX5M2B5600C40K. Dung lượng: 32GB. Số lượng: 2 thanh. Màu: Đen. Bảo Hành: 36 Tháng. Thông số kỹ thuật. Hãng sản xuất…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "32GB"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-corsair-vengeance-rgb-white-32gb-2x16gb-6000-ddr5-cmh32gx5m2e6000c36w",
+      "name": "Ram Corsair Vengeance RGB White 32GB (2x16GB) 6000 DDR5 (CMH32GX5M2E6000C36W)",
+      "brand": "Corsair",
+      "price": 13990000,
+      "sku": "RAM-COR-VENGEANCE-RGB-32GB-6000-DDR5-WHI",
+      "imageUrl": "/images/products/ram-corsair-vengeance-rgb-white-32gb-2x16gb-6000-ddr5-cmh32gx5m2e.jpg",
+      "description": "Nhà sản xuất: CORSAIR. Mã part: CMH32GX5M2E6000C36W. Dung lượng: 32GB. Số lượng: 2 thanh. Màu: Trắng. Bảo Hành: 36 Tháng. Thông số kỹ thuật. Hãng sản xuất…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "32GB"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-corsair-dominator-titanium-black-32gb-2x16gb-rgb-60000-ddr5-cmp32gx5m2b6000c30",
+      "name": "RAM Corsair Dominator Titanium Black 32GB (2x16GB) RGB 6000 DDR5 (CMP32GX5M2B6000C30)",
+      "brand": "Corsair",
+      "price": 14990000,
+      "sku": "RAM-COR-TITANIUM-BLA-2X16GB-RGB6000-DDR5",
+      "imageUrl": "/images/products/ram-corsair-dominator-titanium-black-32gb-2x16gb-rgb-60000-ddr5-c.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: Corsair. Mã sản phẩm: CMP32GX5M2B6000C30. Tình trạng: Mới. Bảo hành: 36 tháng. RAM Corsair Dominator Titanium 32GB (2x16GB) RGB…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR5"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "32GB"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "32g-ddr4-2x16g-3200-corsair-dominator-platinum-rgb-cl16-20-20-38",
+      "name": "Ram Corsair Dominator 32GB (2x16GB) RGB 3200 White (CMT32GX4M2E3200C16W)",
+      "brand": "Corsair",
+      "price": 3590000,
+      "sku": "RAM-COR-DOMINATOR-2X16G-RGB3200-WHT-E",
+      "imageUrl": "/images/products/32g-ddr4-2x16g-3200-corsair-dominator-platinum-rgb-cl16-20-20-38.jpg",
+      "description": "Nhà sản xuất: CORSAIR. Loại RAM: DDR4. Dung lượng: 32GB. Số lượng: 2 thanh. Bus: 3200MHz. Tản nhiệt: Có. Màu: Trắng. Mã sản phẩm: CMT32GX4M2E3200C16W. Bảo…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR4"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "32GB"
+        },
+        {
+          "specName": "Bus Speed",
+          "specValue": "3200 MHz"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "8gb-ddr4-1x8gb-3200-ram-teamgroup-t-force-delta-rgb-black",
+      "name": "Ram T-Group T-Force Delta 1x8GB 3200 RGB Black",
+      "brand": "Team Group",
+      "price": 2190000,
+      "sku": "RAM-TEAM-DELTA-1X8G-3200-RGB-BLACK",
+      "imageUrl": "/images/products/8gb-ddr4-1x8gb-3200-ram-teamgroup-t-force-delta-rgb-black.jpg",
+      "description": "Thông tin chung: Loại RAM: DDR4. Dung lượng: 8GB. Số lượng: 1 thanh. Bus: 3200MHz. Bảo hành : 60 tháng. Mã sản phẩm : TF3D48G3200HC16F01. THÔNG SỐ KĨ THUẬT…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR4"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Bus Speed",
+          "specValue": "3200 MHz"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-laptop-crucial-ddr4-8gb-bus-3200-ct8g4sfra32a",
+      "name": "Ram Laptop Crucial DDR4 8GB Bus 3200 (CT8G4SFRA32A)",
+      "brand": "Crucial",
+      "price": 1990000,
+      "sku": "RAM-CRUCIAL-LAP-8GB-3200-D4",
+      "imageUrl": "/images/products/ram-laptop-crucial-ddr4-8gb-bus-3200-ct8g4sfra32a.jpg",
+      "description": "Khám phá Ram Laptop Crucial DDR4 8GB Bus 3200 (CT8G4SFRA32A). RAM Crucial DDR4 8GB 3200MHz CT8G4DFRA32A hướng đến nhu cầu nâng cấp bộ nhớ cho máy tính để bàn…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR4"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Bus Speed",
+          "specValue": "3200 MHz"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "RAM",
+      "slug": "ram-t-group-t-force-delta-1x16gb-3600-rgb-black",
+      "name": "Ram T-Group T-Force Delta 1x16GB 3600 RGB Black",
+      "brand": "Team Group",
+      "price": 3490000,
+      "sku": "RAM-TEAM-DELTA-1X16G-3600-RGB-BLACK",
+      "imageUrl": "/images/products/ram-t-group-t-force-delta-1x16gb-3600-rgb-black.jpg",
+      "description": "Thông tin chung: Thương hiệu: TeamGroup. Loại RAM: DDR4. Dung lượng: 16GB. Số lượng: 1 thanh. Bus: 3600MHz. Bảo hành: 60 tháng. THÔNG SỐ KĨ THUẬT : Chuẩn RAM…",
+      "specs": [
+        {
+          "specName": "RAM Type",
+          "specValue": "DDR4"
+        },
+        {
+          "specName": "Capacity",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Bus Speed",
+          "specValue": "3600 MHz"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-msi-spatium-m480-pro-pcie-4-0-nvme-m-2-1tb",
+      "name": "Ổ cứng SSD MSI SPATIUM M480 PRO PCIe 4.0 NVMe M.2 1TB",
+      "brand": "MSI",
+      "price": 4990000,
+      "sku": "SSD-MSI-M480-PRO-1TB-PCIE-GEN4",
+      "imageUrl": "/images/products/o-cung-ssd-msi-spatium-m480-pro-pcie-4-0-nvme-m-2-1tb.jpg",
+      "description": "Thông tin chung. Hãng sản xuất : MSI. Tình trạng : Mới. Chuẩn kết nối : M.2 PCIe NVMe (Gen 4). Bảo hành : 60 tháng. Thông số sản phẩm: Model. SPATIUM M480 PRO…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "1TB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-kingston-nv3-500gb-m-2-pcie-nvme-gen4",
+      "name": "Ổ cứng SSD Kingston NV3 500GB M.2 PCIe NVMe Gen4",
+      "brand": "Kingston",
+      "price": 3890000,
+      "sku": "SSD-KINGS-NV3-500GB",
+      "imageUrl": "/images/products/o-cung-ssd-kingston-nv3-500gb-m-2-pcie-nvme-gen4.jpg",
+      "description": "Thông tin chung. Hãng sản xuất : Kingston. Tình trạng : Mới. Chuẩn kết nối : M.2 PCIe NVMe (Gen 4). Bảo hành : 36 tháng. Thông số kỹ thuật: Thương hiệu…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "500GB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-kingston-nv3-2tb-m-2-pcie-nvme-gen4",
+      "name": "Ổ cứng SSD Kingston NV3 2TB M.2 PCIe NVMe Gen4",
+      "brand": "Kingston",
+      "price": 10990000,
+      "sku": "SSD-KINGS-NV3-2TB",
+      "imageUrl": "/images/products/o-cung-ssd-kingston-nv3-2tb-m-2-pcie-nvme-gen4.jpg",
+      "description": "Thông tin chung. Hãng sản xuất : Kingston. Tình trạng : Mới. Chuẩn kết nối : M.2 PCIe NVMe (Gen 4). Bảo hành : 36 tháng. Thông số kỹ thuật: Thương hiệu…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "2TB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-samsung-9100-pro-nvme-m-2-1tb-gen5",
+      "name": "Ổ cứng SSD Samsung 9100 PRO NVMe M.2 1TB Gen5",
+      "brand": "Samsung",
+      "price": 8690000,
+      "sku": "SSD-SAM-9100-PRO-M2-NVME-GEN5-1TB",
+      "imageUrl": "/images/products/o-cung-ssd-samsung-9100-pro-nvme-m-2-1tb-gen5.jpg",
+      "description": "Khám phá ổ cứng SSD Samsung 9100 PRO NVMe M.2 1TB Gen5. Ổ cứng SSD Samsung 9100 PRO NVMe M.2 1TB Gen5 hướng đến những hệ thống cần tốc độ lưu trữ cao cho game…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "1TB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 5.0"
+        }
+      ],
+      "stockQuantity": 0,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "ssd-kingston-kc3000-2tb-m-2-pcie-gen-4-nvme",
+      "name": "Ổ Cứng SSD Kingston KC3000 2TB M.2 PCIe gen 4 NVMe (SKC3000D/2048G)",
+      "brand": "Kingston",
+      "price": 10990000,
+      "sku": "SSD-KINGS-KC3000-2TB",
+      "imageUrl": "/images/products/ssd-kingston-kc3000-2tb-m-2-pcie-gen-4-nvme.jpg",
+      "description": "Thông tin chung : Hãng sản xuất : Kingston. Tình trạng : Mới. Chuẩn kết nối : M.2 PCIe NVMe (Gen 4). Bảo hành : 60 tháng. THÔNG SỐ KĨ THUẬT : Chuẩn kết nối…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "2TB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "ssd-klevv-cras-c710-256gb-gen3-k256gm2sp0-c71",
+      "name": "Ổ Cứng SSD KLEVV CRAS C710 256GB Gen3 (K256GM2SP0-C71)",
+      "brand": "Klevv",
+      "price": 490000,
+      "sku": "SSD-KLEVV-M2-256GB-GEN3",
+      "imageUrl": "/images/products/ssd-klevv-cras-c710-256gb-gen3-k256gm2sp0-c71.jpg",
+      "description": "Thông tin chung: Thương hiệu: Klevv. Dung lượng: 256GB. Chuẩn giao tiếp: M.2 NVMe. Bảo hành: 36 tháng. Thông số kỹ thuật. Hãng sản xuất: Klevv. Model…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "256GB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-samsung-9100-pro-nvme-m-2-2tb-gen5",
+      "name": "Ổ cứng SSD Samsung 9100 PRO NVMe M.2 2TB Gen5",
+      "brand": "Samsung",
+      "price": 17990000,
+      "sku": "SSD-SAM-9100-PRO-M2-NVME-GEN5-2TB",
+      "imageUrl": "/images/products/o-cung-ssd-samsung-9100-pro-nvme-m-2-2tb-gen5.jpg",
+      "description": "Thương hiệu: Samsung. Bảo hành: 60 tháng. Khám phá ổ cứng SSD Samsung 9100 PRO NVMe M.2 2TB Gen5. Ổ cứng SSD Samsung 9100 PRO NVMe M.2 2TB Gen5 là lựa chọn…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "2TB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 5.0"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-samsung-990-pro-1tb-pcie-gen4-nvme-mz-v9p1t0bw",
+      "name": "Ổ Cứng SSD Samsung 990 PRO 1TB PCIe Gen4 NVMe (MZ-V9P1T0BW)",
+      "brand": "Samsung",
+      "price": 8990000,
+      "sku": "SSD-SAM-990-PRO-NVME-1TB",
+      "imageUrl": "/images/products/o-cung-ssd-samsung-990-pro-1tb-pcie-gen4-nvme-mz-v9p1t0bw.jpg",
+      "description": "Thông số kỹ thuật. Hình dạng thiết bị M.2 (2280). Giao diện PCIe Gen 4.0 x4, NVMe 2.0. Kích thước (RxCxS) 80 x 22 x 2.3 mm. Trọng lượng Tối đa 9.0g. Mục đích…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "1TB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-samsung-990-pro-4tb-m2-pcie-gen4-nvme",
+      "name": "Ổ Cứng SSD Samsung 990 PRO 4TB M.2 PCIe Gen4 NVMe (MZ-V9P4T0BW)",
+      "brand": "Samsung",
+      "price": 33390000,
+      "sku": "SSD-SAM-990-PRO-M2-NVME-4TB",
+      "imageUrl": "/images/products/o-cung-ssd-samsung-990-pro-4tb-m2-pcie-gen4-nvme.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: Samsung. Bảo hành: 60 tháng. Thông số kỹ thuật. Nhà sản xuất Samsung. Model MZ-V9P4T0BW. Chuẩn giao tiếp PCIe Gen4.0 x4…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "4TB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-kingston-nv3-1tb-m-2-pcie-nvme-gen4",
+      "name": "Ổ cứng SSD Kingston NV3 1TB M.2 PCIe NVMe Gen4",
+      "brand": "Kingston",
+      "price": 4990000,
+      "sku": "SSD-KINGS-NV3-1TB",
+      "imageUrl": "/images/products/o-cung-ssd-kingston-nv3-1tb-m-2-pcie-nvme-gen4.jpg",
+      "description": "Thông tin chung. Hãng sản xuất : Kingston. Tình trạng : Mới. Chuẩn kết nối : M.2 PCIe NVMe (Gen 4). Bảo hành : 36 tháng. Thông số kỹ thuật: Thương hiệu…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "1TB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-samsung-990-pro-2tb-pcie-gen4-nvme-mz-v9p2t0bw",
+      "name": "Ổ Cứng SSD Samsung 990 PRO 2TB PCIe Gen4 NVMe (MZ-V9P2T0BW)",
+      "brand": "Samsung",
+      "price": 16990000,
+      "sku": "SSD-SAM-990-PRO-NVME-2TB",
+      "imageUrl": "/images/products/o-cung-ssd-samsung-990-pro-2tb-pcie-gen4-nvme-mz-v9p2t0bw.jpg",
+      "description": "Thông số kỹ thuật. Nhà sản xuất Samsung. Model MZ-V9P2T0BW. Chuẩn giao tiếp PCIe Gen4.0 x4, NVMe1.3c. Kích thước M.2 2280. Dung lượng 2 TB. Random 4k 1000.000…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "2TB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-sstc-sata-iii-m100-512gb",
+      "name": "Ổ Cứng SSD SSTC Sata III M100 512GB",
+      "brand": "SSTC",
+      "price": 1790000,
+      "sku": "SSD-SSTC-SATA-M100-512GB",
+      "imageUrl": "/images/products/o-cung-ssd-sstc-sata-iii-m100-512gb.jpg",
+      "description": "Khám phá ổ cứng SSD SSTC Sata III M100 512GB. Ổ cứng SSD SSTC Sata III M100 512GB là lựa chọn hướng đến những hệ thống vẫn sử dụng giao tiếp SATA và cần cải…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "512GB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "SATA III 2.5 inch"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-sstc-m2-nvme-gen3x4-max-iii-256gb",
+      "name": "Ổ Cứng SSD SSTC M2 NVME Gen3x4 Max III 256GB",
+      "brand": "SSTC",
+      "price": 1590000,
+      "sku": "SSD-SSTC-M2-MAXIII-PCIE-256GB",
+      "imageUrl": "/images/products/o-cung-ssd-sstc-m2-nvme-gen3x4-max-iii-256gb.jpg",
+      "description": "Khám phá ổ cứng SSD SSTC M2 NVME Gen3x4 Max III 256GB. Ổ cứng SSD SSTC M2 NVME Gen3x4 Max III 256GB là lựa chọn phù hợp nếu bạn muốn cải thiện tốc độ cho máy…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "256GB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-sstc-oceanic-whitetip-e130-512gb-m-2-2280-pcie-nvme-gen-3x4",
+      "name": "Ổ Cứng SSD SSTC Oceanic Whitetip E130 512GB M.2 2280 PCIe NVMe (Gen 3x4)",
+      "brand": "Không thương hiệu",
+      "price": 2290000,
+      "sku": "SSD-SSTC-OCE-WHI-E130-512GB-M2-GEN3",
+      "imageUrl": "/images/products/o-cung-ssd-sstc-oceanic-whitetip-e130-512gb-m-2-2280-pcie-nvme-ge.jpg",
+      "description": "Khám phá ổ cứng SSD SSTC Oceanic Whitetip E130 512GB M.2 2280 PCIe NVMe (Gen 3x4). Ổ cứng SSD SSTC Oceanic Whitetip E130 512GB M.2 2280 PCIe NVMe Gen 3x4 hướng…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "512GB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-sandisk-optimus-5100-pcie-500gb-m2",
+      "name": "Ổ cứng SSD Sandisk Optimus 5100 PCIe 500GB M2",
+      "brand": "Không thương hiệu",
+      "price": 3800000,
+      "sku": "SSD-SANDISK-OPTIMUS-5100-500GB",
+      "imageUrl": "/images/products/o-cung-ssd-sandisk-optimus-5100-pcie-500gb-m2.jpg",
+      "description": "Khám phá ổ cứng SSD Sandisk Optimus 5100 PCIe 500GB M2. Ổ cứng SSD Sandisk Optimus 5100 PCIe 4.0 500GB M.2 mang đến tốc độ đọc ghi cao cùng thiết kế M.2 2280…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "500GB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 5.0"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-kingspec-nvme-512gb-ne-512",
+      "name": "Ổ Cứng SSD KingSpec NVMe 512GB (NE-512)",
+      "brand": "KingSpec",
+      "price": 2290000,
+      "sku": "SSD-KINGSPEC-M2-PCIE-512GB",
+      "imageUrl": "/images/products/o-cung-ssd-kingspec-nvme-512gb-ne-512.jpg",
+      "description": "Khám phá ổ Cứng SSD KingSpec NVMe 512GB (NE-512). KingSpec NE-512 là mẫu ssd M.2 NVMe dung lượng 512GB dành cho người dùng muốn nâng cấp tốc độ lưu trữ trên PC…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "512GB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-sandisk-optimus-5100-pcie-1tb-m2",
+      "name": "Ổ cứng SSD Sandisk Optimus 5100 PCIe 1TB M2",
+      "brand": "Không thương hiệu",
+      "price": 7200000,
+      "sku": "SSD-SANDISK-OPTIMUS-5100-1TB",
+      "imageUrl": "/images/products/o-cung-ssd-sandisk-optimus-5100-pcie-1tb-m2.jpg",
+      "description": "Khám phá ổ cứng SSD Sandisk Optimus 5100 PCIe 1TB M2. Ổ cứng SSD Sandisk Optimus 5100 PCIe 4.0 1TB M.2 mang đến không gian lưu trữ 1TB cùng tốc độ đọc ghi cao…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "1TB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-sandisk-optimus-5100-pcie-2tb-m2",
+      "name": "Ổ cứng SSD Sandisk Optimus 5100 PCIe 2TB M2",
+      "brand": "Không thương hiệu",
+      "price": 13500000,
+      "sku": "SSD-SANDISK-OPTIMUS-5100-2TB",
+      "imageUrl": "/images/products/o-cung-ssd-sandisk-optimus-5100-pcie-2tb-m2.jpg",
+      "description": "Khám phá ổ cứng SSD Sandisk Optimus 5100 PCIe 2TB M2. Ổ cứng SSD Sandisk Optimus 5100 PCIe 4.0 2TB M.2 là lựa chọn phù hợp cho người dùng cần mở rộng không…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "2TB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-sandisk-optimus-gx-7100-pcie-gen4-500gb-m2",
+      "name": "Ổ cứng SSD Sandisk Optimus GX 7100 PCIe Gen4 500GB M2",
+      "brand": "Không thương hiệu",
+      "price": 4600000,
+      "sku": "SSD-SANDISK-OPTIMUS-GX-7100-500GB",
+      "imageUrl": "/images/products/o-cung-ssd-sandisk-optimus-gx-7100-pcie-gen4-500gb-m2.jpg",
+      "description": "Khám phá ổ cứng SSD Sandisk Optimus GX 7100 PCIe Gen4 500GB M2. Ổ cứng SSD Sandisk Optimus GX 7100 PCIe Gen4 500GB M.2 sở hữu dung lượng 500GB, chuẩn M.2 2280…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "500GB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Storage",
+      "slug": "o-cung-ssd-sandisk-optimus-gx-7100-pcie-gen4-2tb-m2",
+      "name": "Ổ cứng SSD Sandisk Optimus GX 7100 PCIe Gen4 2TB M2",
+      "brand": "Không thương hiệu",
+      "price": 17600000,
+      "sku": "SSD-SANDISK-OPTIMUS-GX-7100-2TB",
+      "imageUrl": "/images/products/o-cung-ssd-sandisk-optimus-gx-7100-pcie-gen4-2tb-m2.jpg",
+      "description": "Khám phá ổ cứng SSD Sandisk Optimus GX 7100 PCIe Gen4 2TB M2. Ổ cứng SSD SanDisk Optimus GX 7100 PCIe Gen4 2TB M.2 2280 là lựa chọn lưu trữ dành cho người dùng…",
+      "specs": [
+        {
+          "specName": "Capacity",
+          "specValue": "2TB"
+        },
+        {
+          "specName": "Interface",
+          "specValue": "M.2 NVMe PCIe 4.0"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-cooler-master-v-platinum-1300-v2-1600w-80-plus-platinum-full-modular",
+      "name": "Nguồn máy tính Cooler Master V Platinum 1300 V2 - 1600W - 80 Plus Platinum - Full Modular",
+      "brand": "Cooler Master",
+      "price": 6790000,
+      "sku": "PW-CM-V-1300-V2-PLATINUM",
+      "imageUrl": "/images/products/nguon-may-tinh-cooler-master-v-platinum-1300-v2-1600w-80-plus-pla.jpg",
+      "description": "Thông số kỹ thuật. Model MPZ-D002-AFAP. Phiên bản ATX ATX 12V Ver. 3.1. PFC Active PFC. Điện áp đầu vào 100-240V. Dòng điện đầu vào 15-7A. Tần số đầu vào…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "1600W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Platinum"
+        }
+      ],
+      "stockQuantity": 0,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-fsp-vic-wd-650w-80-plus-white-650w",
+      "name": "Nguồn máy tính FSP VIC WD 650W - 80 Plus White (650W)",
+      "brand": "FSP",
+      "price": 990000,
+      "sku": "PW-FSP-VIC-WD-650W",
+      "imageUrl": "/images/products/nguon-may-tinh-fsp-vic-wd-650w-80-plus-white-650w.jpg",
+      "description": "Khám phá nguồn máy tính FSP VIC WD 650W - 80 Plus White (650W). Nguồn máy tính FSP VIC WD 650W - 80 Plus White (650W) hướng đến những cấu hình máy tính phổ…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "650W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus White"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-cooler-master-coolermaster-v-platinum-1600-v2-1600w-80-plus-platinum-full-modular",
+      "name": "Nguồn máy tính Cooler Master V Platinum 1600 V2 - 1600W - 80 Plus Platinum - Full Modular",
+      "brand": "Cooler Master",
+      "price": 7890000,
+      "sku": "PW-CM-V-1600-V2-PLATINUM",
+      "imageUrl": "/images/products/nguon-may-tinh-cooler-master-coolermaster-v-platinum-1600-v2-1600.jpg",
+      "description": "Thông số kỹ thuật. Model MPZ-G002-AFAP. ATX Version ATX 12V Ver. 3.1. PFC Active PFC. PFC 100-240V. Input Current 16-8A. Input Voltage 50-60Hz. Dimensions (L x…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "1600W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Platinum"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-asus-rog-thor-1200-p3-1200w-platinum-iii-pcie-gen-5-0",
+      "name": "Nguồn Máy Tính ASUS ROG THOR 1200 P3 1200W PLATINUM III ( PCIe Gen 5.0)",
+      "brand": "ASUS",
+      "price": 13990000,
+      "sku": "PW-ASUS-THOR-1200P3",
+      "imageUrl": "/images/products/nguon-may-tinh-asus-rog-thor-1200-p3-1200w-platinum-iii-pcie-gen-.jpg",
+      "description": "Thông số kỹ thuật. Intel Specification ATX12V. PFC Type Active PFC. ATX Standard ATX 3.1. Dimensions 190 x 150 x 86 mm. Efficiency 80Plus Platinum. MTBF…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "1200W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80Plus Platinum"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-cooler-master-mwe-gold-1050w-v2-atx3-1-80-plus-gold-full-modular",
+      "name": "Nguồn máy tính Cooler Master MWE GOLD 1050W V2 ATX3.1 - 80 Plus Gold - Full Modular",
+      "brand": "Cooler Master",
+      "price": 4490000,
+      "sku": "PW-CM-MWE-1050-V2-GOLD-3-1",
+      "imageUrl": "/images/products/nguon-may-tinh-cooler-master-mwe-gold-1050w-v2-atx3-1-80-plus-gol.jpg",
+      "description": "Thông tin chung: Thương hiệu: Cooler Master. Bảo hành: 120 tháng. Thông số kỹ thuật: Hãng sản xuất Cooler Master. Model MPE-A501-AFCAG-3. Phiên bản ATX Rev.",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "1050W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Gold"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-asus-rog-thor-1600t3-atx-3-1-pcie-5-0-80-plus-titanium-full-modular-1600w",
+      "name": "Nguồn ASUS ROG THOR 1600T3 ATX 3.1, PCIe 5.0, 80 Plus Titanium, Full Modular (1600W)",
+      "brand": "ASUS",
+      "price": 24490000,
+      "sku": "PW-ASUS-THOR-1600W-T3",
+      "imageUrl": "/images/products/nguon-asus-rog-thor-1600t3-atx-3-1-pcie-5-0-80-plus-titanium-full.jpg",
+      "description": "ASUS ROG THOR 1600T3 – Siêu phẩm nguồn máy tính chuẩn Titanium. Sức mạnh vượt trội – Chuẩn 80 PLUS Titanium. ASUS ROG THOR 1600T3 là một trong những bộ nguồn…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "1600W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Titanium"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-msi-meg-ai1600t-pcie5-80-plus-titanium-1600w",
+      "name": "Nguồn máy tính MSI MEG AI1600T PCIE5 - 80 Plus Titanium (1600W)",
+      "brand": "MSI",
+      "price": 13990000,
+      "sku": "PW-MSI-MEG-AI1600T-PCIE5-80-PLUS-TITAN",
+      "imageUrl": "/images/products/nguon-may-tinh-msi-meg-ai1600t-pcie5-80-plus-titanium-1600w.jpg",
+      "description": "Bộ nguồn MSI MEG Ai1600T PCIE5. Bộ nguồn MSI MEG Ai1600T PCIE5 được thiết kế để đáp ứng nhu cầu của các hệ thống máy tính hiệu suất cao, đặc biệt hỗ trợ các…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "1600W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Titanium"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-cooler-master-mwe-gold-1250w-v2-atx3-1-80-plus-gold-full-modular",
+      "name": "Nguồn máy tính Cooler Master MWE GOLD 1250W V2 ATX3.1 - 80 Plus Gold - Full Modular",
+      "brand": "Cooler Master",
+      "price": 5490000,
+      "sku": "PW-CM-MWE-1250-V2-GOLD-3-1",
+      "imageUrl": "/images/products/nguon-may-tinh-cooler-master-mwe-gold-1250w-v2-atx3-1-80-plus-gol.jpg",
+      "description": "Thông tin chung: Thương hiệu: Cooler Master. Bảo hành: 120 tháng. Thông số kỹ thuật: Hãng sản xuất Cooler Master. Model MPE-C501-AFCAG-3. Phiên bản ATX 12V…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "1250W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Gold"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-fsp-vic-bd-750w-80-plus-bronze-750w",
+      "name": "Nguồn máy tính FSP VIC BD 750W - 80 Plus Bronze (750W)",
+      "brand": "FSP",
+      "price": 1490000,
+      "sku": "PW-FSP-VIC-BD-750W",
+      "imageUrl": "/images/products/nguon-may-tinh-fsp-vic-bd-750w-80-plus-bronze-750w.jpg",
+      "description": "Khám phá nguồn máy tính FSP VIC BD 750W - 80 Plus Bronze (750W). Nguồn máy tính FSP VIC BD 750W - 80 Plus Bronze (750W) là lựa chọn hướng đến các bộ PC cần mức…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "750W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Bronze"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-corsair-rm1200x-shift-white-cp-9020276-na",
+      "name": "Nguồn máy tính Corsair RM1200x SHIFT White ATX 3.1 - 80 Plus Gold - Full Modular (1200W) (CP-9020276-NA)",
+      "brand": "Corsair",
+      "price": 6150000,
+      "sku": "PW-COR-RM1200X-SHIFT-WHITE-80PLUS-GOLD",
+      "imageUrl": "/images/products/nguon-may-tinh-corsair-rm1200x-shift-white-cp-9020276-na.jpg",
+      "description": "Nguồn máy tính Corsair RM1200x SHIFT White ATX 3.1 - 80 Plus Gold - Full Modular (1200W) (CP-9020276-NA) chính hãng bảo hành đầy đủ.",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "1200W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Gold"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-cooler-master-mwe-650w-80plus-bronze-v3",
+      "name": "Nguồn máy tính Cooler Master MWE 650 - 80 Plus Bronze - V3 230V (650W)",
+      "brand": "Cooler Master",
+      "price": 1390000,
+      "sku": "PW-CM-MWE650-230V-V3",
+      "imageUrl": "/images/products/nguon-may-tinh-cooler-master-mwe-650w-80plus-bronze-v3.jpg",
+      "description": "Nguồn máy tính Cooler Master MWE 650 - 80 Plus Bronze - V3 230V (650W) chính hãng bảo hành đầy đủ.",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "650W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Bronze"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-cooler-master-mwe-850-gold-v2-atx3-1-e-eu",
+      "name": "Nguồn máy tính Cooler Master MWE GOLD 850W V2 ATX3.1 - 80 Plus Gold - Full Modular",
+      "brand": "Cooler Master",
+      "price": 2990000,
+      "sku": "PW-CM-MWE-850-V2-GOLD",
+      "imageUrl": "/images/products/nguon-cooler-master-mwe-850-gold-v2-atx3-1-e-eu.jpg",
+      "description": "Khám phá nguồn máy tính Cooler Master MWE GOLD 850W V2 ATX3.1 - 80 Plus Gold - Full Modular. Nguồn máy tính Cooler Master MWE GOLD 850W V2 ATX3.1 - 80 Plus…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "850W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Gold"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-msi-mag-a1000gl-pcie5-80-plus-gold-full-modular-1000w",
+      "name": "Nguồn máy tính MSI MAG A1000GL PCIE5 - 80 Plus Gold - Full Modular (1000W)",
+      "brand": "MSI",
+      "price": 3990000,
+      "sku": "PW-MSI-A1000GL-MAG-80PLUS-GOLD-PCIE5",
+      "imageUrl": "/images/products/nguon-may-tinh-msi-mag-a1000gl-pcie5-80-plus-gold-full-modular-10.jpg",
+      "description": "Khám phá nguồn máy tính MSI MAG A1000GL PCIE5 - 80 Plus Gold - Full Modular (1000W). MSI MAG A1000GL PCIE5 hướng đến những hệ thống PC cần công suất lớn cùng…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "1000W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Gold"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-lian-li-eg1300-white",
+      "name": "Nguồn máy tính Lian Li EDGE 1300W White L-Shape - 80 Plus Platinum - Full Modular",
+      "brand": "Lian Li",
+      "price": 5990000,
+      "sku": "PW-LIANLI-EG1300-WHI",
+      "imageUrl": "/images/products/nguon-may-tinh-lian-li-eg1300-white.jpg",
+      "description": "Thông tin chung : Nhà sản xuất: Lian Li. Bảo hành: 60 tháng. Thông số kỹ thuật. Thương hiệu Lian Li. Model EG1300. Màu sắc Trắng. Kích thước (D)182 mm X (W)86…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "1300W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Platinum"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-cooler-master-mwe-750-80-plus-bronze-v3-230v-750w",
+      "name": "Nguồn máy tính Cooler Master MWE 750 - 80 Plus Bronze - V3 230V (750W)",
+      "brand": "Cooler Master",
+      "price": 1690000,
+      "sku": "PW-CM-MWE750-230V-V3",
+      "imageUrl": "/images/products/nguon-may-tinh-cooler-master-mwe-750-80-plus-bronze-v3-230v-750w.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: Cooler Master. Bảo hành: 60 Tháng. Thông số kỹ thuật: Thương hiệu: CoolerMaster. Phiên bản ATX ATX 12V Ver. 3.1. PFC. Kích hoạt…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "750W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Bronze"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-lian-li-eg1300-black",
+      "name": "Nguồn máy tính Lian Li EDGE 1300W Black L-Shape - 80 Plus Platinum - Full Modular",
+      "brand": "Lian Li",
+      "price": 5490000,
+      "sku": "PW-LIANLI-EG1300-BLA",
+      "imageUrl": "/images/products/nguon-may-tinh-lian-li-eg1300-black.jpg",
+      "description": "Thông tin chung : Nhà sản xuất: Lian Li. Bảo hành: 60 tháng. Thông số kỹ thuật. Thương hiệu Lian Li. Model EG1300. Màu sắc Đen. Kích thước (D)182 mm X (W)86 mm…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "1300W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Platinum"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-msi-mag-a1250gl-pcie5",
+      "name": "Nguồn máy tính MSI MAG A1250GL PCIE5 - 80 Plus Gold - Full Modular (1250W)",
+      "brand": "MSI",
+      "price": 5490000,
+      "sku": "PW-MSI-A1250GL-MAG-80PLUS-GOLD",
+      "imageUrl": "/images/products/nguon-may-tinh-msi-mag-a1250gl-pcie5.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: MSI. Bảo hành: 60 Tháng. Thông số kỹ thuật. Quạt tản nhiệt TORX FAN 12CM. Khối lượng 169g. Mô-đun Có (mô-đun hoàn toàn). Kích…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "1250W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Gold"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-corsair-cx650-80-plus-bronze-650w-cp-9020278-na",
+      "name": "Nguồn máy tính Corsair CX650 - 80 Plus Bronze (650W) CP-9020278-NA",
+      "brand": "Corsair",
+      "price": 1390000,
+      "sku": "PW-COR-CX650-BRONZE-V2",
+      "imageUrl": "/images/products/nguon-may-tinh-corsair-cx650-80-plus-bronze-650w-cp-9020278-na.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: Corsair. Mã sản phẩm: CP-9020278-NA. Bảo hành: 60 tháng. Thông số kỹ thuật. Đầu kết nối ATX. 1. Phiên bản ATX12V. V2.31. Loại…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "650W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Bronze"
+        }
+      ],
+      "stockQuantity": 0,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-corsair-hx1200i-80-plus-platinum-full-modular-1200w-cp-9020281-na",
+      "name": "Nguồn máy tính Corsair HX1200i - 80 Plus Platinum - Full Modular (1200W) (CP-9020281-NA)",
+      "brand": "Corsair",
+      "price": 7590000,
+      "sku": "PW-COR-HX1200I-PLA",
+      "imageUrl": "/images/products/nguon-may-tinh-corsair-hx1200i-80-plus-platinum-full-modular-1200.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: Corsair. Mã sản phẩm: CP-9020281-NA. Bảo hành: 120 tháng. Thông số kỹ thuật : Thương hiệu Corsair. Kết nối ATX 1. Phiên bản…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "1200W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Platinum"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Power Supply",
+      "slug": "nguon-may-tinh-corsair-cx750-80-plus-bronze-750w-cp-9020279-na",
+      "name": "Nguồn máy tính Corsair CX750 - 80 Plus Bronze (750W) CP-9020279-NA",
+      "brand": "Corsair",
+      "price": 1690000,
+      "sku": "PW-COR-CX750-BRONZE-V2",
+      "imageUrl": "/images/products/nguon-may-tinh-corsair-cx750-80-plus-bronze-750w-cp-9020279-na.jpg",
+      "description": "Thông tin chung: Nhà sản xuất: Corsair. Mã sản phẩm: CP-9020279-NA. Bảo hành: 60 tháng. Thông số kỹ thuật. Đầu kết nối ATX. 1. Phiên bản ATX12V. V2.31. Loại…",
+      "specs": [
+        {
+          "specName": "Wattage",
+          "specValue": "750W"
+        },
+        {
+          "specName": "Efficiency",
+          "specValue": "80 Plus Bronze"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-dell-dc15250-5434blk-m4cfy-i5-1334u-8gb-512gb-15-6-fhd-touch-win-11",
+      "name": "Laptop Dell DC15250-5434BLK M4CFY (I5-1334U/ 8GB/ 512GB/ 15.6\" FHD Touch/ Win 11) - Nhập Khẩu Chính Hãng",
+      "brand": "DELL",
+      "price": 16990000,
+      "sku": "LAP-DELL-PRO-15-DC15250-M4CFY",
+      "imageUrl": "/images/products/laptop-dell-dc15250-5434blk-m4cfy-i5-1334u-8gb-512gb-15-6-fhd-tou.jpg",
+      "description": "Khám phá laptop Dell DC15250-5434BLK M4CFY (I5-1334U/ 8GB/ 512GB/ 15.6\" FHD Touch/ Win 11) - Nhập Khẩu Chính Hãng. Laptop Dell DC15250-5434BLK M4CFY hướng đến…",
+      "specs": [
+        {
+          "specName": "RAM",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "15.6\" FHD"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-acer-aspire-go-15-ag15-72p-776j-15-6-fhdips-c7-150u-1-16gb-512gb-win",
+      "name": "Laptop Acer Aspire Go 15 AG15-72P-776J (Core 7-150U/ 16GB/ 512GB/ 15.6\" FHD IPS/ Win 11)",
+      "brand": "ACER",
+      "price": 22790000,
+      "sku": "LAP-ACER-ASPIRE-GO-AG15-72P-776J",
+      "imageUrl": "/images/products/laptop-acer-aspire-go-15-ag15-72p-776j-15-6-fhdips-c7-150u-1-16gb.jpg",
+      "description": "Khám phá laptop Acer Aspire Go 15 AG15 72P 776J. Acer Aspire Go 15 AG15-72P-776J là mẫu laptop dành cho người dùng cần một thiết bị có hiệu năng ổn định cho…",
+      "specs": [
+        {
+          "specName": "RAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "15.6\" FHD"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-gaming-acer-nitro-propanel-anv16-i12-53vh-core-5-205h-rtx-3050-4gb-16gb-512gb-16-fhd-165hz-win-11",
+      "name": "Laptop gaming Acer Nitro ProPanel ANV16-I12-53VH (Core 5-205H/ RTX 3050 4GB/ 16GB/ 512GB/ 16\" FHD 165Hz/ Win 11)",
+      "brand": "ACER",
+      "price": 29490000,
+      "sku": "LAP-ACER-NITRO-ANV16-I12-53VH",
+      "imageUrl": "/images/products/laptop-gaming-acer-nitro-propanel-anv16-i12-53vh-core-5-205h-rtx-.jpg",
+      "description": "✔ Tặng E-Gift Code 500.000 đồng - Thẻ nạp game VNG cho game thủ khi mua laptop gaming Acer (từ 01/10/2026 đến 30/11/2026). Xem chi tiết. Khám phá laptop gaming…",
+      "specs": [
+        {
+          "specName": "GPU",
+          "specValue": "RTX 3050"
+        },
+        {
+          "specName": "RAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "16\" FHD 165Hz"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-gaming-acer-aspire-7-a715-59g-59rd",
+      "name": "Laptop gaming Acer Aspire 7 A715-59G-59RD (Core 5-210H/ RTX 3050 4GB/ 16GB/ 512GB/ 15.6\" FHD/ Win 11)",
+      "brand": "ACER",
+      "price": 24990000,
+      "sku": "LAP-ACER-ASPIRE-7-A715-59G-59RD",
+      "imageUrl": "/images/products/laptop-gaming-acer-aspire-7-a715-59g-59rd.jpg",
+      "description": "✔ Tặng E-Gift Code 500.000 đồng - Thẻ nạp game VNG cho game thủ khi mua laptop gaming Acer (từ 01/10/2026 đến 30/11/2026). Xem chi tiết. Khám phá laptop gaming…",
+      "specs": [
+        {
+          "specName": "GPU",
+          "specValue": "RTX 3050"
+        },
+        {
+          "specName": "RAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "15.6\" FHD"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-gaming-lenovo-loq-15arp10e-83s000dcvn-ryzen-7-170-rtx-3050-6gb-16gb-1tb-15-6-fhd-ips-win-11",
+      "name": "Laptop gaming Lenovo LOQ 15ARP10E 83S000DCVN (Ryzen 7-170/ RTX 3050 6GB/ 16GB/ 1TB/ 15.6\" FHD IPS/ Win 11)",
+      "brand": "LENOVO",
+      "price": 30390000,
+      "sku": "LAP-LEN-LOQ-15ARP10E-83S000DCVN",
+      "imageUrl": "/images/products/laptop-gaming-lenovo-loq-15arp10e-83s000dcvn-ryzen-7-170-rtx-3050.jpg",
+      "description": "Khám phá laptop gaming Lenovo LOQ 15ARP10E 83S000DCVN (Ryzen 7-170/ RTX 3050 6GB/ 16GB/ 1TB/ 15.6\" FHD IPS/ Win 11). Laptop gaming Lenovo LOQ 15ARP10E…",
+      "specs": [
+        {
+          "specName": "GPU",
+          "specValue": "RTX 3050"
+        },
+        {
+          "specName": "RAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "15.6\" FHD"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-gaming-asus-tuf-gaming-a15-fa506ncg-hn396w-ryzen-7-155-rtx-3050-4gb-8gb-512gb-15-6-fhd-144hz-win-11",
+      "name": "Laptop gaming ASUS TUF Gaming A15 FA506NCG-HN396W (Ryzen 7-155/ RTX 3050 4GB/ 8GB/ 512GB/ 15.6\" FHD 144Hz/ Win 11)",
+      "brand": "ASUS",
+      "price": 25690000,
+      "sku": "LAP-ASUS-TUF-A15-FA506NCG-HN396W",
+      "imageUrl": "/images/products/laptop-gaming-asus-tuf-gaming-a15-fa506ncg-hn396w-ryzen-7-155-rtx.jpg",
+      "description": "Khám phá laptop gaming ASUS TUF Gaming A15 FA506NCG-HN396W (Ryzen 7-155/ RTX 3050 4GB/ 8GB/ 512GB/ 15.6\" FHD 144Hz/ Win 11). Laptop gaming ASUS TUF Gaming A15…",
+      "specs": [
+        {
+          "specName": "GPU",
+          "specValue": "RTX 3050"
+        },
+        {
+          "specName": "RAM",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "15.6\" FHD 144Hz"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-gaming-acer-aspire-7-a715-59g-53rh-core-5-210h-rtx-4050-6gb-16gb-512gb-15-6-fhd-ips-144hz",
+      "name": "Laptop gaming Acer Aspire 7 A715-59G-53RH (Core 5-210H/ RTX 4050 6GB/ 16GB/ 512GB/ 15.6\" FHD IPS 144Hz/ Win 11)",
+      "brand": "ACER",
+      "price": 29990000,
+      "sku": "LAP-ACER-ASPIRE-7-A715-59G-53RH",
+      "imageUrl": "/images/products/laptop-gaming-acer-aspire-7-a715-59g-53rh-core-5-210h-rtx-4050-6g.jpg",
+      "description": "✔ Tặng E-Gift Code 500.000 đồng - Thẻ nạp game VNG cho game thủ khi mua laptop gaming Acer (từ 01/10/2026 đến 30/11/2026). Xem chi tiết. Khám phá laptop gaming…",
+      "specs": [
+        {
+          "specName": "GPU",
+          "specValue": "RTX 4050"
+        },
+        {
+          "specName": "RAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "15.6\" FHD"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-asus-expertbook-p1403cva-c5h16-50w",
+      "name": "Laptop Asus ExpertBook P1403CVA-C5H16-50W (Core 5-210H/ 16GB/ 512GB/ 14\" FHD/ Win 11)",
+      "brand": "ASUS",
+      "price": 22990000,
+      "sku": "LAP-ASUS-EXPERT-P1403CVA-C5H16-50W",
+      "imageUrl": "/images/products/laptop-asus-expertbook-p1403cva-c5h16-50w.jpg",
+      "description": "Khám phá Laptop ASUS ExpertBook P1 P1403CVA-C5H16-50W-C5-210H. Nếu bạn đang tìm một chiếc laptop văn phòng đồng hành trong các công việc hàng ngày thì ASUS…",
+      "specs": [
+        {
+          "specName": "RAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "14\" FHD"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-acer-swift-air-14-sfa14-i31-52bv-core-5-320-12gb-512gb-14-wuxga-ips-120hz-win-11",
+      "name": "Laptop Acer Swift Air 14 SFA14-I31-52BV (Core 5-320/ 12GB/ 512GB/ 14\" FHD+ IPS 120Hz/ Green/ Win 11)",
+      "brand": "ACER",
+      "price": 24990000,
+      "sku": "LAP-ACER-SWIFT-AIR-14-SFA14-I31-52BV",
+      "imageUrl": "/images/products/laptop-acer-swift-air-14-sfa14-i31-52bv-core-5-320-12gb-512gb-14-.jpg",
+      "description": "Khám phá laptop Acer Swift Air 14 SFA14-I31-52BV (Core 5-320/ 12GB/ 512GB/ 14\" WUXGA IPS 120Hz/ Win 11). Laptop Acer Swift Air 14 SFA14-I31-52BV (Core 5-320/…",
+      "specs": [
+        {
+          "specName": "Display",
+          "specValue": "14\" FHD"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-gaming-acer-nitro-v-15-propanel-anv15-52-50rb",
+      "name": "Laptop gaming Acer Nitro ProPanel ANV15-52-50RB (Core 5-210H/ RTX 4050 6GB/ 16GB/ 512GB/ 15.6\" FHD/ Win 11)",
+      "brand": "ACER",
+      "price": 31990000,
+      "sku": "LAP-ACER-NITRO-V-ANV15-52-50RB",
+      "imageUrl": "/images/products/laptop-gaming-acer-nitro-v-15-propanel-anv15-52-50rb.jpg",
+      "description": "✔ Tặng E-Gift Code 500.000 đồng - Thẻ nạp game VNG cho game thủ khi mua laptop gaming Acer (từ 01/10/2026 đến 30/11/2026). Xem chi tiết. Khám phá laptop gaming…",
+      "specs": [
+        {
+          "specName": "GPU",
+          "specValue": "RTX 4050"
+        },
+        {
+          "specName": "RAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "15.6\" FHD"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-asus-expertbook-p3-g1-p3406ccap-u516s8w-ultra-5-225h-16gb-512gb-14-wuxga-win-11",
+      "name": "Laptop Asus ExpertBook P3 G1 P3406CCAP-U516S8W (Ultra 5-225H/ 16GB/ 512GB/ 14\" WUXGA/ Win 11)",
+      "brand": "ASUS",
+      "price": 24990000,
+      "sku": "LAP-ASUS-EXPERT-P3406CCAP-U516S8W",
+      "imageUrl": "/images/products/laptop-asus-expertbook-p3-g1-p3406ccap-u516s8w-ultra-5-225h-16gb-.jpg",
+      "description": "Khám phá laptop Asus ExpertBook P3 G1 P3406CCAP-U516S8W. Laptop Asus ExpertBook P3 G1 P3406CCAP-U516S8W tập trung vào những yếu tố thiết thực cho công việc…",
+      "specs": [
+        {
+          "specName": "RAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "14\""
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-asus-vivobook-14-x1404v-core-5-120u-8gb-256gb-14-fhd-win-11",
+      "name": "Laptop Asus Vivobook 14 X1404V (Core 5-120U/ 8GB/ 256GB/ 14\" FHD/ Win 11)",
+      "brand": "ASUS",
+      "price": 15490000,
+      "sku": "LAP-ASUS-VIVO-14-X1404V",
+      "imageUrl": "/images/products/laptop-asus-vivobook-14-x1404v-core-5-120u-8gb-256gb-14-fhd-win-1.jpg",
+      "description": "Khám phá laptop Asus Vivobook 14 X1404V (Core 5-120U/ 8GB/ 256GB/ 14\" FHD/ Win 11). Laptop Asus Vivobook 14 X1404V được trang bị vi xử lý Intel Core 5-120U…",
+      "specs": [
+        {
+          "specName": "CPU",
+          "specValue": "Intel Core 5-120U"
+        },
+        {
+          "specName": "RAM",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "14\" FHD"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-gaming-asus-v16-v3607vj-tk189w-core-5-210h-rtx-3050-6gb-16gb-512gb-16-wuxga-144hz-win-11",
+      "name": "Laptop gaming ASUS V16 V3607VJ-TK189W (Core 5-210H/ RTX 3050 6GB/ 16GB/ 512GB/ 16\" WUXGA 144Hz/ Win 11)",
+      "brand": "ASUS",
+      "price": 27490000,
+      "sku": "LAP-ASUS-V3607VJ-TK189W",
+      "imageUrl": "/images/products/laptop-gaming-asus-v16-v3607vj-tk189w-core-5-210h-rtx-3050-6gb-16.jpg",
+      "description": "Khám phá laptop gaming ASUS V16 V3607VJ-TK189W (Core 5-210H/ RTX 3050 6GB/ 16GB/ 512GB/ 16\" WUXGA 144Hz/ Win 11). Laptop gaming ASUS V16 V3607VJ-TK189W là lựa…",
+      "specs": [
+        {
+          "specName": "GPU",
+          "specValue": "RTX 3050"
+        },
+        {
+          "specName": "RAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "16\""
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-acer-aspire-lite-15-al15-53p-56qh",
+      "name": "Laptop Acer Aspire Lite 15 AL15-53P-56QH (Core 5-120U/ 8GB/ 512GB/ 15.6\" FHD/ Win 11)",
+      "brand": "ACER",
+      "price": 18490000,
+      "sku": "LAP-ACER-ASPIRE-LITE-AL15-53P-56QH",
+      "imageUrl": "/images/products/laptop-acer-aspire-lite-15-al15-53p-56qh.jpg",
+      "description": "Khám phá laptop Acer Aspire Lite 15 AL15 53P 56QH. Laptop Acer Aspire Lite 15 AL15 53P 56QH là mẫu laptop văn phòng 15.6 inch thuộc phân khúc phổ thông dành…",
+      "specs": [
+        {
+          "specName": "RAM",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "15.6\" FHD"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-acer-swift-air-14-ai-sfa14-i31-55nr-core-5-320-12gb-512gb-14-fhd-ips-120hz-pink-win-11",
+      "name": "Laptop Acer Swift Air 14 AI SFA14-I31-55NR (Core 5-320/ 12GB/ 512GB/ 14\" FHD+ IPS 120Hz/ Pink/ Win 11)",
+      "brand": "ACER",
+      "price": 24990000,
+      "sku": "LAP-ACER-SWIFT-AIR-14-SFA14-I31-55NR",
+      "imageUrl": "/images/products/laptop-acer-swift-air-14-ai-sfa14-i31-55nr-core-5-320-12gb-512gb-.jpg",
+      "description": "Khám phá laptop Acer Swift Air 14 AI SFA14-I31-55NR (Core 5-320/ 12GB/ 512GB/ 14\" FHD+ IPS 120Hz/ Pink/ Win 11). Laptop Acer Swift Air 14 AI SFA14-I31-55NR…",
+      "specs": [
+        {
+          "specName": "Display",
+          "specValue": "14\" FHD"
+        }
+      ],
+      "stockQuantity": 0,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-acer-swift-air-14-ai-sfa14-i31-54a2-core-5-320-12gb-512gb-14-fhd-ips-120hz-blue-win-11",
+      "name": "Laptop Acer Swift Air 14 SFA14-I31-54A2 (Core 5-320/ 12GB/ 512GB/ 14\" FHD+ IPS 120Hz/ Blue/ Win 11)",
+      "brand": "ACER",
+      "price": 24990000,
+      "sku": "LAP-ACER-SWIFT-AIR-14-SFA14-I31-54A2",
+      "imageUrl": "/images/products/laptop-acer-swift-air-14-ai-sfa14-i31-54a2-core-5-320-12gb-512gb-.jpg",
+      "description": "Khám phá laptop Acer Swift Air 14 AI SFA14-I31-54A2 (Core 5-320/ 12GB/ 512GB/ 14\" FHD+ IPS 120Hz/ Blue/ Win 11). Acer Swift Air 14 AI SFA14-I31-54A2 kết hợp…",
+      "specs": [
+        {
+          "specName": "Display",
+          "specValue": "14\" FHD"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-acer-swift-go-14-ai-sfg14-75-5264",
+      "name": "Laptop Acer Swift Go 14 AI SFG14-75-5264 (Ultra 5-226V/ 16GB/ 512GB/ 14.0\" FHD+ OLED/ Win 11)",
+      "brand": "ACER",
+      "price": 27990000,
+      "sku": "LAP-ACER-SWIFT-GO-14-AI-SFG14-75-5264",
+      "imageUrl": "/images/products/laptop-acer-swift-go-14-ai-sfg14-75-5264.jpg",
+      "description": "✔ Bảo hành chính hãng 24 tháng. ✔ Hỗ trợ đổi mới trong 7 ngày. ✔ Windows bản quyền tích hợp. ✔ Miễn phí giao hàng toàn quốc. Thông số kỹ thuật: CPU Intel®…",
+      "specs": [
+        {
+          "specName": "RAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "14.0\" FHD"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-gaming-acer-nitro-v-15-propanel-anv15-52-50va",
+      "name": "Laptop gaming Acer Nitro ProPanel ANV15-52-50VA (Core 5-210H/ RTX 3050/ 16GB/ 512GB/ 15.6\" FHD/ Win 11)",
+      "brand": "ACER",
+      "price": 27490000,
+      "sku": "LAP-ACER-NITRO-V-ANV15-52-50VA",
+      "imageUrl": "/images/products/laptop-gaming-acer-nitro-v-15-propanel-anv15-52-50va.jpg",
+      "description": "✔ Tặng E-Gift Code 500.000 đồng - Thẻ nạp game VNG cho game thủ khi mua laptop gaming Acer (từ 01/10/2026 đến 30/11/2026). Xem chi tiết. Khám phá laptop gaming…",
+      "specs": [
+        {
+          "specName": "GPU",
+          "specValue": "RTX 3050"
+        },
+        {
+          "specName": "RAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "15.6\" FHD"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-acer-aspire-lite-15-al15-53p-56ec-core-5-120u-8gb-512gb-15-6-fhd-ips",
+      "name": "Laptop Acer Aspire Lite 15 AL15-53P-56EC (Core 5-120U/ 16GB/ 512GB/ 15.6\" FHD IPS/ Win 11)",
+      "brand": "ACER",
+      "price": 20490000,
+      "sku": "LAP-ACER-ASPIRE-LITE-AL15-53P-56EC",
+      "imageUrl": "/images/products/laptop-acer-aspire-lite-15-al15-53p-56ec-core-5-120u-8gb-512gb-15.jpg",
+      "description": "Khám phá laptop Acer Aspire Lite 15 AL15-53P-56EC. Laptop Acer Aspire Lite 15 AL15-53P-56EC là lựa chọn phù hợp cho học sinh, sinh viên, nhân viên văn phòng và…",
+      "specs": [
+        {
+          "specName": "RAM",
+          "specValue": "16GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "15.6\" FHD"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Laptop",
+      "slug": "laptop-acer-aspire-lite-15-al15-411p-r1cm-ryzen-5-3500u-8gb-256gb",
+      "name": "Laptop Acer Aspire Lite 15 AL15-411P-R1CM (Ryzen 5-3500U/ 8GB/ 256GB/ 15.6\" FHD IPS/ Win 11)",
+      "brand": "ACER",
+      "price": 17490000,
+      "sku": "LAP-ACER-ASPIRE-LITE-AL15-411P-R1CM",
+      "imageUrl": "/images/products/laptop-acer-aspire-lite-15-al15-411p-r1cm-ryzen-5-3500u-8gb-256gb.jpg",
+      "description": "Khám phá laptop Acer Aspire Lite 15 AL15-411P-R1CM. Khám phá laptop Acer Aspire Lite 15 AL15-411P-R1CM là mẫu laptop văn phòng phù hợp với học sinh, sinh viên…",
+      "specs": [
+        {
+          "specName": "RAM",
+          "specValue": "8GB"
+        },
+        {
+          "specName": "Display",
+          "specValue": "15.6\" FHD"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-logitech-g316-x-98-rgb-den-tactile",
+      "name": "Bàn phím Logitech G316 X 98 RGB Đen Tactile",
+      "brand": "Logitech",
+      "price": 1990000,
+      "sku": "KB-LOG-G316-X-98-BLK-TACTILE",
+      "imageUrl": "/images/products/ban-phim-logitech-g316-x-98-rgb-den-tactile.jpg",
+      "description": "Khám phá bàn phím Logitech G316 X 98 RGB Đen Tactile. Bàn phím Logitech G316 X 98 RGB Đen Tactile hướng đến những góc máy cần sự gọn gàng nhưng không muốn đánh…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Tactile Brown Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-logitech-g316-x-98-rgb-trang-tactile",
+      "name": "Bàn phím Logitech G316 X 98 RGB Trắng Tactile",
+      "brand": "Logitech",
+      "price": 1990000,
+      "sku": "KB-LOG-G316-X-98-WHT-TACTILE",
+      "imageUrl": "/images/products/ban-phim-logitech-g316-x-98-rgb-trang-tactile.jpg",
+      "description": "Khám phá bàn phím Logitech G316 X 98 RGB Trắng Tactile. Bàn phím Logitech G316 X 98 RGB Trắng Tactile giải quyết bài toán quen thuộc của những người cần đầy đủ…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Tactile Brown Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-gaming-asus-rog-azoth-96-he-black",
+      "name": "Bàn phím gaming ASUS ROG Azoth 96 HE Black",
+      "brand": "ASUS",
+      "price": 9590000,
+      "sku": "KB-ASUS-M902-ROG-AZOTH-96-HE-BLK",
+      "imageUrl": "/images/products/ban-phim-gaming-asus-rog-azoth-96-he-black.jpg",
+      "description": "Mua Bàn phím Gaming dòng ROG Falchion/ Azoth series tặng phụ kiện độc quyền ROG Polling Rate Booster. Thời gian khuyến mãi: 15 / 07 /202 6 đến 31/ 08 /202 6.",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-asus-m709-rog-azoth-extreme-e20-nx-snow",
+      "name": "Bàn phím ASUS M709 ROG AZOTH EXTREME E20 NX Snow",
+      "brand": "ASUS",
+      "price": 19990000,
+      "sku": "KB-ASUS-M709-ROG-AZOTH-EXTREME-E20-SW",
+      "imageUrl": "/images/products/ban-phim-asus-m709-rog-azoth-extreme-e20-nx-snow.jpg",
+      "description": "Khám phá bàn phím ASUS M709 ROG AZOTH EXTREME E20 NX Snow. Bàn phím M709 ROG AZOTH EXTREME E20 NX Snow là mẫu bàn phím cơ gaming cao cấp dành cho game thủ và…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-gaming-asus-rog-azoth-96-he-white",
+      "name": "Bàn phím gaming ASUS ROG Azoth 96 HE White",
+      "brand": "ASUS",
+      "price": 9590000,
+      "sku": "KB-ASUS-M902-ROG-AZOTH-96-HE-WHI",
+      "imageUrl": "/images/products/ban-phim-gaming-asus-rog-azoth-96-he-white.jpg",
+      "description": "Mua Bàn phím Gaming dòng ROG Falchion/ Azoth series tặng phụ kiện độc quyền ROG Polling Rate Booster. Thời gian khuyến mãi: 15 / 07 /202 6 đến 31/ 08 /202 6.",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ke-tay-ban-phim-logitech-g512-x-75-palm-rest",
+      "name": "Kê tay bàn phím Logitech G512 X 75 Palm Rest",
+      "brand": "Logitech",
+      "price": 990000,
+      "sku": "PK-LOGITECH-G512X-75-PALMREST",
+      "imageUrl": "/images/products/ke-tay-ban-phim-logitech-g512-x-75-palm-rest.jpg",
+      "description": "Khám phá kê tay bàn phím Logitech G512 X 75 Palm Rest. Logitech G512 X Palm Rest là kê cổ tay acrylic được thiết kế riêng cho bàn phím gaming G512 X 75, mang…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ke-tay-ban-phim-logitech-g512-x-98-palm-rest",
+      "name": "Kê tay bàn phím Logitech G512 X 98 Palm Rest",
+      "brand": "Logitech",
+      "price": 990000,
+      "sku": "PK-LOGITECH-G512X-98-PALMREST",
+      "imageUrl": "/images/products/ke-tay-ban-phim-logitech-g512-x-98-palm-rest.jpg",
+      "description": "Khám phá kê tay bàn phím Logitech G512 X 98 Palm Rest. Logitech G512 X Palm Rest là kê cổ tay acrylic được thiết kế riêng cho bàn phím gaming G512 X 98, giúp…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-gaming-logitech-g512-x-98-tmr-8k-white",
+      "name": "Bàn phím gaming Logitech G512 X 98 TMR 8K White",
+      "brand": "Logitech",
+      "price": 5390000,
+      "sku": "KB-LOGITECH-G512X-98-WHI",
+      "imageUrl": "/images/products/ban-phim-gaming-logitech-g512-x-98-tmr-8k-white.jpg",
+      "description": "Khám phá bàn phím gaming Logitech G512 X 98 TMR 8K White. Logitech G512 X 98 là bàn phím cơ gaming thuộc dòng G5 Series, được thiết kế để mang lại khả năng…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-khong-day-akko-5087-v3-prunus-lannesiana-akko-piano-pro",
+      "name": "Bàn phím không dây AKKO 5087 V3 Prunus Lannesiana Akko Piano Pro",
+      "brand": "AKKO",
+      "price": 1390000,
+      "sku": "KB-AKKO-5087-V3-PRUNUS",
+      "imageUrl": "/images/products/ban-phim-khong-day-akko-5087-v3-prunus-lannesiana-akko-piano-pro.jpg",
+      "description": "Khám phá bàn phím không dây AKKO 5087 V3 Prunus Lannesiana Akko Piano Pro. Không chỉ là một thiết bị nhập liệu, bàn phím không dây AKKO 5087 V3 Prunus…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless / Bluetooth"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Tenkeyless (TKL)"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-gaming-logitech-g512-x-98-tmr-8k-black",
+      "name": "Bàn phím gaming Logitech G512 X 98 TMR 8K Black",
+      "brand": "Logitech",
+      "price": 5390000,
+      "sku": "KB-LOGITECH-G512X-98-BLK",
+      "imageUrl": "/images/products/ban-phim-gaming-logitech-g512-x-98-tmr-8k-black.jpg",
+      "description": "Khám phá bàn phím gaming Logitech G512 X 98 TMR 8K Black. Logitech G512 X 98 là bàn phím gaming được thiết kế để mang lại hiệu năng cao và khả năng tùy biến…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-aula-s99-pro-tm-xanh-duong-be-tim-s9904",
+      "name": "Bàn phím AULA S99 Pro TM (Xanh dương be tím) S9904",
+      "brand": "AULA",
+      "price": 790000,
+      "sku": "KB-AULA-S99-PRO-S9904",
+      "imageUrl": "/images/products/ban-phim-aula-s99-pro-tm-xanh-duong-be-tim-s9904.jpg",
+      "description": "Khám phá bàn phím AULA S99 Pro TM (Xanh dương be tím) S9904. AULA S99 Pro TM (Xanh dương be tím) S9904 là mẫu bàn phím dành cho người dùng thích những góc…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-gaming-logitech-g512-x-75-tmr-8k-white",
+      "name": "Bàn phím gaming Logitech G512 X 75 TMR 8K White",
+      "brand": "Logitech",
+      "price": 4890000,
+      "sku": "KB-LOGITECH-G512X-75-WHI",
+      "imageUrl": "/images/products/ban-phim-gaming-logitech-g512-x-75-tmr-8k-white.jpg",
+      "description": "Khám phá bàn phím gaming Logitech G512 X 75 TMR 8K White. Logitech G512 X 75 là bàn phím cơ kết hợp giữa tốc độ analog và cảm giác gõ cơ học, mang lại trải…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 0,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-gaming-logitech-g512-x-75-tmr-8k-black",
+      "name": "Bàn phím gaming Logitech G512 X 75 TMR 8K Black",
+      "brand": "Logitech",
+      "price": 4890000,
+      "sku": "KB-LOGITECH-G512X-75-BLK",
+      "imageUrl": "/images/products/ban-phim-gaming-logitech-g512-x-75-tmr-8k-black.jpg",
+      "description": "Khám phá bàn phím gaming Logitech G512 X 75 TMR 8K Black. Logitech G512 X 75 là bàn phím gaming thuộc dòng G5 Series, kết hợp giữa công nghệ cơ học và analog…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-logitech-g915-x-lightspeed-tkl-clicky-wireless-black",
+      "name": "Bàn phím Logitech G915 X Lightspeed TKL Clicky Wireless Black",
+      "brand": "Logitech",
+      "price": 4400000,
+      "sku": "KB-LOGITECH-G915-X-LS-TKL-CLICKY-BLK",
+      "imageUrl": "/images/products/ban-phim-logitech-g915-x-lightspeed-tkl-clicky-wireless-black.jpg",
+      "description": "Khám phá bàn phím Logitech G915 X Lightspeed TKL Clicky Wireless Black. Logitech G915 X LIGHTSPEED TKL là bàn phím không dây cấu hình thấp được thiết kế cho…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless / Bluetooth"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Clicky Blue Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Tenkeyless (TKL)"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-gaming-asus-xa14-rog-strix-scope-ii-x-nx-storm-switch",
+      "name": "Bàn phím gaming ASUS XA14 ROG STRIX SCOPE II X NX Storm",
+      "brand": "ASUS",
+      "price": 3390000,
+      "sku": "KB-ASUS-XA14-ROG-STRIX-SCOPE-II-STORM",
+      "imageUrl": "/images/products/ban-phim-gaming-asus-xa14-rog-strix-scope-ii-x-nx-storm-switch.jpg",
+      "description": "Khám phá bàn phím gaming ASUS XA14 ROG STRIX SCOPE II X NX Storm. ASUS XA14 ROG STRIX SCOPE II X NX Storm là bàn phím cơ fullsize dành cho game thủ cần cảm…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Fullsize 104 Keys"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-rapoo-nk1900-mau-den",
+      "name": "Bàn phím Rapoo NK1900 màu đen",
+      "brand": "Rapoo",
+      "price": 170000,
+      "sku": "KB-RAPOO-NK1900",
+      "imageUrl": "/images/products/ban-phim-rapoo-nk1900-mau-den.jpg",
+      "description": "Thông tin chung. Nhà Sản Xuất : Rapoo. Tình Trạng : Mới 100% - Fullbox. Bảo Hành : 24 tháng. Thông số kỹ thuật : Thương hiệu Rapoo. Model NK1900. Màu sắc Đen.",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-co-gaming-khong-day-dareu-flex-75-black-grey-3-mode-pegasus-switch",
+      "name": "Bàn phím cơ gaming không dây DareU Flex 75 Black Grey 3 Mode Pegasus switch",
+      "brand": "DareU",
+      "price": 690000,
+      "sku": "KB-DAR-FLEX-75-BLK-GRAY",
+      "imageUrl": "/images/products/ban-phim-co-gaming-khong-day-dareu-flex-75-black-grey-3-mode-pega.jpg",
+      "description": "Khám phá bàn phím cơ gaming không dây DareU Flex 75 Black Grey 3 Mode Pegasus switch. Bàn phím cơ gaming không dây DareU Flex 75 Black Grey 3 Mode Pegasus…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless / Bluetooth"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-co-asus-rog-falchion-ace-75-he-v2x-white",
+      "name": "Bàn phím cơ ASUS ROG Falchion Ace 75 HE V2X White",
+      "brand": "ASUS",
+      "price": 5890000,
+      "sku": "KB-ASU-ROG-FALCHION-ACE-75-HE-V2X-WHT",
+      "imageUrl": "/images/products/ban-phim-co-asus-rog-falchion-ace-75-he-v2x-white.jpg",
+      "description": "Khám phá bàn phím cơ ASUS ROG Falchion Ace 75 HE V2X White. Bàn phím cơ ASUS ROG Falchion Ace 75 HE V2X White mang đến một lựa chọn đáng chú ý cho game thủ…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-co-gaming-khong-day-dareu-flex-75-white-black-3-mode-pegasus-switch",
+      "name": "Bàn phím cơ gaming không dây DareU Flex 75 White Black 3 Mode Pegasus switch",
+      "brand": "DareU",
+      "price": 690000,
+      "sku": "KB-DAR-FLEX-75-WHT-BLK",
+      "imageUrl": "/images/products/ban-phim-co-gaming-khong-day-dareu-flex-75-white-black-3-mode-peg.jpg",
+      "description": "Khám phá bàn phím cơ gaming không dây DareU Flex 75 White Black 3 Mode Pegasus switch. Bàn phím cơ gaming không dây DareU Flex 75 White Black 3 Mode Pegasus…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless / Bluetooth"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Keyboard",
+      "slug": "ban-phim-co-asus-rog-falchion-ace-75-he-v2x-red",
+      "name": "Bàn phím cơ ASUS ROG Falchion Ace 75 HE V2X Red",
+      "brand": "ASUS",
+      "price": 5890000,
+      "sku": "KB-ASU-ROG-FALCHION-ACE-75-HE-V2X-RED",
+      "imageUrl": "/images/products/ban-phim-co-asus-rog-falchion-ace-75-he-v2x-red.jpg",
+      "description": "Khám phá bàn phím cơ ASUS ROG Falchion Ace 75 HE V2X Red. Bàn phím cơ ASUS ROG Falchion Ace 75 HE V2X Red mang đến diện mạo nổi bật cùng nền tảng Hotswap dành…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB Type-C"
+        },
+        {
+          "specName": "Switch Type",
+          "specValue": "Mechanical Custom Switch"
+        },
+        {
+          "specName": "Layout",
+          "specValue": "Compact 75% / 80%"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-logitech-g102-lightsync-rgb-black",
+      "name": "Chuột Logitech G102 LightSync Black",
+      "brand": "Logitech",
+      "price": 400000,
+      "sku": "CHU-LOG-G102-LIGHTSYNC-BLACK",
+      "imageUrl": "/images/products/chuot-logitech-g102-lightsync-rgb-black.jpg",
+      "description": "Đánh giá chi tiết chuột Logitech G102 Lightsync RGB Black. Dù có mức giá rất bình dân nhưng chuột Logitech G102 Lightsync RGB lại được trang bị led RGB 16,8…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-logitech-g304-lightspeed-wireless",
+      "name": "Chuột Logitech G304 Wireless",
+      "brand": "Logitech",
+      "price": 725000,
+      "sku": "CHU-LOG-G304",
+      "imageUrl": "/images/products/chuot-logitech-g304-lightspeed-wireless.jpg",
+      "description": "Một số đánh giá chi tiết chuột Logitech G304 Lightspeed Wireless. G304 là một trong những dòng chuột Logitech chơi game với công nghệ LIGHTSPEED được thiết kế…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless 2.4GHz / BT"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "razer-deathadder-essential",
+      "name": "Chuột Razer DeathAdder Essential (RZ01-03850100-R3M1)",
+      "brand": "Razer",
+      "price": 370000,
+      "sku": "CHU-RAZ-DA-ESSENTIAL",
+      "imageUrl": "/images/products/razer-deathadder-essential.jpg",
+      "description": "Chuột Razer Deathadder Essential sở hữu thiết kế công thái học. Chuột gaming DeathAdder Essential được Razer thiết kế với kiểu dáng công thái học (Ergonomic)…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-khong-day-logitech-m331-silent",
+      "name": "Chuột không dây Logitech M331 Silent Black",
+      "brand": "Logitech",
+      "price": 360000,
+      "sku": "CHU-LOG-M331-SIL-BLA",
+      "imageUrl": "/images/products/chuot-khong-day-logitech-m331-silent.jpg",
+      "description": "Thông tin chung: Hãng sản xuất: Logitech. Tình trạng: Mới. Bảo hành: 12 Tháng. Thông số kỹ thuật. Thương hiệu: Logitech. Bảo hành: 12 tháng. Model: Logitech…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless 2.4GHz / BT"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-asus-rog-strix-impact-iii-wireless",
+      "name": "Chuột ASUS ROG Strix Impact III Wireless",
+      "brand": "ASUS",
+      "price": 1090000,
+      "sku": "CHU-ASUS-ROG-IMPACT-III-WL",
+      "imageUrl": "/images/products/chuot-asus-rog-strix-impact-iii-wireless.jpg",
+      "description": "Nhà sản xuất: Asus. Tình trạng: Mới 100%. Bảo hành: 24 Tháng. Thông số kỹ thuật: Kết nối. Bluetooth 5.1. RF 2.4GHz. Loại pin Pin AA /AAA. Thời lượng pin Lên…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless 2.4GHz / BT"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-logitech-g102-lightsync-rgb-white",
+      "name": "Chuột Logitech G102 LightSync White",
+      "brand": "Logitech",
+      "price": 400000,
+      "sku": "CHU-LOG-G102-LIGHTSYNC-WHITE",
+      "imageUrl": "/images/products/chuot-logitech-g102-lightsync-rgb-white.jpg",
+      "description": "Dù có mức giá rất bình dân nhưng Chuột Logitech G102 Lightsync RGB lại được trang bị led RGB 16,8 triệu màu .Chọn một màu hay trộn 3 màu, hiệu ứng có sẵn hay…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-asus-tuf-gaming-m3-gen-ii",
+      "name": "Chuột Asus TUF Gaming M3 Gen II",
+      "brand": "ASUS",
+      "price": 390000,
+      "sku": "CHU-ASUS-TUF-M3-GENII",
+      "imageUrl": "/images/products/chuot-asus-tuf-gaming-m3-gen-ii.jpg",
+      "description": "Nhà sản xuất : ASUS. Tình trạng : Fullbox-100%. Bảo hành : 24 tháng. Thông số kỹ thuật : Hãng sản xuất: Asus. Bảo hành: 24 Tháng. Kiểu kết nối: Có dây. Độ nhạy…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "logitech-g502-hero",
+      "name": "Chuột Logitech G502 Hero Gaming",
+      "brand": "Logitech",
+      "price": 920000,
+      "sku": "CHU-LOG-G502-HERO",
+      "imageUrl": "/images/products/logitech-g502-hero.jpg",
+      "description": "Đánh giá chi tiết chuột Logitech G502 Hero Gaming. Ngoài hiệu suất cốt lõi và các tính năng cá nhân, nhiều chi tiết được thiết kế và chế tạo với sự tận tâm.",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 29,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-gaming-khong-day-dareu-a950gm-black",
+      "name": "Chuột gaming không dây DareU A950GM Black",
+      "brand": "DareU",
+      "price": 550000,
+      "sku": "CHU-DAR-A950GM-BLK",
+      "imageUrl": "/images/products/chuot-gaming-khong-day-dareu-a950gm-black.jpg",
+      "description": "Khám phá chuột gaming không dây DareU A950GM Black. Chuột gaming không dây DareU A950GM Black kết hợp cảm biến PAW3395, trọng lượng 60 ± 2g cùng ba phương thức…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless 2.4GHz / BT"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 0,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-gaming-khong-day-logitech-pro-x3-superstrike-lightspeed-pink",
+      "name": "Chuột gaming không dây Logitech Pro X3 Superstrike Lightspeed Pink",
+      "brand": "Logitech",
+      "price": 4790000,
+      "sku": "CHU-LOGITECH-X3-SUPERSTRIKE-LP-PINK",
+      "imageUrl": "/images/products/chuot-gaming-khong-day-logitech-pro-x3-superstrike-lightspeed-pin.jpg",
+      "description": "Khám phá chuột gaming không dây Logitech Pro X3 Superstrike Lightspeed Pink. Chuột gaming không dây Logitech PRO X3 SUPERSTRIKE Magenta Eclipse hướng đến game…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless 2.4GHz / BT"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-logitech-g-pro-x-superlight-2-dex-wireless-black",
+      "name": "Chuột Logitech G Pro X Superlight 2 Dex Wireless Black",
+      "brand": "Logitech",
+      "price": 3190000,
+      "sku": "CHU-LOGITECH-G-PRO-X-SUPERLIGHT-2-DEX-WL-BLA",
+      "imageUrl": "/images/products/chuot-logitech-g-pro-x-superlight-2-dex-wireless-black.jpg",
+      "description": "Đánh giá chi tiết chuột Logitech G Pro X Superlight 2 Dex Wireless Black. Logitech G Pro X Superlight 2 Dex Wireless là một thiết bị chuột không dây cao cấp…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless 2.4GHz / BT"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 14,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-gaming-khong-day-logitech-pro-x3-superstrike-lightspeed-black",
+      "name": "Chuột gaming không dây Logitech Pro X3 Superstrike Lightspeed Black",
+      "brand": "Logitech",
+      "price": 4790000,
+      "sku": "CHU-LOGITECH-X3-SUPERSTRIKE-LP-BLK",
+      "imageUrl": "/images/products/chuot-gaming-khong-day-logitech-pro-x3-superstrike-lightspeed-bla.jpg",
+      "description": "Khám phá chuột gaming không dây Logitech Pro X3 Superstrike Lightspeed Black. Chuột gaming không dây Logitech PRO X3 SUPERSTRIKE LIGHTSPEED Black được phát…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless 2.4GHz / BT"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-gaming-predator-cestus-330-pmw920",
+      "name": "Chuột Gaming Predator Cestus 330 (PMW920)",
+      "brand": "ACER",
+      "price": 1500000,
+      "sku": "ACER-PRE-CESTUS-330-PMW920",
+      "imageUrl": "/images/products/chuot-gaming-predator-cestus-330-pmw920.jpg",
+      "description": "Khám phá chuột Gaming Predator Cestus 330 (PMW920). Chuột Gaming Predator Cestus 330 (PMW920) hướng đến những game thủ ưu tiên khả năng kiểm soát chính xác…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 20,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-razer-basilisk-v3-pro-35k-phantom-green-edition",
+      "name": "Chuột Razer Basilisk V3 Pro 35K Phantom Green Edition",
+      "brand": "Razer",
+      "price": 3940000,
+      "sku": "CHU-RAZER-BASILISK-V3-PRO-35K-PHANTOM",
+      "imageUrl": "/images/products/chuot-razer-basilisk-v3-pro-35k-phantom-green-edition.jpg",
+      "description": "Thương hiệu: Razer. Bảo hành: 24 tháng. Khám phá chuột Razer Basilisk V3 Pro 35K Phantom Green Edition. Chuột Razer Basilisk V3 Pro 35K Phantom Green Edition…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 23,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-gaming-khong-day-logitech-g304-x-superlight-black",
+      "name": "Chuột gaming không dây Logitech G304 X Superlight Black",
+      "brand": "Logitech",
+      "price": 1790000,
+      "sku": "CHU-LOG-G304-X-SUPERLIGHT-BLK",
+      "imageUrl": "/images/products/chuot-gaming-khong-day-logitech-g304-x-superlight-black.jpg",
+      "description": "Khám phá chuột gaming không dây Logitech G304 X Superlight Black. Chuột gaming không dây Logitech G304 X Superlight Black hướng đến những game thủ ưu tiên tốc…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless 2.4GHz / BT"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 26,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-khong-day-hyperwork-silentium-ms01-trang",
+      "name": "Chuột không dây HyperWork Silentium MS01 Trắng",
+      "brand": "HyperWork",
+      "price": 490000,
+      "sku": "CHU-HW-SIL-MS01-WHT",
+      "imageUrl": "/images/products/chuot-khong-day-hyperwork-silentium-ms01-trang.jpg",
+      "description": "Khám phá chuột không dây HyperWork Silentium MS01 Trắng. Chuột không dây HyperWork Silentium MS01 Trắng được phát triển dành cho những người làm việc trong môi…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless 2.4GHz / BT"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 2,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-khong-day-hyperwork-silentium-gen-2-ms01-den",
+      "name": "Chuột không dây HyperWork Silentium Gen 2 MS01 Đen",
+      "brand": "HyperWork",
+      "price": 650000,
+      "sku": "CHU-HW-SIL-MS01-G2-BLK",
+      "imageUrl": "/images/products/chuot-khong-day-hyperwork-silentium-gen-2-ms01-den.jpg",
+      "description": "Khám phá chuột không dây HyperWork Silentium Gen 2 MS01 Đen. Chuột không dây HyperWork Silentium Gen 2 MS01 Đen được phát triển dành cho những người thường…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless 2.4GHz / BT"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 8,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-akko-ag-one-8k-joy-of-life",
+      "name": "Chuột AKKO AG ONE 8K Joy of Life",
+      "brand": "AKKO",
+      "price": 790000,
+      "sku": "CHU-AKKO-8K-JOY-OF-LIFE",
+      "imageUrl": "/images/products/chuot-akko-ag-one-8k-joy-of-life.jpg",
+      "description": "Khám phá chuột AKKO AG ONE 8K Joy of Life. Chuột AKKO AG ONE 8K Joy of Life mang đến khả năng phản hồi gần như tức thời nhờ polling rate 8000Hz và độ chính xác…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wired USB"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 11,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-khong-day-logitech-signature-comfort-m840-l-white",
+      "name": "Chuột không dây Logitech Signature Comfort M840 L White",
+      "brand": "Logitech",
+      "price": 990000,
+      "sku": "CHU-LOGITECH-M840-L-WHI",
+      "imageUrl": "/images/products/chuot-khong-day-logitech-signature-comfort-m840-l-white.jpg",
+      "description": "Khám phá chuột không dây Logitech Signature Comfort M840 L White. Logitech Signature Comfort M840 L White là mẫu chuột máy tính không dây được phát triển cho…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless 2.4GHz / BT"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 4,
+      "lowStockThreshold": 5
+    },
+    {
+      "category": "Mouse",
+      "slug": "chuot-khong-day-hyperwork-silentium-gen-2-ms01-trang",
+      "name": "Chuột không dây HyperWork Silentium Gen 2 MS01 Trắng",
+      "brand": "HyperWork",
+      "price": 650000,
+      "sku": "CHU-HW-SIL-MS01-G2-WHT",
+      "imageUrl": "/images/products/chuot-khong-day-hyperwork-silentium-gen-2-ms01-trang.jpg",
+      "description": "Khám phá chuột không dây HyperWork Silentium Gen 2 MS01 Trắng. Chuột không dây HyperWork Silentium Gen 2 MS01 Trắng được phát triển dành cho người dùng văn…",
+      "specs": [
+        {
+          "specName": "Connection",
+          "specValue": "Wireless 2.4GHz / BT"
+        },
+        {
+          "specName": "DPI",
+          "specValue": "8.000 - 26.000 DPI"
+        },
+        {
+          "specName": "Sensor",
+          "specValue": "Optical Gaming Sensor"
+        }
+      ],
+      "stockQuantity": 17,
+      "lowStockThreshold": 5
+    }
+  ]
+}

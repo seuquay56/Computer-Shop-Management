@@ -532,6 +532,117 @@
           }
         }
       ]
+    },
+    {
+      "name": "Module 3 - Cart, SePay VietQR Checkout & Orders (Member 3)",
+      "item": [
+        {
+          "name": "Validate Cart Stock & PC Compatibility",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    {\n      \"variantId\": 1,\n      \"quantity\": 1\n    },\n    {\n      \"variantId\": 5,\n      \"quantity\": 1\n    }\n  ]\n}"
+            },
+            "url": "{{baseUrl}}/api/orders/cart/validate"
+          }
+        },
+        {
+          "name": "Create Checkout Order (VietQR SePay)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    {\n      \"variantId\": 1,\n      \"quantity\": 1\n    }\n  ],\n  \"paymentMethod\": \"VietQR\",\n  \"sessionId\": \"postman-session-2026-001\",\n  \"customerName\": \"Nguyen Nhat Huy\",\n  \"customerPhone\": \"0901234567\",\n  \"shippingAddress\": \"19 Nguyen Huu Tho, Q.7, HCMC\"\n}"
+            },
+            "url": "{{baseUrl}}/api/orders/checkout"
+          }
+        },
+        {
+          "name": "SePay Webhook Callback (Apikey Auth)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Apikey dev_sepay_webhook_api_key_2026"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 92704,\n  \"gateway\": \"MBBank\",\n  \"accountNumber\": \"0123456789\",\n  \"transferType\": \"in\",\n  \"transferAmount\": 15490000,\n  \"code\": \"CSORDER1\",\n  \"content\": \"CSORDER1 Thanh toan Computer Shop\",\n  \"referenceCode\": \"MBVCB.20261118\"\n}"
+            },
+            "url": "{{baseUrl}}/api/payment/sepay-webhook"
+          }
+        },
+        {
+          "name": "Get My Orders (Customer Tracking)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/orders/my"
+          }
+        },
+        {
+          "name": "Admin List All Orders",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": "{{baseUrl}}/api/admin/orders"
+          }
+        },
+        {
+          "name": "Admin Update Order Status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"Packing\"\n}"
+            },
+            "url": "{{baseUrl}}/api/admin/orders/1/status"
+          }
+        }
+      ]
     }
   ]
 }

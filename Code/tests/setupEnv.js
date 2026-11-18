@@ -1,0 +1,15 @@
+process.env.NODE_ENV = 'test';
+process.env.JWT_SECRET = 'test_jwt_secret_key_for_computer_shop_management_2026';
+process.env.DB_HOST = 'localhost';
+process.env.DB_PORT = '5432';
+process.env.DB_NAME = 'computer_shop_db_test';
+process.env.DB_USER = 'postgres';
+process.env.DB_PASSWORD = 'test_password';
+process.env.SEPAY_BANK_ACCOUNT = '0123456789';
+process.env.SEPAY_BANK_CODE = 'MBBank';
+process.env.SEPAY_ACCOUNT_NAME = 'COMPUTER SHOP VN';
+process.env.SEPAY_QR_TEMPLATE = 'compact';
+process.env.SEPAY_WEBHOOK_API_KEY = 'test_sepay_webhook_api_key_2026';
+process.env.PAYMENT_CALLBACK_SECRET = 'test_hmac_callback_secret_2026_computer_shop';
+process.env.ORDER_PREFIX = 'CSORDER';
+process.env.PAYMENT_DEMO_MODE = 'true';

@@ -1,17 +1,20 @@
 {
-  "name": "computer-shop-member1-backend",
+  "name": "computer-shop-management-software",
   "version": "1.0.0",
   "private": true,
-  "description": "Backend and basic Admin web interface for Computer Shop Management Software - Member 1",
+  "description": "Computer Shop Management Software — Full-Stack 4-Module MVC Application (Members 1, 2 & 3)",
   "main": "src/server.js",
   "type": "commonjs",
-  "engines": { "node": ">=22" },
+  "engines": { "node": ">=20" },
   "scripts": {
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
+    "db:init": "node scripts/init-db.js",
     "db:admin": "node scripts/create-admin.js",
     "db:check": "node scripts/check-db.js",
-    "db:seed": "node scripts/seed-demo.js"
+    "db:seed": "node scripts/seed-demo.js",
+    "test": "jest --verbose",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "bcryptjs": "^3.0.2",
@@ -24,6 +27,20 @@
     "pg": "^8.16.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFiles": ["<rootDir>/tests/setupEnv.js"],
+    "collectCoverageFrom": [
+      "src/utils/sepay.js",
+      "src/validators/order.validator.js",
+      "src/services/order.service.js",
+      "src/services/payment.service.js",
+      "src/controllers/order.controller.js",
+      "src/controllers/payment.controller.js"
+    ]
   }
 }

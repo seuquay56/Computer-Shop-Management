@@ -37,8 +37,11 @@ CREATE TABLE IF NOT EXISTS products (
     brand VARCHAR(50) NOT NULL,
     category_id BIGINT NOT NULL REFERENCES categories(category_id),
     description TEXT,
+    image_url TEXT,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
+
+ALTER TABLE products ADD COLUMN IF NOT EXISTS image_url TEXT;
 
 CREATE INDEX IF NOT EXISTS ix_products_category_id ON products(category_id);
 

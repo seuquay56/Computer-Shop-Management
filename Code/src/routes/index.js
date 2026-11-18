@@ -10,6 +10,10 @@ const specRoutes = require('./spec.routes');
 const productRoutes = require('./product.routes');
 const inventoryRoutes = require('./inventory.routes');
 
+// Member 3 Routes (Cart, Checkout, Orders, SePay VietQR & Payment Callbacks)
+const orderRoutes = require('./order.routes');
+const paymentRoutes = require('./payment.routes');
+
 const router = express.Router();
 
 router.use('/auth', authRoutes);
@@ -22,5 +26,9 @@ router.use('/categories', categoryRoutes);
 router.use('/specs', specRoutes);
 router.use('/products', productRoutes);
 router.use('/inventory', inventoryRoutes);
+
+// Mount Member 3 modules
+router.use('/orders', orderRoutes);
+router.use('/payment', paymentRoutes);
 
 module.exports = router;

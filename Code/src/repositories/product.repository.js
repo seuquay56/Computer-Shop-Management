@@ -109,6 +109,7 @@ async function listProducts({
       p.name,
       p.brand,
       p.description,
+      p.image_url,
       p.created_at,
       c.category_id,
       c.name AS category_name,
@@ -158,6 +159,7 @@ async function findById(productId) {
       p.name,
       p.brand,
       p.description,
+      p.image_url,
       p.created_at,
       c.category_id,
       c.name AS category_name,
@@ -196,16 +198,16 @@ async function findById(productId) {
   return result.rows[0] || null;
 }
 
-async function createProductWithDetails({ name, brand, categoryId, description, specs = [], variants = [] }) {
+async function createProductWithDetails({ name, brand, categoryId, description, imageUrl = '', specs = [], variants = [] }) {
   const client = await getClient();
   try {
     await client.query('BEGIN');
 
     const productRes = await client.query(
-      `INSERT INTO products (name, brand, category_id, description)
-       VALUES ($1, $2, $3, NULLIF($4, ''))
-       RETURNING product_id, name, brand, category_id, description, created_at`,
-      [name, brand, categoryId, description || '']
+      `INSERT INTO products (name, brand, category_id, description, image_url)
+       VALUES ($1, $2, $3, NULLIF($4, ''), NULLIF($5, ''))
+       RETURNING product_id, name, brand, category_id, description, image_url, created_at`,
+      [name, brand, categoryId, description || '', imageUrl || '']
     );
     const productId = productRes.rows[0].product_id;
 
@@ -239,7 +241,7 @@ async function createProductWithDetails({ name, brand, categoryId, description, 
   }
 }
 
-async function updateProduct(productId, { name, brand, categoryId, description, specs }) {
+async function updateProduct(productId, { name, brand, categoryId, description, imageUrl, specs }) {
   const client = await getClient();
   try {
     await client.query('BEGIN');
@@ -252,6 +254,7 @@ async function updateProduct(productId, { name, brand, categoryId, description, 
     if (brand !== undefined) updates.push(`brand = ${add(brand)}`);
     if (categoryId !== undefined) updates.push(`category_id = ${add(categoryId)}`);
     if (description !== undefined) updates.push(`description = NULLIF(${add(description || '')}, '')`);
+    if (imageUrl !== undefined) updates.push(`image_url = NULLIF(${add(imageUrl || '')}, '')`);
 
     if (updates.length > 0) {
       const pId = add(productId);
@@ -375,6 +378,25 @@ async function getFilterOptions() {
    ORDER BY s.spec_name ASC`
   );
 
+  const catSpecsRes = await query(
+    `SELECT p.category_id, s.spec_name, ARRAY_AGG(DISTINCT ps.spec_value ORDER BY ps.spec_value) AS values
+       FROM specs s
+       JOIN product_specs ps ON ps.spec_id = s.spec_id
+       JOIN products p ON p.product_id = ps.product_id
+   GROUP BY p.category_id, s.spec_name
+   ORDER BY p.category_id, s.spec_name ASC`
+  );
+
+  const categorySpecs = {};
+  for (const row of catSpecsRes.rows) {
+    const cid = String(row.category_id);
+    if (!categorySpecs[cid]) categorySpecs[cid] = [];
+    categorySpecs[cid].push({
+      spec_name: row.spec_name,
+      values: row.values,
+    });
+  }
+
   return {
     brands: brandsRes.rows.map((r) => r.brand),
     categories: categoriesRes.rows,
@@ -383,6 +405,7 @@ async function getFilterOptions() {
       max: Number(priceRangeRes.rows[0]?.max_price || 0),
     },
     specs: specsRes.rows,
+    categorySpecs,
   };
 }
 

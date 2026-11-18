@@ -1,5 +1,5 @@
 const dotenv = require('dotenv');
-dotenv.config();
+dotenv.config({ quiet: true });
 
 function required(name, fallback = undefined) {
   const value = process.env[name] ?? fallback;
@@ -29,4 +29,19 @@ module.exports = {
   jwtSecret,
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || '1d',
   bcryptSaltRounds: Number(process.env.BCRYPT_SALT_ROUNDS || 12),
+  sepay: {
+    bankAccount: (process.env.SEPAY_BANK_ACCOUNT || '0123456789').trim(),
+    bankCode: (process.env.SEPAY_BANK_CODE || 'MBBank').trim(),
+    accountName: (process.env.SEPAY_ACCOUNT_NAME || 'COMPUTER SHOP VN').trim(),
+    qrTemplate: (process.env.SEPAY_QR_TEMPLATE || 'compact').trim(),
+    webhookApiKey: (process.env.SEPAY_WEBHOOK_API_KEY || 'dev_sepay_webhook_api_key_2026').trim(),
+    apiToken: (process.env.SEPAY_API_TOKEN || '').trim(),
+    bankAccountId: (process.env.SEPAY_BANK_ACCOUNT_ID || '').trim(),
+  },
+  orderPrefix: (process.env.ORDER_PREFIX || 'CSORDER').trim().toUpperCase(),
+  orderExpireMinutes: Math.max(5, Number(process.env.ORDER_EXPIRE_MINUTES || 30)),
+  paymentCallbackSecret: (process.env.PAYMENT_CALLBACK_SECRET || jwtSecret).trim(),
+  paymentDemoMode: process.env.PAYMENT_DEMO_MODE !== undefined
+    ? process.env.PAYMENT_DEMO_MODE === 'true'
+    : (process.env.NODE_ENV || 'development') !== 'production',
 };

@@ -163,3 +163,57 @@ Errors return `{ "success": false, "message": "..." }` with appropriate HTTP sta
 |---|---|---|---|
 | GET | `/admin/dashboard?from=YYYY-MM-DD&to=YYYY-MM-DD` | Admin | Revenue KPIs, recent orders, daily revenue, conversion rate |
 | POST | `/visits` | Public | Storefront visit tracking: `{ "sessionId": "<uuid>" }` |
+
+---
+
+## 8. Storefront Cart, SePay VietQR Checkout & Order Tracking (Module 3 & 4 - Member 3)
+
+| Method | Endpoint | Access | Description / Payload |
+|---|---|---|---|
+| POST | `/orders/cart/validate` | Public | Real-time stock check, live subtotal/total calculation, and PC hardware compatibility check (CPU Socket, RAM Type, PSU Wattage): `{ "items": [{ "variantId": 1, "quantity": 1 }] }` |
+| POST | `/orders/checkout` | Authenticated | Create order preserving `orders.session_id` (`website_visits` contract). Returns dynamic SePay VietQR URL (`qr.sepay.vn`) for `VietQR`, gateway ref for `ZaloPay`, or immediately transitions `COD` to `Packing` with atomic stock deduction |
+| GET | `/orders/my?page=1&limit=20&status=` | Authenticated | List authenticated customer's order tracking history |
+| GET | `/orders/:orderId` | Owner / Staff / Admin | Full order details, line items, status timeline, and SePay VietQR details |
+| GET | `/orders/:orderId/payment-status` | Owner / Staff / Admin | Lightweight payment polling endpoint (supports automatic SePay User API v2 reconciliation when `SEPAY_API_TOKEN` is set) |
+| POST | `/orders/:orderId/cancel` | Owner | Cancel customer's own `Pending` order |
+| POST | `/payment/sepay-webhook` | SePay (`Authorization: Apikey <key>`) | Incoming SePay bank transfer webhook: verifies API key (constant-time), matches `CSORDER<id>` & exact amount, atomically updates `Pending → Paid` and deducts inventory (`FOR UPDATE`) |
+| POST | `/payment/callback` | SePay Apikey / HMAC-SHA256 | Unified payment callback endpoint supporting both SePay `Apikey` and ZaloPay/VietQR `X-Payment-Signature` HMAC-SHA256 verification |
+| POST | `/payment/simulate/:orderId` | Authenticated (`PAYMENT_DEMO_MODE=true`) | Executes the real SePay webhook or ZaloPay HMAC callback pipeline locally for demonstration and QA testing |
+| GET | `/admin/orders?status=&paymentMethod=&search=` | Admin, Staff | List all orders across the shop for fulfillment management |
+| PATCH | `/admin/orders/:orderId/status` | Admin, Staff | Advance order lifecycle (`Pending → Paid → Packing → Shipped → Completed / Cancelled`) with automatic stock deduction or cancellation stock restoration |
+
+### Checkout Example Payload (`POST /api/orders/checkout`):
+```json
+{
+  "items": [
+    { "variantId": 1, "quantity": 1 },
+    { "variantId": 7, "quantity": 2 }
+  ],
+  "paymentMethod": "VietQR",
+  "sessionId": "550e8400-e29b-41d4-a716-446655440000",
+  "customerName": "Nguyen Nhat Huy",
+  "customerPhone": "0901234567",
+  "shippingAddress": "19 Nguyen Huu Tho, Q.7, TP.HCM",
+  "notes": "Lap rap san va test nhiet do"
+}
+```
+
+### SePay Webhook Example Payload (`POST /api/payment/sepay-webhook`):
+```http
+POST http://localhost:5000/api/payment/sepay-webhook
+Authorization: Apikey YOUR_SEPAY_WEBHOOK_API_KEY
+Content-Type: application/json
+```
+```json
+{
+  "id": 92704,
+  "gateway": "MBBank",
+  "transactionDate": "2026-11-18 17:15:00",
+  "accountNumber": "0123456789",
+  "code": "CSORDER15",
+  "content": "CSORDER15 Thanh toan don hang Computer Shop",
+  "transferType": "in",
+  "transferAmount": 15490000,
+  "referenceCode": "MBVCB.3278907687"
+}
+```
