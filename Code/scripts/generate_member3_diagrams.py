@@ -170,9 +170,10 @@ def draw_sequence_diagram(filename, boundary_title, participants, messages, fram
                     linestyle="--", linewidth=1.0, color=frame_edge, zorder=2
                 )
                 ax.text(
-                    x_lo + 0.14, y_div - 0.19, f"[{fr.get('else_guard', 'else')}]",
-                    ha="left", va="center", fontsize=7.8, style="italic",
-                    color="#92400e", family=STYLE["font"], zorder=3
+                    x_lo + 0.14, y_div - 0.28, f"[{fr.get('else_guard', 'else')}]",
+                    ha="left", va="top", fontsize=7.8, style="italic",
+                    color="#92400e", family=STYLE["font"], zorder=3,
+                    bbox=dict(boxstyle="round,pad=0.2", facecolor="#fef3c7", edgecolor="none", alpha=0.9)
                 )
 
     # Activation bars (soft indigo fill + indigo edge matching Member 2's palette)
